@@ -20,7 +20,7 @@ public static class SubmissionInfo
     {
         new TeamMember("Ian", "iknguyen@student.unimelb.edu.au"),
         new TeamMember("Brian Soe Khant Aung", "soekhantaung@student.unimelb.edu.au"),
-        new TeamMember("Student Name 3", "...@student.unimelb.edu.au"),
+        new TeamMember("Zongliang Han", "zongliangh@student.unimelb.edu.au"),
         // Remove the following line if you have a group of 3
         new TeamMember("Student Name 4", "...@student.unimelb.edu.au"), 
     };
