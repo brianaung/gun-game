@@ -12,7 +12,7 @@ public static class SubmissionInfo
     public static readonly string RepoURL = "https://github.com/COMP30019/project-2-";
     
     // Come up with a team name below (plain text, no more than 50 chars).
-    public static readonly string TeamName = "Replace with your team name";
+    public static readonly string TeamName = "DeezNuts";
     
     // List every team member below. Ensure student names/emails match official
     // UniMelb records exactly (e.g. avoid nicknames or aliases).
@@ -27,14 +27,12 @@ public static class SubmissionInfo
 
     // This may be a "working title" to begin with, but ensure it is final by
     // the video milestone deadline (plain text, no more than 50 chars).
-    public static readonly string GameName = "Replace with your game name";
+    public static readonly string GameName = "Gun Game";
 
     // Write a brief blurb of your game, no more than 200 words. Again, ensure
     // this is final by the video milestone deadline.
     public static readonly string GameBlurb = 
-@"Write a blurb of your game here in plain text. This is a
-multiline verbatim string,
-so don't worry about keeping it to one line, just be sure not to indent it.
+@"Survive for as long as you can in a 3rd person arena shooter game.
 ";
     
     // By the gameplay video milestone deadline this should be a direct link
