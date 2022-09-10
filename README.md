@@ -14,6 +14,14 @@ as protocols and processes you will use to keep the project organised. Keep it u
 throughout the duration of the project. By the final submission it should contain 
 a summary of who completed what. (You should of course remove and replace this paragraph!)
 
+Ian: camera view
+Ian: player input
+Harry: weapon systems
+Harry: partical system
+Brian: enemies system
+Brian: enviroment
+
+
 <!-- [[EndTeamworkPlan]] PLEASE LEAVE THIS LINE UNTOUCHED -->
 
 ## Final report
