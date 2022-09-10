@@ -18,7 +18,7 @@ public static class SubmissionInfo
     // UniMelb records exactly (e.g. avoid nicknames or aliases).
     public static readonly TeamMember[] Team = new[]
     {
-        new TeamMember("Student Name 1", "...@student.unimelb.edu.au"),
+        new TeamMember("Ian", "iknguyen@student.unimelb.edu.au"),
         new TeamMember("Student Name 2", "...@student.unimelb.edu.au"),
         new TeamMember("Student Name 3", "...@student.unimelb.edu.au"),
         // Remove the following line if you have a group of 3
