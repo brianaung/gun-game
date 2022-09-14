@@ -30,7 +30,7 @@ rifle
 
 Harry: particle system
 
-flame comming through fire gun
+flame comming through fire gun, blood animation
 
 Brian: enemy system
 
