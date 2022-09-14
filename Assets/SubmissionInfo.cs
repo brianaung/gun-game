@@ -9,7 +9,7 @@ public static class SubmissionInfo
     // for extra details related to use of this file.
 
     // URL to your group's project 2 repository on GitHub.
-    public static readonly string RepoURL = "https://github.com/COMP30019/project-2-";
+    public static readonly string RepoURL = "https://github.com/COMP30019/project-2-deeznuts";
     
     // Come up with a team name below (plain text, no more than 50 chars).
     public static readonly string TeamName = "DeezNuts";
@@ -21,8 +21,6 @@ public static class SubmissionInfo
         new TeamMember("Ian", "iknguyen@student.unimelb.edu.au"),
         new TeamMember("Brian Soe Khant Aung", "soekhantaung@student.unimelb.edu.au"),
         new TeamMember("Zongliang Han", "zongliangh@student.unimelb.edu.au"),
-        // Remove the following line if you have a group of 3
-        new TeamMember("Student Name 4", "...@student.unimelb.edu.au"), 
     };
 
     // This may be a "working title" to begin with, but ensure it is final by
@@ -32,7 +30,7 @@ public static class SubmissionInfo
     // Write a brief blurb of your game, no more than 200 words. Again, ensure
     // this is final by the video milestone deadline.
     public static readonly string GameBlurb = 
-@"Survive for as long as you can in a 3rd person arena shooter game.
+@"Survive for as long as you can in a 3rd person arena shooter game. Take down enemies within an arena and try to get the highest number of kills
 ";
     
     // By the gameplay video milestone deadline this should be a direct link
