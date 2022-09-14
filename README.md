@@ -18,7 +18,7 @@ Ian: camera view
 
 first/third. Not decide yet. wait to see which is better.
 
-first is scary, third is more suitble to shot
+first is scary, third is more suitable for shotting
 
 Ian: player input
 
