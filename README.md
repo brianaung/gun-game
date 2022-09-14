@@ -14,33 +14,23 @@ as protocols and processes you will use to keep the project organised. Keep it u
 throughout the duration of the project. By the final submission it should contain 
 a summary of who completed what. (You should of course remove and replace this paragraph!)
 
-Ian: camera view
-
-first/third. Not decide yet. wait to see which is better.
-
-first is scary, third is more suitable for shooting
-
-Ian: player input - character movement - jumping/double jump, dashing (mid-air/ground), strafing
-
-Harry: weapon system
-
-fire gun
-
-rifle
-
-Harry: particle system
-
-flame comming through fire gun, blood animation
-
-Brian: enemy system
-
-hide in the corner of maze and pop up sudenly
-
-Brian: enviroment
-
-maze, lava bubble, 
-
-
+- Ian: camera view
+  - first/third. Not decide yet. wait to see which is better.
+  - first is scary, third is more suitable for shooting
+- Ian: player input
+  - character movement 
+  - jumping/double jump, dashing (mid-air/ground), strafing
+- Harry: weapon system
+  - fire gun
+  - rifle
+- Harry: particle system
+  - flame comming through fire gun, blood animation
+- Brian: enemy system
+  - hide in the corner of maze and pop up sudenly
+- Brian: environment
+  - cel shading to have an cartoonish effect
+  - maze, lava bubble
+  - maze is procedurally generated
 
 <!-- [[EndTeamworkPlan]] PLEASE LEAVE THIS LINE UNTOUCHED -->
 
