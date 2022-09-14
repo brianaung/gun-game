@@ -14,14 +14,17 @@ as protocols and processes you will use to keep the project organised. Keep it u
 throughout the duration of the project. By the final submission it should contain 
 a summary of who completed what. (You should of course remove and replace this paragraph!)
 
+Ian: camera view
 
-Ian: third person camera view
-Ian: player input - character movement - jumping/double jump, dashing (mid-air/ground), strafing, wall jump?
+Ian: player input
+
 Harry: weapon system
-Harry: particle system
-Brian: enemy system
-Brian: enviroment
 
+Harry: particle system
+
+Brian: enemy system
+
+Brian: enviroment
 
 
 <!-- [[EndTeamworkPlan]] PLEASE LEAVE THIS LINE UNTOUCHED -->
