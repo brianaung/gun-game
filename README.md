@@ -18,9 +18,9 @@ Ian: camera view
 
 first/third. Not decide yet. wait to see which is better.
 
-first is scary, third is more suitable for shotting
+first is scary, third is more suitable for shooting
 
-Ian: player input
+Ian: player input - character movement - jumping/double jump, dashing (mid-air/ground), strafing
 
 Harry: weapon system
 
