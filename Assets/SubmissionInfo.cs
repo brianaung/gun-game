@@ -30,7 +30,7 @@ public static class SubmissionInfo
     // Write a brief blurb of your game, no more than 200 words. Again, ensure
     // this is final by the video milestone deadline.
     public static readonly string GameBlurb = 
-@"Survive for as long as you can in a 3rd person arena shooter game. Take down enemies within an arena and try to get the highest number of kills
+@"Survive for as long as you can in a 3rd person maze shooter game. Take down enemies within an maze and try to out of the maze.
 ";
     
     // By the gameplay video milestone deadline this should be a direct link
