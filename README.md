@@ -16,15 +16,30 @@ a summary of who completed what. (You should of course remove and replace this p
 
 Ian: camera view
 
+first/third. Not decide yet. wait to see which is better.
+
+first is scary, third is more suitble to shot
+
 Ian: player input
 
 Harry: weapon system
 
+fire gun
+
+rifle
+
 Harry: particle system
+
+flame comming through fire gun
 
 Brian: enemy system
 
+hide in the corner of maze and pop up sudenly
+
 Brian: enviroment
+
+maze, lava bubble, 
+
 
 
 <!-- [[EndTeamworkPlan]] PLEASE LEAVE THIS LINE UNTOUCHED -->
