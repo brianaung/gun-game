@@ -16,9 +16,9 @@ a summary of who completed what. (You should of course remove and replace this p
 
 Ian: camera view
 Ian: player input
-Harry: weapon systems
-Harry: partical system
-Brian: enemies system
+Harry: weapon system
+Harry: particle system
+Brian: enemy system
 Brian: enviroment
 
 
