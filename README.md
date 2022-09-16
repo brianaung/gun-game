@@ -25,7 +25,7 @@ a summary of who completed what. (You should of course remove and replace this p
   - rifle
 - Harry: particle system
   - flame comming through fire gun, blood animation
-- Brian: enemy system
+- Jun: enemy system
   - hide in the corner of maze and pop up sudenly
 - Brian: environment
   - cel shading to have an cartoonish effect
