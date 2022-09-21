@@ -9,32 +9,29 @@ public static class SubmissionInfo
     // for extra details related to use of this file.
 
     // URL to your group's project 2 repository on GitHub.
-    public static readonly string RepoURL = "https://github.com/COMP30019/project-2-";
+    public static readonly string RepoURL = "https://github.com/COMP30019/project-2-deeznuts";
     
     // Come up with a team name below (plain text, no more than 50 chars).
-    public static readonly string TeamName = "Replace with your team name";
+    public static readonly string TeamName = "DeezNuts";
     
     // List every team member below. Ensure student names/emails match official
     // UniMelb records exactly (e.g. avoid nicknames or aliases).
     public static readonly TeamMember[] Team = new[]
     {
         new TeamMember("Ian", "iknguyen@student.unimelb.edu.au"),
-        new TeamMember("Student Name 2", "...@student.unimelb.edu.au"),
-        new TeamMember("Student Name 3", "...@student.unimelb.edu.au"),
-        // Remove the following line if you have a group of 3
-        new TeamMember("Student Name 4", "...@student.unimelb.edu.au"), 
+        new TeamMember("Brian Soe Khant Aung", "soekhantaung@student.unimelb.edu.au"),
+        new TeamMember("Zongliang Han", "zongliangh@student.unimelb.edu.au"),
+        new TeamMember("Woo Hyeok Jun", "woohyeokj@student.unimelb.edu.au"),
     };
 
     // This may be a "working title" to begin with, but ensure it is final by
     // the video milestone deadline (plain text, no more than 50 chars).
-    public static readonly string GameName = "Replace with your game name";
+    public static readonly string GameName = "Gun Game";
 
     // Write a brief blurb of your game, no more than 200 words. Again, ensure
     // this is final by the video milestone deadline.
     public static readonly string GameBlurb = 
-@"Write a blurb of your game here in plain text. This is a
-multiline verbatim string,
-so don't worry about keeping it to one line, just be sure not to indent it.
+@"Survive for as long as you can in a 3rd person maze shooter game. Take down enemies within an maze and try to out of the maze.
 ";
     
     // By the gameplay video milestone deadline this should be a direct link
