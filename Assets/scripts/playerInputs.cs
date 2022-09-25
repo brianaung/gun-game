@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class playerInputs : MonoBehaviour
+public class PlayerInputs : MonoBehaviour
 {
     [SerializeField] float playerSpeed = 1.0f;
     [SerializeField] float jumpStrength = 2.0f;
@@ -17,10 +17,17 @@ public class playerInputs : MonoBehaviour
     {
         
     }
+
     // Update is called once per frame
     void Update()
     {
-        float speed = rigidbody.velocity.magnitude;
+
+
+    }
+
+    public void handleMovement() 
+    {
+                float speed = rigidbody.velocity.magnitude;
         if(Input.GetKey(KeyCode.A)) {
             rigidbody.position += Vector3.left * this.playerSpeed * Time.deltaTime;
         }
@@ -40,6 +47,5 @@ public class playerInputs : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Space)) {
             rigidbody.velocity += Vector3.up * this.jumpStrength;
         }
-
     }
 }
