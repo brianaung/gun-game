@@ -16,6 +16,7 @@ public class Player : MonoBehaviour
     void Update()
     {
         playerInputs.handleMovement();
+        playerInputs.handleRotation();
     }
 
     private void LateUpdate() 
