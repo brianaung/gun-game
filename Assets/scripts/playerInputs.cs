@@ -23,12 +23,6 @@ public class PlayerInputs : MonoBehaviour
         velocity = Vector3.zero;
     }
 
-    private void Update()
-    {
-        handleMovement();
-        handleRotation();
-    }
-
     public void handleMovement() 
     {
         // character movement from https://docs.unity3d.com/ScriptReference/CharacterController.Move.html
