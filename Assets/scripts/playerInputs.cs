@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerInputs : MonoBehaviour
 {
     private float playerSpeed = 5.0f;
-    private float jumpStrength = 7.0f;
+    private float jumpStrength = 9.0f;
     private float sensitivity = 1.0f;
     private Transform playerTransform;
     private float gravity = 25f;
@@ -23,8 +23,15 @@ public class PlayerInputs : MonoBehaviour
         velocity = Vector3.zero;
     }
 
+    private void Update()
+    {
+        handleMovement();
+        handleRotation();
+    }
+
     public void handleMovement() 
     {
+        // character movement from https://docs.unity3d.com/ScriptReference/CharacterController.Move.html
         if(characterController.isGrounded && velocity.y < 0)
         {
             velocity.y = 0f;
@@ -33,6 +40,7 @@ public class PlayerInputs : MonoBehaviour
 
         Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
         move *= playerSpeed;
+        // player transform rotation from https://www.youtube.com/watch?v=CSuvGGiC2wI
         move = transform.rotation * move;
         characterController.Move(move * Time.deltaTime);
 

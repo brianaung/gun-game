@@ -13,11 +13,11 @@ public class Player : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        playerInputs.handleMovement();
-        playerInputs.handleRotation();
-    }
+    // void Update()
+    // {
+    //     playerInputs.handleMovement();
+    //     playerInputs.handleRotation();
+    // }
 
     private void LateUpdate() 
     {
