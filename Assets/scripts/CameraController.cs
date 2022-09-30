@@ -16,8 +16,6 @@ public class CameraController : MonoBehaviour
     private Vector3 currRotation;
     private Vector3 camVelocity = Vector3.zero;
     private float smoothTime = 0.1f;
-
-    private float collisionSensitivity = 1.0f;
     private void Awake() 
     {
         playerTransform = player.transform;
@@ -39,6 +37,8 @@ public class CameraController : MonoBehaviour
 
         transform.localEulerAngles = currRotation;
         transform.position = playerTransform.position - (transform.forward * -zOffset) + (transform.up * yOffset);
+
+        // TODO: camera collision
 
     }
 }
