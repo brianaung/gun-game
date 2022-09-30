@@ -11,6 +11,7 @@ public class PlayerInputs : MonoBehaviour
     private float gravity = 25f;
     private CharacterController characterController;
     private Vector3 velocity;
+    private bool doubleJump = false;
     private bool hasJumped = false;
     private void Awake() 
     {
@@ -30,6 +31,7 @@ public class PlayerInputs : MonoBehaviour
         {
             velocity.y = 0f;
             hasJumped = false;
+            doubleJump = false;
         }
 
         Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
@@ -38,12 +40,22 @@ public class PlayerInputs : MonoBehaviour
         move = transform.rotation * move;
         characterController.Move(move * Time.deltaTime);
 
+        if(Input.GetButtonDown("Jump"))
+        {
+            if(!hasJumped) {
+                hasJumped = true;
+                doubleJump = true;
+                velocity.y = jumpStrength;
+            }
 
-
-        if(Input.GetButton("Jump") && !hasJumped) {
-            hasJumped = true;
-            velocity.y = jumpStrength;
+            else if(doubleJump)
+            {
+                velocity.y = jumpStrength;
+                doubleJump = false;
+                Debug.Log("jump again");
+            }
         }
+
         
         velocity.y -= gravity * Time.deltaTime;
         characterController.Move(velocity * Time.deltaTime);
