@@ -19,8 +19,8 @@ public class Player : MonoBehaviour
         playerInputs.handleRotation();
     }
 
-    private void LateUpdate() 
+    private void LateUpdate()
     {
-        cameraController.followPlayer();
+        cameraController.cameraMove();    
     }
 }

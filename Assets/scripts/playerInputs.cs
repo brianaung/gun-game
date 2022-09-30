@@ -52,7 +52,6 @@ public class PlayerInputs : MonoBehaviour
             {
                 velocity.y = jumpStrength;
                 doubleJump = false;
-                Debug.Log("jump again");
             }
         }
 
