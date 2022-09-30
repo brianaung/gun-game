@@ -560,6 +560,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfae1667b56abfb448aa70a8cfbde10a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerSpeed: 5
+  jumpStrength: 9
+  dashStrength: 5
+  sensitivity: 1
+  dashCooldownTime: 1
+  gravity: 25
+  dashTime: 0.5
+  timer: 0
 --- !u!114 &401235672
 MonoBehaviour:
   m_ObjectHideFlags: 0

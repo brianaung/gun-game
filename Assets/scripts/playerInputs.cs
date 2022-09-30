@@ -4,18 +4,22 @@ using UnityEngine;
 
 public class PlayerInputs : MonoBehaviour
 {
-    private float playerSpeed = 5.0f;
-    private float jumpStrength = 9.0f;
-    private float dashStrength = 5.0f;
-    private float sensitivity = 1.0f;
+    
+    public float playerSpeed = 5.0f;
+    public float jumpStrength = 9.0f;
+    public float dashStrength = 5.0f;
+    public float sensitivity = 1.0f;
+    public float dashCooldownTime = 1f;
     private Transform playerTransform;
-    private float gravity = 25f;
+    public float gravity = 25f;
     private CharacterController characterController;
     private Vector3 velocity;
     private Vector3 dashVelocity;
     private bool doubleJump = false;
     private bool hasJumped = false;
-    private float dashTime = 0.2f;
+    public float dashTime = 0.1f;
+
+    public float timer;
     private void Awake() 
     {
         playerTransform = GetComponent<Transform>();
@@ -61,12 +65,14 @@ public class PlayerInputs : MonoBehaviour
         velocity.y -= gravity * Time.deltaTime;
         characterController.Move(velocity * Time.deltaTime);
         
-        if(Input.GetKeyDown(KeyCode.LeftShift))
+        timer += Time.deltaTime;
+        if(Input.GetKeyDown(KeyCode.LeftShift) && timer > dashCooldownTime)
         {
+            timer = 0;
             StartCoroutine(Dash(move));
         }
 
-
+        Debug.Log(dashCooldownTime);
     }
 
     public void handleRotation() 
@@ -77,11 +83,11 @@ public class PlayerInputs : MonoBehaviour
     
     IEnumerator Dash(Vector3 moveDirection) 
     {
-        float startTime = Time.time;
+        var startTime = Time.time;
         while(Time.time < startTime + dashTime)
         {
-            characterController.Move(moveDirection * dashStrength * Time.deltaTime);
 
+            characterController.Move(moveDirection * dashStrength * Time.deltaTime);
             yield return null;
         }
     }
