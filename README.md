@@ -26,7 +26,7 @@ a summary of who completed what. (You should of course remove and replace this p
 - Harry: particle system
   - flame comming through fire gun, blood animation
 - Jun: enemy system
-  - hide in the corner of maze and pop up sudenly
+  - hide in the corner of maze and pop up suddenly
 - Brian: environment
   - cel shading to have an cartoonish effect
   - maze, lava bubble
