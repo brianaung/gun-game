@@ -1,7 +1,7 @@
 // adapted from:
 // https://www.youtube.com/watch?v=kV4IG811DUU&t=250s
 // https://danielilett.com/2019-05-29-tut2-intro/
-// https://github.com/ToughNutToCrack/ZeldaShaderURP2019.4.0f1
+// https://roystan.net/articles/toon-shader/
 Shader "deeznuts/CelShader"
 {
     Properties
@@ -16,7 +16,7 @@ Shader "deeznuts/CelShader"
         _OutlineSize("Outline Size", Float) = 0.01
         _OutlineColor("Outline Color", Color) = (0, 0, 0, 1)
 
-        // extra effects
+        // for extra effects
         _Antialiasing("Band Smoothing", Float) = 5.0
 		_Glossiness("Glossiness/Shininess", Float) = 400
 		_Fresnel("Fresnel/Rim Amount", Range(0, 1)) = 0.7
@@ -57,7 +57,6 @@ Shader "deeznuts/CelShader"
             float _Antialiasing;
             float _Glossiness;
             float _Fresnel;
-
 
             v2f vert (appdata v)
             {
