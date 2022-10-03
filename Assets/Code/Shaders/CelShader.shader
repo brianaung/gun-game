@@ -1,8 +1,9 @@
-// adapted from:
-// https://www.youtube.com/watch?v=kV4IG811DUU&t=250s
-// https://danielilett.com/2019-05-29-tut2-intro/
-// https://roystan.net/articles/toon-shader/
-// https://www.ronja-tutorials.com/post/032-improved-toon/#specular-highlights
+/* adapted from :
+	https://www.youtube.com/watch?v=kV4IG811DUU&t=250s
+	https://danielilett.com/2019-05-29-tut2-intro/
+	https://roystan.net/articles/toon-shader/
+	https://www.ronja-tutorials.com/post/032-improved-toon/#specular-highlights
+*/
 Shader "deeznuts/CelShader"
 {
     Properties
@@ -22,21 +23,24 @@ Shader "deeznuts/CelShader"
         _Antialiasing("Band Smoothing", Float) = 5.0
 		_Glossiness("Glossiness/Shininess", Float) = 400
 		_Fresnel("Fresnel/Rim Amount", Range(0, 1)) = 0.7
-
     }
     SubShader
     {
-        Tags { "RenderType"="Opaque" }
-        LOD 100
+        Tags { 
+			"LightMode" = "ForwardBase"
+			"PassFlags" = "OnlyDirectional"
+        }
 
         Pass
         {
             CGPROGRAM
             #pragma vertex vert
             #pragma fragment frag
+			#pragma multi_compile_fwdbase
 
             #include "UnityCG.cginc"
 			#include "Lighting.cginc"
+			#include "AutoLight.cginc"
 
             struct vertIn
             {
@@ -48,9 +52,10 @@ Shader "deeznuts/CelShader"
             struct vertOut
             {
                 float2 uv: TEXCOORD0;
-                float4 vertex : SV_POSITION;
+                float4 pos : SV_POSITION;
                 float3 worldNormal: NORMAL;
                 float3 viewDir: TEXCOORD1;
+                SHADOW_COORDS(2)
             };
 
             sampler2D _MainTex;
@@ -66,9 +71,10 @@ Shader "deeznuts/CelShader"
             {
                 vertOut o;
                 o.uv = TRANSFORM_TEX(v.uv, _MainTex);
-                o.vertex = UnityObjectToClipPos(v.vertex);
+                o.pos = UnityObjectToClipPos(v.vertex);
                 o.worldNormal = UnityObjectToWorldNormal(v.normal);
                 o.viewDir = WorldSpaceViewDir(v.vertex);
+				TRANSFER_SHADOW(o)
                 return o;
             }
 
@@ -78,21 +84,24 @@ Shader "deeznuts/CelShader"
 				float3 normal = normalize(i.worldNormal);
                 float3 viewDir = normalize(i.viewDir);
 
+                // to receive shadow
+				float shadow = SHADOW_ATTENUATION(i);
+
                 // calculate diffuse lighting with toon shading effect
                 float diffuse = dot(normal, _WorldSpaceLightPos0);
-                float delta = fwidth(diffuse) * _Antialiasing;
                 // multiple steps effect
                 diffuse = floor(diffuse / _StepWidth);
+                float delta = fwidth(diffuse) * _Antialiasing;
                 diffuse += smoothstep(0, delta, frac(diffuse));
                 // bring it back into range to use it for color
                 diffuse /= _StepAmount;
-                diffuse = saturate(diffuse);
+                diffuse = saturate(diffuse) * shadow;
 
                 // calculate specular lighting
                 float3 halfVec = normalize(_WorldSpaceLightPos0 + viewDir);
                 float specular = dot(normal, halfVec);
                 specular = pow(specular * diffuse, _Glossiness);
-                specular = smoothstep(0, 0.01 * _Antialiasing, specular);
+                specular = smoothstep(0, 0.01 * _Antialiasing, specular) * shadow;
 
                 // calculate rim lighting with fresnel
                 float rim = 1 - dot(viewDir, normal);
@@ -126,7 +135,7 @@ Shader "deeznuts/CelShader"
 
             struct vertOut
             {
-                float4 vertex : SV_POSITION;
+                float4 pos : SV_POSITION;
             };
 
             float _OutlineSize;
@@ -141,7 +150,7 @@ Shader "deeznuts/CelShader"
                 float3 normal = normalize(v.normal) * _OutlineSize;
 
                 float3 pos = v.vertex + normal;
-                o.vertex = UnityObjectToClipPos(pos);
+                o.pos = UnityObjectToClipPos(pos);
 
                 return o;
             }
@@ -153,5 +162,6 @@ Shader "deeznuts/CelShader"
             ENDCG
         }
     }
+    // setting a fallback makes the shadows appear correctly
     FallBack "Diffuse"
 }
