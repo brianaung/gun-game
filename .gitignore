@@ -26,6 +26,8 @@
 # Visual Studio cache directory
 .vs/
 
+.vscode/
+
 # Gradle cache directory
 .gradle/
 
@@ -74,3 +76,5 @@ crashlytics-build.properties
 # Editor settings
 .idea/*
 .vsconfig
+
+.DS_Store
