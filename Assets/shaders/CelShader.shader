@@ -9,9 +9,6 @@ Shader "deeznuts/CelShader"
         _MainTex ("Texture", 2D) = "white" {}
         _Color ("Albedo color", Color) = (1, 1, 1, 1)
 
-        // control layer of shades (flat shading)
-        _Shades ("Shades", Range(1, 20)) = 3
-
         // for the outline
         _OutlineSize("Outline Size", Float) = 0.01
         _OutlineColor("Outline Color", Color) = (0, 0, 0, 1)
@@ -129,9 +126,10 @@ Shader "deeznuts/CelShader"
 
                 // translate vertex along the normal vector
                 // makes stencil bigger so the "outline" is thicker
-                float3 normal = normalize(v.normal) * 0.01;
+                float3 normal = normalize(v.normal) * _OutlineSize;
 
-                o.vertex = UnityObjectToClipPos(v.vertex + normal);
+                float3 pos = v.vertex + normal;
+                o.vertex = UnityObjectToClipPos(pos);
 
                 return o;
             }
