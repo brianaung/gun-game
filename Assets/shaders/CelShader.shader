@@ -14,6 +14,9 @@ Shader "CelShader"
         // for the outline
         _OutlineSize("Outline Size", Float) = 0.01
         _OutlineColor("Outline Color", Color) = (0, 0, 0, 1)
+
+        _Antialiasing("Band Smoothing", Float) = 5.0
+		_Glossiness("Glossiness/Shininess", Float) = 400
     }
     SubShader
     {
@@ -41,12 +44,16 @@ Shader "CelShader"
                 float2 uv: TEXCOORD0;
                 float4 vertex : SV_POSITION;
                 float3 worldNormal: NORMAL;
+                float3 viewDir: TEXCOORD1;
             };
 
             sampler2D _MainTex;
             float4 _MainTex_ST;
             float4 _Color;
             float _Shades;
+            float _Antialiasing;
+            float _Glossiness;
+
 
             v2f vert (appdata v)
             {
@@ -54,21 +61,39 @@ Shader "CelShader"
                 o.uv = TRANSFORM_TEX(v.uv, _MainTex);
                 o.vertex = UnityObjectToClipPos(v.vertex);
                 o.worldNormal = UnityObjectToWorldNormal(v.normal);
+                o.viewDir = WorldSpaceViewDir(v.vertex);
                 return o;
             }
 
             fixed4 frag(v2f i) : SV_Target
             {
                 fixed4 albedo = tex2D(_MainTex, i.uv) * _Color;
-
-                // angle between lightDir and normal
 				float3 normal = normalize(i.worldNormal);
-                float diffuse = max(0.0, dot(normal, normalize(_WorldSpaceLightPos0.xyz)));
+                float3 viewDir = normalize(i.viewDir);
+
+                // calculate diffuse lighting with toon shader effect
+                float diffuse = dot(normal, _WorldSpaceLightPos0);
+                float delta = fwidth(diffuse) * _Antialiasing;
+                diffuse = smoothstep(0, delta, diffuse);
+                //diffuse = floor(diffuse * _Shades) / _Shades;
 
                 // create a toon shading effect
-                diffuse = floor(diffuse * _Shades) / _Shades;
 
-                fixed4 col = albedo * (diffuse * _LightColor0 + unity_AmbientSky);
+                // calculate specular lighting
+                float3 halfVec = normalize(_WorldSpaceLightPos0 + viewDir);
+                float specular = dot(normal, halfVec);
+                specular = pow(specular * diffuse, _Glossiness);
+                specular = smoothstep(0, 0.01 * _Antialiasing, specular);
+
+                // calculate rim lighting
+
+                /*
+                float delta = fwidth(diffuse) * _Antialiasing;
+                float diffuseSmooth = smoothstep(0, delta, diffuse);
+
+                */
+
+                fixed4 col = albedo * ((diffuse + specular) * _LightColor0 + unity_AmbientSky);
 
                 return col;
             }
