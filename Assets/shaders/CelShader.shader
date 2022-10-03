@@ -1,7 +1,8 @@
 // adapted from:
 // https://www.youtube.com/watch?v=kV4IG811DUU&t=250s
 // https://danielilett.com/2019-05-29-tut2-intro/
-Shader "CelShader"
+// https://github.com/ToughNutToCrack/ZeldaShaderURP2019.4.0f1
+Shader "deeznuts/CelShader"
 {
     Properties
     {
@@ -14,6 +15,11 @@ Shader "CelShader"
         // for the outline
         _OutlineSize("Outline Size", Float) = 0.01
         _OutlineColor("Outline Color", Color) = (0, 0, 0, 1)
+
+        // extra effects
+        _Antialiasing("Band Smoothing", Float) = 5.0
+		_Glossiness("Glossiness/Shininess", Float) = 400
+		_Fresnel("Fresnel/Rim Amount", Range(0, 1)) = 0.7
     }
     SubShader
     {
@@ -41,12 +47,17 @@ Shader "CelShader"
                 float2 uv: TEXCOORD0;
                 float4 vertex : SV_POSITION;
                 float3 worldNormal: NORMAL;
+                float3 viewDir: TEXCOORD1;
             };
 
             sampler2D _MainTex;
             float4 _MainTex_ST;
             float4 _Color;
             float _Shades;
+            float _Antialiasing;
+            float _Glossiness;
+            float _Fresnel;
+
 
             v2f vert (appdata v)
             {
@@ -54,21 +65,33 @@ Shader "CelShader"
                 o.uv = TRANSFORM_TEX(v.uv, _MainTex);
                 o.vertex = UnityObjectToClipPos(v.vertex);
                 o.worldNormal = UnityObjectToWorldNormal(v.normal);
+                o.viewDir = WorldSpaceViewDir(v.vertex);
                 return o;
             }
 
             fixed4 frag(v2f i) : SV_Target
             {
                 fixed4 albedo = tex2D(_MainTex, i.uv) * _Color;
-
-                // angle between lightDir and normal
 				float3 normal = normalize(i.worldNormal);
-                float diffuse = max(0.0, dot(normal, normalize(_WorldSpaceLightPos0.xyz)));
+                float3 viewDir = normalize(i.viewDir);
 
-                // create a toon shading effect
-                diffuse = floor(diffuse * _Shades) / _Shades;
+                // calculate diffuse lighting with toon shading effect
+                float diffuse = dot(normal, _WorldSpaceLightPos0);
+                float delta = fwidth(diffuse) * _Antialiasing;
+                diffuse = smoothstep(0, delta, diffuse);
 
-                fixed4 col = albedo * (diffuse * _LightColor0 + unity_AmbientSky);
+                // calculate specular lighting
+                float3 halfVec = normalize(_WorldSpaceLightPos0 + viewDir);
+                float specular = dot(normal, halfVec);
+                specular = pow(specular * diffuse, _Glossiness);
+                specular = smoothstep(0, 0.01 * _Antialiasing, specular);
+
+                // calculate rim lighting with fresnel
+                float rim = 1 - dot(viewDir, normal);
+                rim = rim * diffuse; // control how far the rim extends along the surface
+                rim = smoothstep(_Fresnel - 0.01, _Fresnel + 0.01, rim);
+
+                fixed4 col = albedo * ((diffuse + specular + rim) * _LightColor0 + unity_AmbientSky);
 
                 return col;
             }
