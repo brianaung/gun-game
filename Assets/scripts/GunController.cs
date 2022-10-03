@@ -60,7 +60,7 @@ public class GunController : MonoBehaviour {
 
         currentRotation.y = Mathf.Clamp(currentRotation.y, -30, 45);
 
-        // transform.root.localRotation = Quaternion.AngleAxis(currentRotation.x, Vector3.up);
+         transform.root.localRotation = Quaternion.AngleAxis(currentRotation.x, Vector3.up);
         // transform.parent.localRotation = Quaternion.AngleAxis(-currentRotation.y, Vector3.right);
     }
 
@@ -81,8 +81,8 @@ public class GunController : MonoBehaviour {
     }
 
     void gunRecoil() {
-        //transform.localPosition -= Vector3.forward*0.1f;
-        //transform.localPosition += Vector3.forward*0.1f;
+        transform.root.localPosition -= Vector3.forward*100f;
+        transform.root.localPosition += Vector3.forward*100f;
         if (randomRecoil) {
             float xRecoil = Random.Range(-randomRecoilConstraints.x, randomRecoilConstraints.x);
             float yRecoil = Random.Range(-randomRecoilConstraints.y, randomRecoilConstraints.y);
@@ -90,6 +90,11 @@ public class GunController : MonoBehaviour {
             Vector2 recoil = new Vector2(xRecoil, yRecoil);
             currentRotation += recoil;
         }
+    }
+    
+    //TODO: gun aiming effect
+    void gunAim() {
+
     }
 
     void RaycastToEnemy() {
@@ -104,6 +109,11 @@ public class GunController : MonoBehaviour {
 
             }
         }
+    }
+
+    //TODO: swich weapon
+    void swichWeapon() {
+        
     }
 
 }
