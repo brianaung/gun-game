@@ -1,7 +1,8 @@
 // adapted from:
 // https://www.youtube.com/watch?v=kV4IG811DUU&t=250s
 // https://danielilett.com/2019-05-29-tut2-intro/
-Shader "CelShader"
+// https://github.com/ToughNutToCrack/ZeldaShaderURP2019.4.0f1
+Shader "deeznuts/CelShader"
 {
     Properties
     {
@@ -15,8 +16,10 @@ Shader "CelShader"
         _OutlineSize("Outline Size", Float) = 0.01
         _OutlineColor("Outline Color", Color) = (0, 0, 0, 1)
 
+        // extra effects
         _Antialiasing("Band Smoothing", Float) = 5.0
 		_Glossiness("Glossiness/Shininess", Float) = 400
+		_Fresnel("Fresnel/Rim Amount", Range(0, 1)) = 0.7
     }
     SubShader
     {
@@ -53,6 +56,7 @@ Shader "CelShader"
             float _Shades;
             float _Antialiasing;
             float _Glossiness;
+            float _Fresnel;
 
 
             v2f vert (appdata v)
@@ -71,13 +75,10 @@ Shader "CelShader"
 				float3 normal = normalize(i.worldNormal);
                 float3 viewDir = normalize(i.viewDir);
 
-                // calculate diffuse lighting with toon shader effect
+                // calculate diffuse lighting with toon shading effect
                 float diffuse = dot(normal, _WorldSpaceLightPos0);
                 float delta = fwidth(diffuse) * _Antialiasing;
                 diffuse = smoothstep(0, delta, diffuse);
-                //diffuse = floor(diffuse * _Shades) / _Shades;
-
-                // create a toon shading effect
 
                 // calculate specular lighting
                 float3 halfVec = normalize(_WorldSpaceLightPos0 + viewDir);
@@ -85,15 +86,12 @@ Shader "CelShader"
                 specular = pow(specular * diffuse, _Glossiness);
                 specular = smoothstep(0, 0.01 * _Antialiasing, specular);
 
-                // calculate rim lighting
+                // calculate rim lighting with fresnel
+                float rim = 1 - dot(viewDir, normal);
+                rim = rim * diffuse; // control how far the rim extends along the surface
+                rim = smoothstep(_Fresnel - 0.01, _Fresnel + 0.01, rim);
 
-                /*
-                float delta = fwidth(diffuse) * _Antialiasing;
-                float diffuseSmooth = smoothstep(0, delta, diffuse);
-
-                */
-
-                fixed4 col = albedo * ((diffuse + specular) * _LightColor0 + unity_AmbientSky);
+                fixed4 col = albedo * ((diffuse + specular + rim) * _LightColor0 + unity_AmbientSky);
 
                 return col;
             }
