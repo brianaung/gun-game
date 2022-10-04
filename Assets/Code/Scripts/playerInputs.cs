@@ -45,6 +45,20 @@ public class PlayerInputs : MonoBehaviour
         move = transform.rotation * move;
         characterController.Move(move * Time.deltaTime);
 
+        Jump();
+
+        velocity.y -= gravity * Time.deltaTime;
+        characterController.Move(velocity * Time.deltaTime);
+
+    }
+
+    public void handleRotation() 
+    {
+        playerTransform.Rotate(new Vector3(0, Input.GetAxis("Mouse X") * sensitivity,0));
+    }
+
+    public void Jump()
+    {
         if(Input.GetButtonDown("Jump"))
         {
             if(!hasJumped) {
@@ -62,13 +76,5 @@ public class PlayerInputs : MonoBehaviour
             }
         }
 
-        velocity.y -= gravity * Time.deltaTime;
-        characterController.Move(velocity * Time.deltaTime);
-
-    }
-
-    public void handleRotation() 
-    {
-        playerTransform.Rotate(new Vector3(0, Input.GetAxis("Mouse X") * sensitivity,0));
     }
 }
