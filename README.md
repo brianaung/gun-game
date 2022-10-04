@@ -20,9 +20,15 @@ a summary of who completed what. (You should of course remove and replace this p
 - Ian: player input
   - character movement 
   - jumping/double jump, dashing (mid-air/ground), strafing
-- Harry: weapon system
-  - fire gun
+- Harry: weapon system: AK47/Firethrower
+  - right click to shoot, press "R" to reload, press "1" or "2" to swich weapon, move mouse to trun character around
+  - fire gun: it is implement with fire particle system. 
   - rifle
+  - Decision making:
+    - weapn only move in horizontal line
+  - External resource:
+    - https://www.youtube.com/watch?v=Cwe-GV1OM3k
+    - https://www.youtube.com/watch?v=om-SS-CBZ8g&t=3s
 - Harry: particle system
   - flame comming through fire gun, blood animation
 - Jun: enemy system
