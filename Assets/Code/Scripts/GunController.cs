@@ -60,7 +60,7 @@ public class GunController : MonoBehaviour {
 
         currentRotation.y = Mathf.Clamp(currentRotation.y, -30, 45);
 
-         transform.root.localRotation = Quaternion.AngleAxis(currentRotation.x, Vector3.up);
+        // transform.root.localRotation = Quaternion.AngleAxis(currentRotation.x, Vector3.up);
         // transform.parent.localRotation = Quaternion.AngleAxis(-currentRotation.y, Vector3.right);
     }
 

@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class PlayerInputs : MonoBehaviour
 {
-    
-    public float playerSpeed = 5.0f;
+    public float playerSpeed = 9.0f;
     public float jumpStrength = 9.0f;
     public float dashStrength = 5.0f;
     public float sensitivity = 1.0f;
@@ -14,10 +13,9 @@ public class PlayerInputs : MonoBehaviour
     public float gravity = 25f;
     private CharacterController characterController;
     private Vector3 velocity;
-    private Vector3 dashVelocity;
     private bool doubleJump = false;
     private bool hasJumped = false;
-    public float dashTime = 0.1f;
+    public ParticleSystem dust;
 
     public float timer;
     private void Awake() 
@@ -53,42 +51,24 @@ public class PlayerInputs : MonoBehaviour
                 hasJumped = true;
                 doubleJump = true;
                 velocity.y = jumpStrength;
+                dust.Play();
             }
 
             else if(doubleJump)
             {
                 velocity.y = jumpStrength;
                 doubleJump = false;
+                dust.Play();
             }
         }
 
         velocity.y -= gravity * Time.deltaTime;
         characterController.Move(velocity * Time.deltaTime);
-        
-        timer += Time.deltaTime;
-        if(Input.GetKeyDown(KeyCode.LeftShift) && timer > dashCooldownTime)
-        {
-            timer = 0;
-            StartCoroutine(Dash(move));
-        }
 
-        Debug.Log(dashCooldownTime);
     }
 
     public void handleRotation() 
     {
         playerTransform.Rotate(new Vector3(0, Input.GetAxis("Mouse X") * sensitivity,0));
-    }
-
-    
-    IEnumerator Dash(Vector3 moveDirection) 
-    {
-        var startTime = Time.time;
-        while(Time.time < startTime + dashTime)
-        {
-
-            characterController.Move(moveDirection * dashStrength * Time.deltaTime);
-            yield return null;
-        }
     }
 }
