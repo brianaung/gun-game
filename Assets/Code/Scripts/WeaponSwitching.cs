@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class weaponSwiching : MonoBehaviour
+public class WeaponSwitching : MonoBehaviour
 {
     //[Header("reference")]
     [Header("reference")]
