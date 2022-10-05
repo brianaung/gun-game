@@ -718,11 +718,11 @@ PlayerSettings:
     m_VersionName: 
   apiCompatibilityLevel: 6
   activeInputHandler: 0
-  cloudProjectId: 
+  cloudProjectId: 4ea98e10-7dab-4a04-a908-5a35b7578862
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: 
-  organizationId: 
+  projectName: Project 2
+  organizationId: brianaung
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   playerDataPath: 

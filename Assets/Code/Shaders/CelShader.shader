@@ -16,7 +16,7 @@ Shader "deeznuts/CelShader"
         _StepWidth("Step Size", Range(0, 1)) = 0.2
 
         // for the outline
-        _OutlineSize("Outline Size", Float) = 0.01
+        _OutlineSize("Outline Size", Float) = 0.0001
         _OutlineColor("Outline Color", Color) = (0, 0, 0, 1)
 
         // for extra effects
