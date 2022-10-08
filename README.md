@@ -15,11 +15,12 @@ throughout the duration of the project. By the final submission it should contai
 a summary of who completed what. (You should of course remove and replace this paragraph!)
 
 - Ian: camera view
-  - third. Not decide yet. wait to see which is better.
+  - third person, camera movement, camera collision
 - Ian: player input
   - character movement 
   - jumping/double jump, dashing (mid-air/ground), strafing
-- Ian: UI elements + game controller
+- Ian: UI elements (health and ammo) + game controller ()
+- Ian: jump particle effect
 - Harry: weapon system: AK47/Firethrower
   - right click to shoot, press "R" to reload, press "1" or "2" to swich weapon, move mouse to trun character around
   - fire gun: it is implement with fire particle system. 
