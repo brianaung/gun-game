@@ -8,8 +8,9 @@ public class UIManager : MonoBehaviour
     private int ammo = 30;
     public TMP_Text healthText;
     public TMP_Text ammoText;
-
     public GameObject Ak47;
+    public GameObject Flamethrower;
+    private int currWeapon = 1;
     void Start() 
     {
         // init health here
@@ -17,7 +18,17 @@ public class UIManager : MonoBehaviour
     void Update()
     {
         healthText.text = "Health: " + health;
-        ammoText.text = "Ammo: " + Ak47.GetComponent<GunController>().GetClipSize() + " / " + Ak47.GetComponent<GunController>().GetBulletCapacity();
+        if(currWeapon == 1)
+        {
+            ammoText.text = "Ammo: " + Ak47.GetComponent<GunController>().GetClipSize() + " / " + Ak47.GetComponent<GunController>().GetBulletCapacity();
+        }
+        else if(currWeapon == 2)
+        {
+            ammoText.text = "Ammo: infinite";
+        }
+
+        WeaponChange();
+        
         if(Input.GetKeyDown(KeyCode.H))
         {
             HealthDecrease();
@@ -37,5 +48,17 @@ public class UIManager : MonoBehaviour
     private void HealthIncrease()
     {
         health++;
+    }
+
+    private void WeaponChange()
+    {
+        if(Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            currWeapon = 1;
+        }
+        if(Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            currWeapon = 2;
+        }
     }
 }
