@@ -116,4 +116,13 @@ public class GunController : MonoBehaviour {
         
     }
 
+    public int GetClipSize()
+    {
+        return currentBullet;
+    }
+
+    public int GetBulletCapacity()
+    {
+        return bulletTotal;
+    }
 }

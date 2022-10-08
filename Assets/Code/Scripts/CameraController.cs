@@ -16,6 +16,8 @@ public class CameraController : MonoBehaviour
     private Vector3 currRotation;
     private Vector3 camVelocity = Vector3.zero;
     private float smoothTime = 0.1f;
+
+    private float cameraCollisionOffset = 0.1f;
     private void Awake() 
     {
         playerTransform = player.transform;
@@ -43,7 +45,7 @@ public class CameraController : MonoBehaviour
 
         if(Physics.Linecast(playerTransform.position, transform.position, out var hit))
         {
-            transform.position = hit.point;
+            transform.position = hit.point + new Vector3(0, 0, cameraCollisionOffset);
         }
 
     }
