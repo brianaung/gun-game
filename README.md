@@ -15,11 +15,11 @@ throughout the duration of the project. By the final submission it should contai
 a summary of who completed what. (You should of course remove and replace this paragraph!)
 
 - Ian: camera view
-  - first/third. Not decide yet. wait to see which is better.
-  - first is scary, third is more suitable for shooting
+  - third. Not decide yet. wait to see which is better.
 - Ian: player input
   - character movement 
   - jumping/double jump, dashing (mid-air/ground), strafing
+- Ian: UI elements + game controller
 - Harry: weapon system: AK47/Firethrower
   - right click to shoot, press "R" to reload, press "1" or "2" to swich weapon, move mouse to trun character around
   - fire gun: it is implement with fire particle system. 
@@ -29,14 +29,17 @@ a summary of who completed what. (You should of course remove and replace this p
   - External resource:
     - https://www.youtube.com/watch?v=Cwe-GV1OM3k
     - https://www.youtube.com/watch?v=om-SS-CBZ8g&t=3s
+  - weapon damage
 - Harry: particle system
   - flame comming through fire gun, blood animation
 - Jun: enemy system
   - hide in the corner of maze and pop up suddenly
+  - projectile collision
+  - enemy movement
+  - enemy spawn rate
 - Brian: environment
   - cel shading to have an cartoonish effect
-  - maze, lava bubble
-  - maze is procedurally generated
+  - Rooms, procedurally generated (room size, enemies spawn rate, objects within the room)
 
 <!-- [[EndTeamworkPlan]] PLEASE LEAVE THIS LINE UNTOUCHED -->
 
