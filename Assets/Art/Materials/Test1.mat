@@ -33,8 +33,10 @@ Material:
     - _Fresnel: 0.7
     - _Glossiness: 400
     - _ID: 1
-    - _OutlineSize: 0.01
+    - _OutlineSize: 0.0001
     - _Shades: 3
+    - _StepAmount: 3
+    - _StepWidth: 0.2
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}

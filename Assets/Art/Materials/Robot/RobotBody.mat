@@ -80,10 +80,12 @@ Material:
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
+    - _StepAmount: 3
+    - _StepWidth: 0.2
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.33034885, g: 0.6320754, b: 0.6289899, a: 1}
+    - _Color: {r: 0.32941177, g: 0.6313726, b: 0.6222117, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
