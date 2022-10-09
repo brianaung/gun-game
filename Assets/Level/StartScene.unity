@@ -10297,12 +10297,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31ed2897ad9af7d408b3f93c47c21216, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dungeonWidth: 100
-  dungeonLength: 100
-  roomWidthMin: 25
-  roomLengthMin: 25
-  maxIterations: 1
+  dungeonWidth: 450
+  dungeonLength: 250
+  roomWidthMin: 70
+  roomLengthMin: 70
+  maxIterations: 10
   corridorWidth: 5
+  material: {fileID: 2100000, guid: 0e605328c8a2c4c56a5d434a040af4e2, type: 2}
 --- !u!4 &555612858
 Transform:
   m_ObjectHideFlags: 0
@@ -10429,7 +10430,7 @@ Transform:
   m_GameObject: {fileID: 836512113}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.0951843, y: -1, z: -2.7099419}
-  m_LocalScale: {x: 20, y: 20, z: 20}
+  m_LocalScale: {x: 2000, y: 200, z: 2000}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}

@@ -47,6 +47,9 @@ public static class StructureHelper
     // NOTE:
     // pointModifier - makes sure the rooms are of different sizes
     // offset - controls space between each room
+    // current best settings:
+    // 0.4 for BotLeft and 0.6 for TopRight with 1 offset
+    // width: 450, height: 250, min room width/length: 70, max iteration: 10
     public static Vector2Int GenerateBottomLeftCornerBetween(
         Vector2Int boundaryLeftPoint, Vector2Int boundaryRightPoint, float pointModifier, int offset)
     {
