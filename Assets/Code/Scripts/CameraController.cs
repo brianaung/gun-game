@@ -43,7 +43,7 @@ public class CameraController : MonoBehaviour
         // Basic camera collision. Simply checks if there is anything between the player and the camera. 
         // if there is, the camera will move to the hit point of the linecast between the player and camera
 
-        if(Physics.Linecast(playerTransform.position, transform.position, out var hit))
+        if(Physics.Linecast(playerTransform.position - new Vector3(0, 0, cameraCollisionOffset) , transform.position, out var hit))
         {
             transform.position = hit.point + new Vector3(0, 0, cameraCollisionOffset);
         }
