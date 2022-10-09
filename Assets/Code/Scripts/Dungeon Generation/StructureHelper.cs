@@ -44,6 +44,9 @@ public static class StructureHelper
         return listToReturn;
     }
 
+    // NOTE:
+    // pointModifier - makes sure the rooms are of different sizes
+    // offset - controls space between each room
     public static Vector2Int GenerateBottomLeftCornerBetween(
         Vector2Int boundaryLeftPoint, Vector2Int boundaryRightPoint, float pointModifier, int offset)
     {
