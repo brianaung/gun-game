@@ -21,10 +21,4 @@ public class DungeonCreator : MonoBehaviour
         DungeonGenerator generator = new DungeonGenerator(dungeonWidth, dungeonLength);
         var listOfRooms = generator.CalculateRooms(maxIterations, roomWidthMin, roomLengthMin);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
