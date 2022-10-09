@@ -40,10 +40,11 @@ public class CameraController : MonoBehaviour
         transform.localEulerAngles = currRotation;
         transform.position = playerTransform.position - (transform.forward * -zOffset) + (transform.up * yOffset);
 
-        // Basic camera collision. Simply checks if there is anything between the player and the camera. 
-        // if there is, the camera will move to the hit point of the linecast between the player and camera
+        // Basic camera collision. Simply checks if there is anything behind the camera. 
+        // if there is, the camera will move to the hit point of the linecast between the player and camera.
+        // it actually moves slightly ahead to deal with wall collisions, a minimise clipping issues.
 
-        if(Physics.Linecast(playerTransform.position - new Vector3(0, 0, cameraCollisionOffset) , transform.position, out var hit))
+        if(Physics.Linecast(transform.position , transform.position + new Vector3(0, 0, -cameraCollisionOffset), out var hit))
         {
             transform.position = hit.point + new Vector3(0, 0, cameraCollisionOffset);
         }
