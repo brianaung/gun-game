@@ -22,11 +22,14 @@ public class PlayerInputs : MonoBehaviour
     {
         playerTransform = GetComponent<Transform>();
         characterController = GetComponent<CharacterController>();
+
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     private void Start() 
     {
         velocity = Vector3.zero;
+
     }
 
     public void handleMovement() 

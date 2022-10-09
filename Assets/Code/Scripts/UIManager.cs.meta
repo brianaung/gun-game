@@ -3,7 +3,11 @@ guid: b28e2ae201d33a147a98d70b2c51a75b
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - healthText: {instanceID: 0}
+  - ammoText: {instanceID: 0}
+  - Ak47: {fileID: 919132149155446097, guid: 8166c66914117407bb2d3829055ebf9a, type: 3}
+  - Flamethrower: {fileID: 919132149155446097, guid: 2fbc96069585b4cee8197b2e3ec5af8d, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

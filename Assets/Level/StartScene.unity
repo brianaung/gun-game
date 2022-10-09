@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -325,7 +325,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 237462921}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -4.28}
+  m_LocalPosition: {x: -3.81913, y: 1.9771042, z: -6.256122}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5338,13 +5338,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfae1667b56abfb448aa70a8cfbde10a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSpeed: 5
+  playerSpeed: 9
   jumpStrength: 9
   dashStrength: 5
   sensitivity: 1
   dashCooldownTime: 1
   gravity: 25
-  dust: {fileID: 1834397218}
+  dust: {fileID: 0}
   timer: 0
 --- !u!114 &401235672
 MonoBehaviour:
@@ -10947,11 +10947,6 @@ MonoBehaviour:
   mouseSensitivity: 1
   randomRecoil: 0
   randomRecoilConstraints: {x: 0, y: 0}
---- !u!198 &1834397218 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 6820588145337418827, guid: 8fec88ccaab7985409eaa8be5e473568, type: 3}
-  m_PrefabInstance: {fileID: 6820588143679728233}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1834397219 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6820588145337418826, guid: 8fec88ccaab7985409eaa8be5e473568, type: 3}
