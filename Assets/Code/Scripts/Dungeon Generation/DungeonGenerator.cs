@@ -19,8 +19,9 @@ public class DungeonGenerator
         // implement Binary Space Partitioner algo
         BinarySpacePartitioner bsp = 
             new BinarySpacePartitioner(this.dungeonWidth, this.dungeonLength);
-
         allSpaceNodes = bsp.PrepareNodesCollection(maxIterations, roomWidthMin, roomLengthMin);
+
+        List<Node> roomSpaces = StructureHelper.TraverseGraphs(bsp.RootNode);
 
         return new List<Node>(allSpaceNodes);
     }
