@@ -5,7 +5,6 @@ using TMPro;
 public class UIManager : MonoBehaviour
 {
     private int health = 5;
-    private int ammo = 30;
     public TMP_Text healthText;
     public TMP_Text ammoText;
     public GameObject Ak47;
