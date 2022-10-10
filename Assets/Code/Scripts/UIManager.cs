@@ -7,6 +7,7 @@ public class UIManager : MonoBehaviour
     private int health = 5;
     public TMP_Text healthText;
     public TMP_Text ammoText;
+    public TMP_Text killText;
     public GameObject Ak47;
     public GameObject Flamethrower;
     private int currWeapon = 1;
@@ -17,6 +18,7 @@ public class UIManager : MonoBehaviour
     void Update()
     {
         healthText.text = "Health: " + health;
+        killText.text = "Kills: " + GameManager.Instance.playerKills;
         if(currWeapon == 1)
         {
             ammoText.text = "Ammo: " + Ak47.GetComponent<GunController>().GetClipSize() + " / " + Ak47.GetComponent<GunController>().GetBulletCapacity();

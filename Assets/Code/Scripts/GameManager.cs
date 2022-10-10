@@ -5,10 +5,9 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-    private int playerKills;
+    public int playerKills;
     public string gameOverScene;
     public string startScreen;
-    private bool gameOver = false;
     private void Awake() {
 
         if(Instance == null)
@@ -29,14 +28,15 @@ public class GameManager : MonoBehaviour
 
     public void endGame()
     {
-        gameOver = true;
         SceneManager.LoadScene(gameOverScene);
     }
 
     public void playAgain()
     {
+        
         playerKills = 0;
-        gameOver = false;
         SceneManager.LoadScene(startScreen);
+        
+
     }
 }

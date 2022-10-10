@@ -25,6 +25,7 @@ public class ProjectileController : MonoBehaviour
             // Destroy self.
             Destroy(col.gameObject);
             Destroy(gameObject);
+            GameManager.Instance.updateKills();
         //}
     }
 
