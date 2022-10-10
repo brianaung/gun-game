@@ -74,4 +74,11 @@ public static class StructureHelper
             Random.Range((int)(minY + (maxY - minY) * pointModifier), maxY)
             );
     }
+
+    public static Vector2Int GetMidPoint(Vector2Int v1, Vector2Int v2)
+    {
+        Vector2 mid = (v1 + v2) / 2;
+
+        return new Vector2Int((int)mid.x, (int)mid.y);
+    }
 }
