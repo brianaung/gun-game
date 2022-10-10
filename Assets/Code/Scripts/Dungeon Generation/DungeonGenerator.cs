@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class DungeonGenerator
@@ -34,6 +35,6 @@ public class DungeonGenerator
         CorridorGenerator corridorGenerator = new CorridorGenerator();
         var corridorList = corridorGenerator.CreateCorridor(allNodes, corridorWidth);
 
-        return new List<Node>(roomList);
+        return new List<Node>(roomList).Concat(corridorList).ToList();
     }
 }
