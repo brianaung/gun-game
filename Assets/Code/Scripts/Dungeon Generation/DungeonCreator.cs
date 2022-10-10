@@ -2,7 +2,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
+[RequireComponent(typeof(MeshFilter))]
 public class DungeonCreator : MonoBehaviour
 {
     public Material material;
@@ -38,40 +40,25 @@ public class DungeonCreator : MonoBehaviour
     // https://github.com/COMP30019/Workshop-2/blob/main/Assets/GenerateCube.cs
     private void CreateMesh(Vector2 bottomLeftCorner, Vector2 topRightCorner)
     {
-        Mesh mesh = new Mesh();
+        var mesh = new Mesh();
 
-        Vector3 bottomLeftV = new Vector3(bottomLeftCorner.x, 0, bottomLeftCorner.y);
-        Vector3 bottomRightV = new Vector3(topRightCorner.x, 0, bottomLeftCorner.y);
-        Vector3 topLeftV = new Vector3(bottomLeftCorner.x, 0, topRightCorner.y);
-        Vector3 topRightV = new Vector3(topRightCorner.x, 0, topRightCorner.y);
-
-        Vector3[] vertices = new Vector3[]
+        mesh.SetVertices(new[]
         {
-            topLeftV,
-            topRightV,
-            bottomLeftV,
-            bottomRightV
-        };
+            // topLeftV -> botLeftV -> botRightV
+            new Vector3(bottomLeftCorner.x, 0, topRightCorner.y),
+            new Vector3(bottomLeftCorner.x, 0, bottomLeftCorner.y),
+            new Vector3(topRightCorner.x, 0, bottomLeftCorner.y),
 
-        Vector2[] uvs = new Vector2[vertices.Length];
-        for (int i = 0; i < uvs.Length; i++)
-        {
-            uvs[i] = new Vector2(vertices[i].x, vertices[i].z);
-        }
+            // topLeftV -> botRightV -> topRightV
+            new Vector3(bottomLeftCorner.x, 0, topRightCorner.y),
+            new Vector3(topRightCorner.x, 0, bottomLeftCorner.y),
+            new Vector3(topRightCorner.x, 0, topRightCorner.y)
+        });
 
-        int[] triangles = new int[]
-        {
-            0,
-            1,
-            2,
-            2,
-            1,
-            3
-        };
+        var indices =
+            Enumerable.Range(0, mesh.vertices.Length).Reverse().ToArray();
 
-        mesh.vertices = vertices;
-        mesh.uv = uvs;
-        mesh.triangles = triangles;
+        mesh.SetIndices(indices, MeshTopology.Triangles, 0);
 
         GameObject floor = new GameObject("Mesh Floor", typeof(MeshFilter), typeof(MeshRenderer));
         floor.transform.position = Vector3.zero;
