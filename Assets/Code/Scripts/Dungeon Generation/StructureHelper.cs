@@ -8,7 +8,7 @@ using Random = UnityEngine.Random;
  */
 public static class StructureHelper
 {
-    public static List<Node> TraverseGraphs(RoomNode parentNode)
+    public static List<Node> TraverseGraphs(Node parentNode)
     {
         Queue<Node> nodesToCheck = new Queue<Node>();
         List<Node> listToReturn = new List<Node>();

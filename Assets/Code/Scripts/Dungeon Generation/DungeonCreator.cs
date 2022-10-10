@@ -25,9 +25,9 @@ public class DungeonCreator : MonoBehaviour
     private void CreateDungeon()
     {
         DungeonGenerator generator = new DungeonGenerator(dungeonWidth, dungeonLength);
-        var listOfRooms = generator.CalculateRooms(
+        var listOfRooms = generator.CalculateDungeon(
                                         maxIterations, roomWidthMin, roomLengthMin, 
-                                        botCornerMod, topCornerMod, offset);
+                                        botCornerMod, topCornerMod, offset, corridorWidth);
         for (int i = 0; i < listOfRooms.Count; i++)
         {
             CreateMesh(listOfRooms[i].BottomLeftAreaCorner, listOfRooms[i].TopRightAreaCorner);
