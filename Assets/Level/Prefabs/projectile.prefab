@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 9200155551697868907}
   - component: {fileID: -1350025191871753293}
   - component: {fileID: -3292295781675479882}
-  - component: {fileID: -4047801590641740888}
   m_Layer: 0
   m_Name: projectile
   m_TagString: Untagged
@@ -35,7 +34,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &9200155551697868909
 MeshFilter:
@@ -95,7 +94,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9200155551697868905}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
@@ -126,17 +125,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6f0ff9ab0ae5e4609bc5952d06118c15, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &-4047801590641740888
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9200155551697868905}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d41d99c9b0a124888bdd3af3fdea212f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

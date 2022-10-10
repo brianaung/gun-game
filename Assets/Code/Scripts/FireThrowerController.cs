@@ -76,7 +76,7 @@ public class FireThrowerController : MonoBehaviour {
         gunRecoil();
         //StartCoroutine(muzzleFlash());
         flame.Play();
-        RaycastToEnemy();
+        //RaycastToEnemy();
         yield return new WaitForSeconds(fireRate);
         canShoot = true;
     }

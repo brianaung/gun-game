@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5440,13 +5440,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfae1667b56abfb448aa70a8cfbde10a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSpeed: 5
+  playerSpeed: 9
   jumpStrength: 9
   dashStrength: 5
   sensitivity: 1
   dashCooldownTime: 1
   gravity: 25
-  dust: {fileID: 1834397218}
+  dust: {fileID: 0}
   timer: 0
 --- !u!114 &401235672
 MonoBehaviour:
@@ -5566,6 +5566,7 @@ GameObject:
   - component: {fileID: 510126773}
   - component: {fileID: 510126775}
   - component: {fileID: 510126774}
+  - component: {fileID: 510126776}
   m_Layer: 0
   m_Name: flame
   m_TagString: Untagged
@@ -9253,7 +9254,7 @@ ParticleSystem:
     m_Dampen:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.05
+      scalar: 0
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -9359,7 +9360,7 @@ ParticleSystem:
     m_EnergyLossOnCollision:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 1
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -9418,7 +9419,7 @@ ParticleSystem:
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5
-    collisionMessages: 0
+    collisionMessages: 1
     collidesWithDynamic: 1
     interiorCollisions: 0
   TriggerModule:
@@ -10370,6 +10371,19 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!114 &510126776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 510126772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7d763cbbf0bc4617859a1144ff5786d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particleSystem: {fileID: 510126775}
 --- !u!1 &559056162
 GameObject:
   m_ObjectHideFlags: 0
@@ -10518,8 +10532,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8377a2ae564f63d4e8735f6dad4ef899, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 5
-  healthText: {fileID: 559056164}
 --- !u!1 &622703300
 GameObject:
   m_ObjectHideFlags: 0
@@ -10915,6 +10927,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4000013285487154, guid: 3123da49cb81147489b444f2749aba47, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198000010778961324, guid: 3123da49cb81147489b444f2749aba47, type: 3}
+      propertyPath: CollisionModule.enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 198000014016860652, guid: 3123da49cb81147489b444f2749aba47, type: 3}
@@ -11492,11 +11508,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1815602662}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!198 &1834397218 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 6820588145337418827, guid: 8fec88ccaab7985409eaa8be5e473568, type: 3}
-  m_PrefabInstance: {fileID: 6820588143679728233}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1834397219 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6820588145337418826, guid: 8fec88ccaab7985409eaa8be5e473568, type: 3}
@@ -11648,7 +11659,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1966014092}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 2
@@ -11852,7 +11863,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2136250571}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 2
