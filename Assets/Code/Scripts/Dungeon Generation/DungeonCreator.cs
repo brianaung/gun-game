@@ -5,11 +5,14 @@ using UnityEngine;
 
 public class DungeonCreator : MonoBehaviour
 {
-    public int dungeonWidth, dungeonLength;
-    public int roomWidthMin, roomLengthMin;
-    public int maxIterations;
-    public int corridorWidth;
     public Material material;
+    public int dungeonWidth = 450, dungeonLength = 250;
+    public int roomWidthMin = 70, roomLengthMin = 70;
+    public int maxIterations = 10;
+    public int corridorWidth = 5;
+    [Range(0.0f, 0.3f)] public float botCornerMod = 0.3f;
+    [Range(0.7f, 1.0f)] public float topCornerMod = 0.7f;
+    [Range (0, 2)] public int offset = 1;
 
     // Start is called before the first frame update
     void Start()
@@ -20,7 +23,9 @@ public class DungeonCreator : MonoBehaviour
     private void CreateDungeon()
     {
         DungeonGenerator generator = new DungeonGenerator(dungeonWidth, dungeonLength);
-        var listOfRooms = generator.CalculateRooms(maxIterations, roomWidthMin, roomLengthMin);
+        var listOfRooms = generator.CalculateRooms(
+                                        maxIterations, roomWidthMin, roomLengthMin, 
+                                        botCornerMod, topCornerMod, offset);
         for (int i = 0; i < listOfRooms.Count; i++)
         {
             CreateMesh(listOfRooms[i].BottomLeftAreaCorner, listOfRooms[i].TopRightAreaCorner);

@@ -14,7 +14,7 @@ public class DungeonGenerator
         this.dungeonLength = dungeonLength;
     }
 
-    public List<Node> CalculateRooms(int maxIterations, int roomWidthMin, int roomLengthMin)
+    public List<Node> CalculateRooms(int maxIterations, int roomWidthMin, int roomLengthMin, float botCornerMod, float topCornerMod, int offset)
     {
         // implement Binary Space Partitioner algo
         BinarySpacePartitioner bsp = 
@@ -26,7 +26,7 @@ public class DungeonGenerator
 
         // generate rooms in room space nodes
         RoomGenerator roomGenerator = new RoomGenerator(maxIterations, roomLengthMin, roomWidthMin);
-        List<RoomNode> roomList = roomGenerator.GenerateRooms(roomSpaces);
+        List<RoomNode> roomList = roomGenerator.GenerateRooms(roomSpaces, botCornerMod, topCornerMod, offset);
 
         return new List<Node>(roomList);
     }
