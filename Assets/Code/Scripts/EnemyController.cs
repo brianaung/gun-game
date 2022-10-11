@@ -7,11 +7,22 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private int maxEnemyNumber;
 
     public GameObject theEnemy;
-    private int xPos;
-    private int zPos;
+    public string position;
     private int enemyCount;
+    
+    private int xPosMin;
+    private int xPosMax;
+    private int zPosMin;
+    private int zPosMax;
+
+    
 
     void Awake(){
+        xPosMin = (int) (transform.position.x-2*transform.lossyScale.x);
+        xPosMax = (int) (transform.position.x+2*transform.lossyScale.x);
+        // xPosMax = (int) (transform.position.x+transform.lossyScale.x);
+        zPosMin = (int) (transform.position.z-transform.lossyScale.z/2);
+        zPosMax = (int) (transform.position.z + transform.lossyScale.z/2);
     }
     // Start is called before the first frame update
     void Start()
@@ -22,8 +33,9 @@ public class EnemyController : MonoBehaviour
     IEnumerator EnemyDrop()
     {
         while(this.enemyCount < maxEnemyNumber){
-            xPos = Random.Range(0, 10);
-            zPos = Random.Range(30, 50);
+            int xPos = Random.Range(xPosMin, xPosMax);
+            int zPos = Random.Range(zPosMin, zPosMax);
+            Debug.Log((xPos, zPos));
             Instantiate(theEnemy, new Vector3(xPos, 0, zPos), Quaternion.identity);
             yield return new WaitForSeconds(0.5f);
             this.enemyCount+=1;
