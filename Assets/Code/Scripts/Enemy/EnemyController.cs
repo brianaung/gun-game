@@ -1,44 +1,29 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(MeshRenderer))]
 public class EnemyController : MonoBehaviour
 {
-    [SerializeField] private int maxEnemyNumber;
-
-    public GameObject theEnemy;
-    public string position;
-    private int enemyCount;
+    [SerializeField] private ParticleSystem deathEffect;
     
-    private int xPosMin;
-    private int xPosMax;
-    private int zPosMin;
-    private int zPosMax;
+    private MeshRenderer _renderer;
 
-    
-
-    void Awake(){
-        xPosMin = (int) (transform.position.x-2*transform.lossyScale.x);
-        xPosMax = (int) (transform.position.x+2*transform.lossyScale.x);
-        // xPosMax = (int) (transform.position.x+transform.lossyScale.x);
-        zPosMin = (int) (transform.position.z-transform.lossyScale.z/2);
-        zPosMax = (int) (transform.position.z + transform.lossyScale.z/2);
-    }
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        StartCoroutine(EnemyDrop());
+        this._renderer = gameObject.GetComponent<MeshRenderer>();
     }
 
-    IEnumerator EnemyDrop()
+    // This method listens to HealthManager "onHealthChanged" events. The actual
+    // event listening is set up within the editor interface. This is purely for
+    // visuals currently, and takes a fractional value between 0 and 1.
+    public void UpdateHealth(float frac)
     {
-        while(this.enemyCount < maxEnemyNumber){
-            int xPos = Random.Range(xPosMin, xPosMax);
-            int zPos = Random.Range(zPosMin, zPosMax);
-            Debug.Log((xPos, zPos));
-            Instantiate(theEnemy, new Vector3(xPos, 0, zPos), Quaternion.identity);
-            yield return new WaitForSeconds(0.5f);
-            this.enemyCount+=1;
-        }
+        this._renderer.material.color = Color.red * frac;
+    }
+
+    // Same as above, but listens to onDeath events.
+    public void Kill()
+    {
+        var particles = Instantiate(this.deathEffect);
+        particles.transform.position = transform.position;
     }
 }

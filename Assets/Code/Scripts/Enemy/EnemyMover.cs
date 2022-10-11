@@ -1,31 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class EnemyMover : MonoBehaviour
 {
     // External parameters/variables
+
     [SerializeField] private float moveSpeed;
     [SerializeField] private float enemyHealth;
-    [SerializeField] private ParticleSystem deathEffect;
     
     public GameObject thePlayer;
     private Transform target;
     private Vector3 moveDirection;
-    private float health;
-
-    private MeshRenderer _renderer;
-
+    
     private void Awake()
     {
         thePlayer = GameObject.FindGameObjectsWithTag("Player")[0];
-        this.health = enemyHealth;
         this.target = thePlayer.transform;
-    }
-
-    // Start is called before the first frame update
-    private void Start()
-    {
     }
 
     // Update is called once per frame
@@ -49,7 +39,6 @@ public class EnemyMover : MonoBehaviour
 
     private void FixedUpdate()
     {
-        // this.enemyTemplate.velocity = this.moveDirection * moveSpeed;
         move2Direction();
     }
 
@@ -59,16 +48,4 @@ public class EnemyMover : MonoBehaviour
         transform.rotation = Quaternion.Euler(new Vector3(0, angleX, 0));
         this.moveDirection = direction;
     }
-
-    public void UpdateHealth(float frac)
-    {
-        this._renderer.material.color = Color.red * frac;
-    }
-
-    public void Kill()
-    {
-        var particles = Instantiate(this.deathEffect);
-        particles.transform.position = transform.position;
-    }
-
 }

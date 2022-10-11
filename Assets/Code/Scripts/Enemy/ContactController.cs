@@ -5,7 +5,7 @@ using UnityEngine;
 public class ContactController : MonoBehaviour
 {
     [SerializeField] private ParticleSystem collisionParticles;
-    [SerializeField] private int damageAmount = 50;
+    // [SerializeField] private int damageAmount = 50;
     [SerializeField] private string tagToDamage;
 
 

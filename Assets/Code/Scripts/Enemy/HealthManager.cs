@@ -30,7 +30,9 @@ public class HealthManager : MonoBehaviour
             // can still treat it like an integer variable (add, subtract, etc).
             this._currentHealth = value;
             var frac = this._currentHealth / (float)this.startingHealth;
+
             this.onHealthChanged.Invoke(frac);
+            
             if (CurrentHealth <= 0) // Did we die?
             {
                 // Let onDeath event listeners know that we died. 
