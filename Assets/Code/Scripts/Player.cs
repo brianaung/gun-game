@@ -15,12 +15,20 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        playerInputs.handleMovement();
-        playerInputs.handleRotation();
-    }
+        if(!GameManager.Instance.gameOver)
+        {
+            playerInputs.handleMovement();
+            playerInputs.handleRotation();
+            cameraController.cameraMove();   
+        }
 
-    private void LateUpdate()
-    {
-        cameraController.cameraMove();    
+        if(GameManager.Instance.gameOver)
+        {
+            if(Input.GetKeyDown(KeyCode.Return))
+            {
+                GameManager.Instance.playAgain();
+            }
+        }
+
     }
 }

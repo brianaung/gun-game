@@ -8,6 +8,7 @@ public class UIManager : MonoBehaviour
     public TMP_Text healthText;
     public TMP_Text ammoText;
     public TMP_Text killText;
+    public TMP_Text endGameText;
     public GameObject Ak47;
     public GameObject Flamethrower;
     private int currWeapon = 1;
@@ -17,6 +18,15 @@ public class UIManager : MonoBehaviour
     }
     void Update()
     {
+        if(GameManager.Instance.gameOver)
+        {
+            endGameText.text = "You Died! D: \n Press enter to return to the main menu";
+        }
+        else
+        {
+            endGameText.text = "";
+        }
+
         healthText.text = "Health: " + health;
         killText.text = "Kills: " + GameManager.Instance.playerKills;
         if(currWeapon == 1)
@@ -30,15 +40,15 @@ public class UIManager : MonoBehaviour
 
         WeaponChange();
         
-        if(Input.GetKeyDown(KeyCode.H))
-        {
-            HealthDecrease();
-        }
+        // if(Input.GetKeyDown(KeyCode.H))
+        // {
+        //     HealthDecrease();
+        // }
 
-        if(Input.GetKeyDown(KeyCode.J))
-        {
-            HealthIncrease();
-        }
+        // if(Input.GetKeyDown(KeyCode.J))
+        // {
+        //     HealthIncrease();
+        // }
     }
 
     private void HealthDecrease()

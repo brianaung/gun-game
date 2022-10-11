@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public int playerKills;
     public string gameOverScene;
     public string startScreen;
+    public bool gameOver = false;
     private void Awake() {
 
         if(Instance == null)
@@ -28,15 +29,11 @@ public class GameManager : MonoBehaviour
 
     public void endGame()
     {
-        SceneManager.LoadScene(gameOverScene);
+        gameOver = true;
     }
 
     public void playAgain()
     {
-        
-        playerKills = 0;
         SceneManager.LoadScene(startScreen);
-        
-
     }
 }
