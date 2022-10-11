@@ -16,10 +16,10 @@ public class DungeonCreator : MonoBehaviour
     public Material material;
     public int dungeonWidth = 180, dungeonLength = 120;
     public int roomWidthMin = 50, roomLengthMin = 50;
-    public int maxIterations = 5;
+    public int maxIterations = 4;
     public int corridorWidth = 8;
-    [Range(0.0f, 0.3f)] public float botCornerMod = 0.3f;
-    [Range(0.7f, 1.0f)] public float topCornerMod = 0.7f;
+    [Range(0.0f, 0.3f)] public float botCornerMod = 0.2f;
+    [Range(0.7f, 1.0f)] public float topCornerMod = 0.8f;
     [Range (0, 2)] public int offset = 1;
 
     // for constructing walls
