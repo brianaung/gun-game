@@ -13,7 +13,7 @@ public class PlayerCharacter : MonoBehaviour
     bool start;
     
     // Start is called before the first frame update
-    private void Start() {
+    private void Awake() {
         isShot = false;
         BlurScript.enabled = false;
         currentHealth = PlayerHealth;

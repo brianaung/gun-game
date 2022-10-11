@@ -5,7 +5,7 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     public GameObject player;
-    public GameObject camCenter;
+    public GameObject cameraCollider;
     public Camera cam;
     public float yOffset = 1.0f;
     public float zOffset = -5.0f;
@@ -16,8 +16,10 @@ public class CameraController : MonoBehaviour
     private Vector3 currRotation;
     private Vector3 camVelocity = Vector3.zero;
     private float smoothTime = 0.1f;
+    private float sphereCastRadius = 1f;
 
-    private float cameraCollisionOffset = 0.1f;
+    private RaycastHit hit;
+    private float cameraCollisionOffset = 1f;
     private void Awake() 
     {
         playerTransform = player.transform;
@@ -42,10 +44,14 @@ public class CameraController : MonoBehaviour
 
         // Basic camera collision. Simply checks if there is anything between the player and the camera. 
         // if there is, the camera will move to the hit point of the linecast between the player and camera
-
-        if(Physics.Linecast(playerTransform.position - new Vector3(0, 0, cameraCollisionOffset) , transform.position, out var hit))
+        // todo fix camera collision
+        if(Physics.Linecast(transform.position, transform.position - (transform.forward * cameraCollisionOffset), out hit))
         {
-            transform.position = hit.point + new Vector3(0, 0, cameraCollisionOffset);
+            Debug.Log(hit.point);
+            cam.transform.position = hit.point;
+            var localPosition = new Vector3(cam.transform.localPosition.x, cam.transform.localPosition.y, cam.transform.localPosition.z + cameraCollisionOffset);
+            cam.transform.localPosition = localPosition;
+            
         }
 
     }
