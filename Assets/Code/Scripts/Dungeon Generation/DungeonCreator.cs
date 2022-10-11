@@ -29,6 +29,9 @@ public class DungeonCreator : MonoBehaviour
     List<Vector3Int> allVertWallPos;
     List<Vector3Int> allHoriWallPos;
 
+    // environment props
+    public GameObject prefabAsset;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -51,13 +54,29 @@ public class DungeonCreator : MonoBehaviour
         allVertWallPos = new List<Vector3Int>();
         allHoriWallPos = new List<Vector3Int>();
 
+        GameObject propsParent = new GameObject("PropsParent");
+        propsParent.transform.parent = transform;
+
         for (int i = 0; i < listOfRooms.Count; i++)
         {
             CreateMesh(listOfRooms[i].BottomLeftAreaCorner, listOfRooms[i].TopRightAreaCorner);
+            var roomCenter = (listOfRooms[i].BottomLeftAreaCorner + listOfRooms[i].TopRightAreaCorner) / 2;
+            PlacePrefab(propsParent, roomCenter);
         }
 
         CreateWalls(wallParent);
 
+    }
+
+    // place prefabs onto the specified location
+    private void PlacePrefab(GameObject propsParent, Vector2Int twoDPos)
+    {
+        // to render prefab starting from bottom (not their pivot)
+        var prefabOffset = (int) prefabAsset.GetComponent<Renderer>().bounds.size.y / 2;
+
+        var finalPos = new Vector3Int(twoDPos.x, prefabOffset, twoDPos.y);
+
+        Instantiate(prefabAsset, finalPos,Quaternion.identity, propsParent.transform);
     }
 
     private void CreateWalls(GameObject wallParent)
@@ -75,6 +94,9 @@ public class DungeonCreator : MonoBehaviour
     private void CreateAWall
         (GameObject wallParent, Vector3Int wallPos, GameObject wallPrefab, bool isVert)
     {
+        var wallOffset = (int) wallPrefab.GetComponent<Renderer>().bounds.size.y / 2;
+        wallPos = new Vector3Int(wallPos.x, wallPos.y + wallOffset, wallPos.z);
+
         if (isVert)
         {
             Instantiate(wallPrefab, wallPos, Quaternion.Euler(0, 90, 0), wallParent.transform);
@@ -100,21 +122,6 @@ public class DungeonCreator : MonoBehaviour
             new Vector3(topRightCorner.x, 0, bottomLeftCorner.y);
         var topRightV =
             new Vector3(topRightCorner.x, 0, topRightCorner.y);
-
-        /*
-        mesh.SetVertices(new[]
-        {
-            // topLeftV -> botLeftV -> botRightV
-            topLeftV,
-            botLeftV,
-            botRightV,
-
-            // topLeftV -> botRightV -> topRightV
-            topLeftV,
-            botRightV,
-            topRightV
-        });
-        */
 
         Vector3[] vertices = new Vector3[]
         {
@@ -145,16 +152,9 @@ public class DungeonCreator : MonoBehaviour
         mesh.triangles = triangles;
         mesh.RecalculateNormals();
 
-        /*
-        var indices =
-            Enumerable.Range(0, mesh.vertices.Length).Reverse().ToArray();
-
-        mesh.SetIndices(indices, MeshTopology.Triangles, 0);
-        */
-
         GameObject floor = new GameObject("Mesh Floor", typeof(MeshFilter), typeof(MeshRenderer));
-        floor.transform.position = Vector3.zero;
-        floor.transform.localScale = Vector3.one;
+        //floor.transform.position = Vector3.zero;
+        //floor.transform.localScale = Vector3.one;
         floor.GetComponent<MeshFilter>().mesh = mesh;
         floor.GetComponent<MeshRenderer>().material = material;
         floor.AddComponent<MeshCollider>();
