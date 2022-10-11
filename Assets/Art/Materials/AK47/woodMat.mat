@@ -68,12 +68,12 @@ Material:
     - _DstBlend: 0
     - _Fresnel: 0.7
     - _GlossMapScale: 1
-    - _Glossiness: 0.25123277
+    - _Glossiness: 400
     - _GlossyReflections: 1
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
-    - _OutlineSize: 0.0001
+    - _OutlineSize: 0.0008
     - _Parallax: 0.02
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
