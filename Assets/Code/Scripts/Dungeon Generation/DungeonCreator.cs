@@ -77,10 +77,10 @@ public class DungeonCreator : MonoBehaviour
     {
         if (isVert)
         {
-            Instantiate(wallPrefab, wallPos, Quaternion.identity, wallParent.transform);
+            Instantiate(wallPrefab, wallPos, Quaternion.Euler(0, 90, 0), wallParent.transform);
         } else
         {
-            Instantiate(wallPrefab, wallPos, Quaternion.Euler(0, 90, 0), wallParent.transform);
+            Instantiate(wallPrefab, wallPos, Quaternion.identity, wallParent.transform);
         }
     }
 
@@ -100,7 +100,8 @@ public class DungeonCreator : MonoBehaviour
             new Vector3(topRightCorner.x, 0, bottomLeftCorner.y);
         var topRightV =
             new Vector3(topRightCorner.x, 0, topRightCorner.y);
-           
+
+        /*
         mesh.SetVertices(new[]
         {
             // topLeftV -> botLeftV -> botRightV
@@ -113,11 +114,42 @@ public class DungeonCreator : MonoBehaviour
             botRightV,
             topRightV
         });
+        */
 
+        Vector3[] vertices = new Vector3[]
+        {
+            topLeftV,
+            topRightV,
+            botLeftV,
+            botRightV
+        };
+
+        Vector2[] uvs = new Vector2[vertices.Length];
+        for (int i = 0; i < uvs.Length; i++)
+        {
+            uvs[i] = new Vector2(vertices[i].x, vertices[i].z);
+        }
+
+        int[] triangles = new int[]
+        {
+            0,
+            1,
+            2,
+            2,
+            1,
+            3
+        };
+
+        mesh.vertices = vertices;
+        mesh.uv = uvs;
+        mesh.triangles = triangles;
+
+        /*
         var indices =
             Enumerable.Range(0, mesh.vertices.Length).Reverse().ToArray();
 
         mesh.SetIndices(indices, MeshTopology.Triangles, 0);
+        */
 
         GameObject floor = new GameObject("Mesh Floor", typeof(MeshFilter), typeof(MeshRenderer));
         floor.transform.position = Vector3.zero;
