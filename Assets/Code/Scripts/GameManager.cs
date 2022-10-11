@@ -6,7 +6,6 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     public int playerKills;
-    public string gameOverScene;
     public string startScreen;
     public bool gameOver = false;
     private void Awake() {

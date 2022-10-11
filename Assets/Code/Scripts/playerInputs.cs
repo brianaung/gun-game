@@ -56,6 +56,7 @@ public class PlayerInputs : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.P))
         {
             GameManager.Instance.endGame();
+            Cursor.lockState = CursorLockMode.None;
         }
 
     }
