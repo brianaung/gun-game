@@ -76,7 +76,7 @@ public class FireThrowerController : MonoBehaviour {
         gunRecoil();
         //StartCoroutine(muzzleFlash());
         flame.Play();
-        RaycastToEnemy();
+        //RaycastToEnemy();
         yield return new WaitForSeconds(fireRate);
         canShoot = true;
     }
@@ -114,7 +114,7 @@ public class FireThrowerController : MonoBehaviour {
         RaycastHit hit;
         if (Physics.Raycast(transform.parent.position, transform.parent.forward, out hit, 1<< LayerMask.NameToLayer("Enemy"))) {
             try {
-                Debug.Log("Hit an enemy");
+                //Debug.Log("Hit an enemy");
                 Rigidbody rb = hit.transform.GetComponent<Rigidbody>();
                 rb.constraints = RigidbodyConstraints.None;
                 rb.AddForce(transform.parent.transform.forward*500);

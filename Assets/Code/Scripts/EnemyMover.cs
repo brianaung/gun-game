@@ -23,7 +23,7 @@ public class EnemyMover : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        Debug.Log(target.position);
+        //Debug.Log(target.position);
     }
 
     // Update is called once per frame
@@ -36,7 +36,7 @@ public class EnemyMover : MonoBehaviour
             transform.position = targetMovePosition;
         }   
         else{
-            Debug.Log(this.moveDirection);
+            //Debug.Log(this.moveDirection);
             transform.rotation = Quaternion.Euler(new Vector3(0, -180, 0));
             var testDirection = new Vector3(0.0f, this.moveDirection.y, this.moveDirection.z);
             collide = Physics.Raycast(transform.position, testDirection, this.moveSpeed*Time.deltaTime);

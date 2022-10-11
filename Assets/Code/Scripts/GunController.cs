@@ -8,6 +8,9 @@ public class GunController : MonoBehaviour {
     public float fireRate = 0.1f;
     public int clipSize = 20;
     public int bulletCapacity = 300;
+    [SerializeField] private GameObject projectilePrefab;
+    [SerializeField] private Transform firePoint;
+    [SerializeField] private float bulletVelocity;
 
     [Header("Mouse Setting")]
     public float mouseSensitivity = 1;
@@ -67,7 +70,10 @@ public class GunController : MonoBehaviour {
     IEnumerator shoot() {
         gunRecoil();
         StartCoroutine(muzzleFlash());
-        RaycastToEnemy();
+        //RaycastToEnemy();
+        var projectile = Instantiate(this.projectilePrefab, this.firePoint.position, this.firePoint.rotation);
+            //projectile.AddForce(firePoint.forward *(this.bulletVelocity));
+            //Destroy(projectile, 1f); 
         yield return new WaitForSeconds(fireRate);
         canShoot = true;
     }
@@ -101,7 +107,7 @@ public class GunController : MonoBehaviour {
         RaycastHit hit;
         if (Physics.Raycast(transform.parent.position, transform.parent.forward, out hit, 1<< LayerMask.NameToLayer("Enemy"))) {
             try {
-                Debug.Log("Hit an enemy");
+                //Debug.Log("Hit an enemy");
                 Rigidbody rb = hit.transform.GetComponent<Rigidbody>();
                 rb.constraints = RigidbodyConstraints.None;
                 rb.AddForce(transform.parent.transform.forward*500);
