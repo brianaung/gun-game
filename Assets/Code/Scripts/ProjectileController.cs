@@ -6,27 +6,25 @@ using System.Collections;
 
 public class ProjectileController : MonoBehaviour
 {
-    
+    //  [SerializeField] private ParticleSystem collisionParticles;
+     [SerializeField] private string tagToDamage;
+     [SerializeField] private int damageAmount = 50;
+
     private void OnTriggerEnter(Collider col)
     {
-        //if (col.gameObject.tag == this.tagToDamage)
-        //{
-            // Damage object with relevant tag. Note that this assumes the 
-            // HealthManager component is attached to the respective object.
-            //var healthManager = col.gameObject.GetComponent<HealthManager>();
-            //healthManager.ApplyDamage(this.damageAmount);
+        if (col.gameObject.tag == this.tagToDamage)
+        {
             
-            // Create collision particles in opposite direction to movement.
             // var particles = Instantiate(this.collisionParticles);
             // particles.transform.position = transform.position;
             // particles.transform.rotation =
             //     Quaternion.LookRotation(-this.velocity);
 
-            // Destroy self.
-            Destroy(col.gameObject);
+            var healthManager = col.gameObject.GetComponent<HealthManager>();
+            healthManager.ApplyDamage(this.damageAmount);
             Destroy(gameObject);
             GameManager.Instance.updateKills();
-        //}
+        }
     }
 
     private void Start() {
