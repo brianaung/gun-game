@@ -12,14 +12,6 @@ public class EnemyController : MonoBehaviour
         this._renderer = gameObject.GetComponent<MeshRenderer>();
     }
 
-    // This method listens to HealthManager "onHealthChanged" events. The actual
-    // event listening is set up within the editor interface. This is purely for
-    // visuals currently, and takes a fractional value between 0 and 1.
-    public void UpdateHealth(float frac)
-    {
-        this._renderer.material.color = Color.red * frac;
-    }
-
     // Same as above, but listens to onDeath events.
     public void Kill()
     {
