@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 80bfd9733656a02478c0b398964ecc6a
+guid: baa962c83ac4a4f428c411f027636070
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Sigmar One
+  - Roboto
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

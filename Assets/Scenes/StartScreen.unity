@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -167,7 +167,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -149.1}
-  m_SizeDelta: {x: 350, y: 60}
+  m_SizeDelta: {x: 300, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &232442012
 MonoBehaviour:
@@ -302,19 +302,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2fbc96069585b4cee8197b2e3ec5af8d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.36
+      value: 1.9914168
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2fbc96069585b4cee8197b2e3ec5af8d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.052435756
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2fbc96069585b4cee8197b2e3ec5af8d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.00062807463
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2fbc96069585b4cee8197b2e3ec5af8d, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.98754275
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2fbc96069585b4cee8197b2e3ec5af8d, type: 3}
       propertyPath: m_LocalRotation.x
@@ -322,7 +322,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2fbc96069585b4cee8197b2e3ec5af8d, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: -0.15735132
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2fbc96069585b4cee8197b2e3ec5af8d, type: 3}
       propertyPath: m_LocalRotation.z
@@ -334,7 +334,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2fbc96069585b4cee8197b2e3ec5af8d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -18.106
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2fbc96069585b4cee8197b2e3ec5af8d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -475,6 +475,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 305582b39cad89e44bd9244e061c272e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerKills: 0
   gameOverScene: GameOver
   startScreen: StartScreen
 --- !u!1 &1136164836
@@ -641,17 +642,17 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Start Game
+  m_text: Start
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 290003618489d8f42bfa1ce3794b9fd2, type: 2}
+  m_sharedMaterial: {fileID: -3060262350930020810, guid: 290003618489d8f42bfa1ce3794b9fd2, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -668,13 +669,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
-  m_fontSizeBase: 50
+  m_fontSize: 38
+  m_fontSizeBase: 38
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 2
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -778,15 +779,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: Gun Game
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 290003618489d8f42bfa1ce3794b9fd2, type: 2}
+  m_sharedMaterial: {fileID: -3060262350930020810, guid: 290003618489d8f42bfa1ce3794b9fd2, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278192127
+  m_fontColor: {r: 1, g: 0.026619365, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -811,7 +812,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -884,19 +885,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8166c66914117407bb2d3829055ebf9a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.49
+      value: -1.4407387
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8166c66914117407bb2d3829055ebf9a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.32
+      value: 0.26624876
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8166c66914117407bb2d3829055ebf9a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.004525721
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8166c66914117407bb2d3829055ebf9a, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.1640572
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8166c66914117407bb2d3829055ebf9a, type: 3}
       propertyPath: m_LocalRotation.x
@@ -904,7 +905,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8166c66914117407bb2d3829055ebf9a, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: -0.9864509
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8166c66914117407bb2d3829055ebf9a, type: 3}
       propertyPath: m_LocalRotation.z
@@ -916,7 +917,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8166c66914117407bb2d3829055ebf9a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -161.115
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8166c66914117407bb2d3829055ebf9a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -941,7 +942,7 @@ GameObject:
   - component: {fileID: 1406274954}
   - component: {fileID: 1406274953}
   m_Layer: 5
-  m_Name: devs
+  m_Name: Devs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -987,18 +988,17 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Developed by: Brain Soe Khant Aung, Zongliang Han, Woo Hyeok Jun, Ian
-    Nguyen'
+  m_text: developed by deeznuts
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 37f8ff3e109e06e45851abab52b17481, type: 2}
+  m_sharedMaterial: {fileID: -1566475471709224630, guid: 37f8ff3e109e06e45851abab52b17481, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1015,15 +1015,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 40
-  m_fontSizeBase: 40
+  m_fontSize: 28
+  m_fontSizeBase: 28
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -1100,8 +1100,8 @@ Camera:
   m_GameObject: {fileID: 1860926543}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 1, g: 0.5415094, b: 0.6865175, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
