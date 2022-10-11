@@ -127,3 +127,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f0ff9ab0ae5e4609bc5952d06118c15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collisionParticles: {fileID: 0}
+  tagToDamage: Enemy
+  damageAmount: 50

@@ -113,8 +113,9 @@ GameObject:
   - component: {fileID: 10540444}
   - component: {fileID: 10540450}
   - component: {fileID: 8455406926108133519}
+  - component: {fileID: 8995880367032134086}
   m_Layer: 0
-  m_Name: enemy
+  m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -230,7 +231,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 4
   enemyHealth: 100
-  deathEffect: {fileID: 0}
   thePlayer: {fileID: 8329708556879167979, guid: eca97d98d8ab33a4583ede23761ceabe, type: 3}
 --- !u!114 &10540450
 MonoBehaviour:
@@ -245,7 +245,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collisionParticles: {fileID: 3417599769178259043, guid: c20ae4c7313f74a4abbfb85ee7397c6f, type: 3}
-  damageAmount: 50
   tagToDamage: Player
 --- !u!114 &8455406926108133519
 MonoBehaviour:
@@ -263,8 +262,8 @@ MonoBehaviour:
   onDeath:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 10540444}
-        m_TargetAssemblyTypeName: EnemyMover, Assembly-CSharp
+      - m_Target: {fileID: 8995880367032134086}
+        m_TargetAssemblyTypeName: EnemyController, Assembly-CSharp
         m_MethodName: Kill
         m_Mode: 1
         m_Arguments:
@@ -278,8 +277,8 @@ MonoBehaviour:
   onHealthChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 10540444}
-        m_TargetAssemblyTypeName: EnemyMover, Assembly-CSharp
+      - m_Target: {fileID: 8995880367032134086}
+        m_TargetAssemblyTypeName: EnemyController, Assembly-CSharp
         m_MethodName: UpdateHealth
         m_Mode: 0
         m_Arguments:
@@ -290,3 +289,16 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &8995880367032134086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2165856287477778891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53b82e0b901e594418f008ab4e2b78b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathEffect: {fileID: 3417599769178259043, guid: c20ae4c7313f74a4abbfb85ee7397c6f, type: 3}
