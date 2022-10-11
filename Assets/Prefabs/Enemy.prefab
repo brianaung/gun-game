@@ -230,7 +230,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 4
   enemyHealth: 100
-  deathEffect: {fileID: 0}
+  deathEffect: {fileID: 3417599769178259043, guid: c20ae4c7313f74a4abbfb85ee7397c6f, type: 3}
   thePlayer: {fileID: 8329708556879167979, guid: eca97d98d8ab33a4583ede23761ceabe, type: 3}
 --- !u!114 &10540450
 MonoBehaviour:
