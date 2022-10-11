@@ -6,7 +6,7 @@ public class Player : MonoBehaviour
 {
     PlayerInputs playerInputs;
     public CameraController cameraController;
-
+    
     private void Awake() 
     {
         playerInputs = GetComponent<PlayerInputs>();
@@ -17,6 +17,7 @@ public class Player : MonoBehaviour
     {
         playerInputs.handleMovement();
         playerInputs.handleRotation();
+        
     }
 
     private void LateUpdate()

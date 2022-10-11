@@ -11306,6 +11306,14 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 401235669}
     m_Modifications:
+    - target: {fileID: 8329708556879167888, guid: eca97d98d8ab33a4583ede23761ceabe, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8329708556879167888, guid: eca97d98d8ab33a4583ede23761ceabe, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8329708556879167979, guid: eca97d98d8ab33a4583ede23761ceabe, type: 3}
       propertyPath: m_Name
       value: PlayerCharacter
@@ -11357,6 +11365,25 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: eca97d98d8ab33a4583ede23761ceabe, type: 3}
+--- !u!1 &1693799022 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8329708556879167979, guid: eca97d98d8ab33a4583ede23761ceabe, type: 3}
+  m_PrefabInstance: {fileID: 1507090105}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1693799026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1693799022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0395b487788ec4a108c43ada67fafc9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerHealth: 2
+  BlurScript: {fileID: 2051981606}
 --- !u!1 &1723201814
 GameObject:
   m_ObjectHideFlags: 0
@@ -11739,6 +11766,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2051981603}
+  - component: {fileID: 2051981606}
   - component: {fileID: 2051981605}
   - component: {fileID: 2051981604}
   m_Layer: 0
@@ -11814,6 +11842,19 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &2051981606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2051981602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0df453d217b449c8882b75ac8b3d7ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effectMaterial: {fileID: 2100000, guid: 5e153467ee1014f759fa9e7da44aa994, type: 2}
 --- !u!4 &2068791346 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4000013285487154, guid: 3123da49cb81147489b444f2749aba47, type: 3}
