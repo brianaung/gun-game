@@ -24,6 +24,9 @@ public class ContactController : MonoBehaviour
             // var healthManager = col.gameObject.GetComponent<HealthManager>();
             // healthManager.ApplyDamage(this.damageAmount);
            
+            var particles = Instantiate(this.collisionParticles);
+            particles.transform.position = transform.position;
+            
             // Destroy self.
             Destroy(gameObject);
         }
