@@ -4,13 +4,13 @@ using UnityEngine;
 using TMPro;
 public class UIManager : MonoBehaviour
 {
-    private int health = 5;
     public TMP_Text healthText;
     public TMP_Text ammoText;
     public TMP_Text killText;
     public TMP_Text endGameText;
     public GameObject Ak47;
     public GameObject Flamethrower;
+    public GameObject player;
     private int currWeapon = 1;
     void Start() 
     {
@@ -27,7 +27,7 @@ public class UIManager : MonoBehaviour
             endGameText.text = "";
         }
 
-        healthText.text = "Health: " + health;
+        healthText.text = "Health: " + player.GetComponent<PlayerCharacter>().currentHealth;
         killText.text = "Kills: " + GameManager.Instance.playerKills;
         if(currWeapon == 1)
         {
@@ -49,16 +49,6 @@ public class UIManager : MonoBehaviour
         // {
         //     HealthIncrease();
         // }
-    }
-
-    private void HealthDecrease()
-    {
-        health--;
-    }
-
-    private void HealthIncrease()
-    {
-        health++;
     }
 
     private void WeaponChange()

@@ -9,7 +9,7 @@ public class PlayerCharacter : MonoBehaviour
     public Behaviour BlurScript;
 
     bool isShot;
-    int currentHealth;
+    public int currentHealth;
     bool start;
     
     // Start is called before the first frame update
@@ -30,6 +30,13 @@ public class PlayerCharacter : MonoBehaviour
         if (isShot) {
             BlurScript.enabled = true;
             StartCoroutine(Blur());
+        }
+
+                
+        if(currentHealth < 0)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            GameManager.Instance.endGame();
         }
     }
 
