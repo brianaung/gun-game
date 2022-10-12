@@ -29,8 +29,8 @@ public class DungeonCreator : MonoBehaviour
     List<Vector3Int> allVertWallPos;
     List<Vector3Int> allHoriWallPos;
 
-    // environment props
-    public GameObject prefabAsset;
+    // player object
+    public GameObject player;
 
     // Start is called before the first frame update
     void Start()
@@ -54,22 +54,20 @@ public class DungeonCreator : MonoBehaviour
         allVertWallPos = new List<Vector3Int>();
         allHoriWallPos = new List<Vector3Int>();
 
-        GameObject propsParent = new GameObject("PropsParent");
-        propsParent.transform.parent = transform;
-
+        // render map (floor and walls)
         for (int i = 0; i < listOfRooms.Count; i++)
         {
             CreateMesh(listOfRooms[i].BottomLeftAreaCorner, listOfRooms[i].TopRightAreaCorner);
-            var roomCenter = (listOfRooms[i].BottomLeftAreaCorner + listOfRooms[i].TopRightAreaCorner) / 2;
-            PlacePrefab(propsParent, roomCenter);
         }
-
         CreateWalls(wallParent);
 
+        // Spawn the player in the middle of first room
+        var roomCenter = (listOfRooms[0].BottomLeftAreaCorner + listOfRooms[0].TopRightAreaCorner) / 2;
+        PlacePrefab(player, gameObject, roomCenter);
     }
 
     // place prefabs onto the specified location
-    private void PlacePrefab(GameObject propsParent, Vector2Int twoDPos)
+    private void PlacePrefab(GameObject prefabAsset, GameObject propsParent, Vector2Int twoDPos)
     {
         // to render prefab starting from bottom (not their pivot)
         var prefabOffset = (int) prefabAsset.GetComponent<Renderer>().bounds.size.y / 2;
