@@ -5,7 +5,7 @@ using UnityEngine;
 public class ParticleSystemController : MonoBehaviour
 {
     public ParticleSystem particleSystem;
-    [SerializeField] private int damageAmount = 80;
+    [SerializeField] private int damageAmount = 10;
 
     private void OnParticleCollision(GameObject enemy) {
         var healthManager = enemy.gameObject.GetComponent<HealthManager>();

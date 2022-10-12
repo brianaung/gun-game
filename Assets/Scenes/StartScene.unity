@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -34712,6 +34712,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particleSystem: {fileID: 510126775}
+  damageAmount: 80
 --- !u!1 &513032751
 GameObject:
   m_ObjectHideFlags: 0
@@ -49289,7 +49290,7 @@ MonoBehaviour:
   killText: {fileID: 691482822}
   endGameText: {fileID: 1423308813}
   Ak47: {fileID: 1409448219}
-  Flamethrower: {fileID: 0}
+  Flamethrower: {fileID: 1723201814}
   player: {fileID: 1693799022}
 --- !u!1 &800642487
 GameObject:
@@ -51555,7 +51556,7 @@ MonoBehaviour:
   playerKills: 0
   startScreen: StartScreen
   gameOver: 0
-  bossScene: 
+  bossScene: BossScene
 --- !u!4 &870205555
 Transform:
   m_ObjectHideFlags: 0
@@ -84712,7 +84713,7 @@ MonoBehaviour:
   topCornerMod: 0.8
   offset: 1
   wallPrefab: {fileID: 8893536677210817396, guid: 8925afe43062a3a46b5ef5ab59dc8524, type: 3}
-  prefabAsset: {fileID: 0}
+  player: {fileID: 0}
 --- !u!4 &1572941461
 Transform:
   m_ObjectHideFlags: 0
@@ -90033,6 +90034,21 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8329708556879167979, guid: eca97d98d8ab33a4583ede23761ceabe, type: 3}
   m_PrefabInstance: {fileID: 1507090105}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1693799023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1693799022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0395b487788ec4a108c43ada67fafc9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerHealth: 5
+  BlurScript: {fileID: 2051981606}
+  currentHealth: 0
 --- !u!1 &1697447987
 GameObject:
   m_ObjectHideFlags: 0
