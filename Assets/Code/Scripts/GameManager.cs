@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public int playerKills;
     public string startScreen;
     public bool gameOver = false;
+    public string bossScene;
     private void Awake() {
 
         if(Instance == null)
@@ -20,7 +21,13 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
+    private void Update()
+    {
+        if(playerKills > 20)
+        {
+            loadBossScene();
+        }
+    }
     public void updateKills()
     {
         playerKills++;
@@ -34,5 +41,10 @@ public class GameManager : MonoBehaviour
     public void playAgain()
     {
         SceneManager.LoadScene(startScreen);
+    }
+
+    public void loadBossScene()
+    {
+        SceneManager.LoadScene(bossScene);
     }
 }

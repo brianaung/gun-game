@@ -7,7 +7,7 @@ public class PlayerCharacter : MonoBehaviour
     [Header("playerSetting")]
     public int PlayerHealth;
     public Behaviour BlurScript;
-
+    
     bool isShot;
     public int currentHealth;
     bool start;

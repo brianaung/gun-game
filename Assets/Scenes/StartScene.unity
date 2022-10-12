@@ -9969,7 +9969,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2051981603}
-  - {fileID: 741272122}
   m_Father: {fileID: 622703301}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9986,7 +9985,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 401235668}
-  cameraCollider: {fileID: 0}
   cam: {fileID: 2051981605}
   yOffset: 1
   zOffset: -10
@@ -24122,7 +24120,7 @@ MonoBehaviour:
   sensitivity: 1
   dashCooldownTime: 1
   gravity: 25
-  dust: {fileID: 0}
+  dust: {fileID: 6820588145337418827, guid: 8fec88ccaab7985409eaa8be5e473568, type: 3}
   timer: 0
 --- !u!114 &401235672
 MonoBehaviour:
@@ -46452,37 +46450,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 738809857}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &741272121
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 741272122}
-  m_Layer: 0
-  m_Name: CameraCollider
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &741272122
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 741272121}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 237462922}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &741586807
 GameObject:
   m_ObjectHideFlags: 0
@@ -49323,6 +49290,7 @@ MonoBehaviour:
   endGameText: {fileID: 1423308813}
   Ak47: {fileID: 1409448219}
   Flamethrower: {fileID: 0}
+  player: {fileID: 1693799022}
 --- !u!1 &800642487
 GameObject:
   m_ObjectHideFlags: 0
@@ -51587,6 +51555,7 @@ MonoBehaviour:
   playerKills: 0
   startScreen: StartScreen
   gameOver: 0
+  bossScene: 
 --- !u!4 &870205555
 Transform:
   m_ObjectHideFlags: 0
@@ -84743,6 +84712,7 @@ MonoBehaviour:
   topCornerMod: 0.8
   offset: 1
   wallPrefab: {fileID: 8893536677210817396, guid: 8925afe43062a3a46b5ef5ab59dc8524, type: 3}
+  prefabAsset: {fileID: 0}
 --- !u!4 &1572941461
 Transform:
   m_ObjectHideFlags: 0
@@ -90063,20 +90033,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8329708556879167979, guid: eca97d98d8ab33a4583ede23761ceabe, type: 3}
   m_PrefabInstance: {fileID: 1507090105}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1693799026
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1693799022}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0395b487788ec4a108c43ada67fafc9f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PlayerHealth: 2
-  BlurScript: {fileID: 2051981606}
 --- !u!1 &1697447987
 GameObject:
   m_ObjectHideFlags: 0

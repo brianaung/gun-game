@@ -31,7 +31,7 @@ public class HealthManager : MonoBehaviour
             {
                 // Let onDeath event listeners know that we died. 
                 this.onDeath.Invoke();
-
+                GameManager.Instance.updateKills();
                 // Destroy ourselves.
                 Destroy(gameObject);
             }

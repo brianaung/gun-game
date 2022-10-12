@@ -53,12 +53,10 @@ public class PlayerInputs : MonoBehaviour
         velocity.y -= gravity * Time.deltaTime;
         characterController.Move(velocity * Time.deltaTime);
 
-        // if(Input.GetKeyDown(KeyCode.P))
-        // {
-        //     GameManager.Instance.endGame();
-        //     Cursor.lockState = CursorLockMode.None;
-        // }
-
+        if(Input.GetKeyDown(KeyCode.P))
+        {
+            GameManager.Instance.loadBossScene();
+        }
     }
 
     public void handleRotation() 
