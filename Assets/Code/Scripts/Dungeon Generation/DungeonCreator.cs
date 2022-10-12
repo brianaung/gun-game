@@ -62,8 +62,9 @@ public class DungeonCreator : MonoBehaviour
         CreateWalls(wallParent);
 
         // Spawn the player in the middle of first room
-        var roomCenter = (listOfRooms[0].BottomLeftAreaCorner + listOfRooms[0].TopRightAreaCorner) / 2;
-        PlacePrefab(player, gameObject, roomCenter);
+        Vector2Int roomCenter = (listOfRooms[0].BottomLeftAreaCorner + listOfRooms[0].TopRightAreaCorner) / 2;
+        Vector3Int finalPos = new Vector3Int(roomCenter.x, 0, roomCenter.y);
+        player.transform.position = finalPos;
     }
 
     // place prefabs onto the specified location
