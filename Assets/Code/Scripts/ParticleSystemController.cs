@@ -5,9 +5,11 @@ using UnityEngine;
 public class ParticleSystemController : MonoBehaviour
 {
     public ParticleSystem particleSystem;
+    [SerializeField] private int damageAmount = 80;
 
     private void OnParticleCollision(GameObject enemy) {
-        Destroy(enemy.gameObject);
+        var healthManager = enemy.gameObject.GetComponent<HealthManager>();
+        healthManager.ApplyDamage(this.damageAmount);
     }
 
 }

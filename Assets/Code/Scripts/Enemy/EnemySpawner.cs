@@ -20,7 +20,6 @@ public class EnemySpawner : MonoBehaviour
     void Awake(){
         xPosMin = (int) (transform.position.x-2*transform.lossyScale.x);
         xPosMax = (int) (transform.position.x+2*transform.lossyScale.x);
-        // xPosMax = (int) (transform.position.x+transform.lossyScale.x);
         zPosMin = (int) (transform.position.z-transform.lossyScale.z/2);
         zPosMax = (int) (transform.position.z + transform.lossyScale.z/2);
     }
@@ -35,7 +34,6 @@ public class EnemySpawner : MonoBehaviour
         while(this.enemyCount < maxEnemyNumber){
             int xPos = Random.Range(xPosMin, xPosMax);
             int zPos = Random.Range(zPosMin, zPosMax);
-            Debug.Log((xPos, zPos));
             Instantiate(theEnemy, new Vector3(xPos, 0, zPos), Quaternion.identity);
             yield return new WaitForSeconds(0.5f);
             this.enemyCount+=1;

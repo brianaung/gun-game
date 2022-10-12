@@ -21,8 +21,9 @@ public class EnemyMover : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        var targetMovePosition = transform.position + (this.moveDirection*moveSpeed*Time.deltaTime);
-        var collide = Physics.Raycast(transform.position, this.moveDirection, this.moveSpeed * Time.deltaTime);
+        Vector3 floor_direction = new Vector3(this.moveDirection.x, 0.0f, this.moveDirection.z);
+        var targetMovePosition = transform.position + (floor_direction*moveSpeed*Time.deltaTime);
+        var collide = Physics.Raycast(transform.position, floor_direction, this.moveSpeed * Time.deltaTime);
 
         if(collide == false){
             transform.position = targetMovePosition;
