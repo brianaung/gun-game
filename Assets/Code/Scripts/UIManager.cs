@@ -27,7 +27,7 @@ public class UIManager : MonoBehaviour
             endGameText.text = "";
         }
 
-        healthText.text = "Health: " + player.GetComponent<PlayerCharacter>().currentHealth;
+        // healthText.text = "Health: " + player.GetComponent<PlayerCharacter>().currentHealth;
         killText.text = "Kills: " + GameManager.Instance.playerKills;
         if(currWeapon == 1)
         {
