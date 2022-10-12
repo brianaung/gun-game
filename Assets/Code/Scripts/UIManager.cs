@@ -35,7 +35,7 @@ public class UIManager : MonoBehaviour
         }
         else if(currWeapon == 2)
         {
-            ammoText.text = "Ammo: infinite";
+            ammoText.text = "Ammo: " + Flamethrower.GetComponent<FireThrowerController>().GetClipSize() + " / " + Flamethrower.GetComponent<FireThrowerController>().GetBulletCapacity();
         }
 
         WeaponChange();

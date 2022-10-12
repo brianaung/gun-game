@@ -124,6 +124,16 @@ public class FireThrowerController : MonoBehaviour {
         }
     }
 
+    public int GetClipSize()
+    {
+        return currentBullet;
+    }
+
+    public int GetBulletCapacity()
+    {
+        return bulletTotal;
+    }
+
     
 
 }
