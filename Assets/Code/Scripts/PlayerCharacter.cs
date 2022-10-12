@@ -20,7 +20,10 @@ public class PlayerCharacter : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider col) {
-        currentHealth--;
+        if (currentHealth > 0) {
+            currentHealth--;
+        }
+        
         isShot = true;
     }
 
@@ -33,8 +36,9 @@ public class PlayerCharacter : MonoBehaviour
         }
 
                 
-        if(currentHealth < 0)
+        if(currentHealth <= 0)
         {
+            BlurScript.enabled = false;
             Cursor.lockState = CursorLockMode.None;
             GameManager.Instance.endGame();
         }
