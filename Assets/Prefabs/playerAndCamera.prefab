@@ -5256,6 +5256,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particleSystem: {fileID: 6985666644869082425}
+  damageAmount: 80
 --- !u!1 &6985666645011913050
 GameObject:
   m_ObjectHideFlags: 0
@@ -5311,7 +5312,7 @@ MonoBehaviour:
   sensitivity: 1
   dashCooldownTime: 1
   gravity: 25
-  dust: {fileID: 0}
+  dust: {fileID: 6985666644580641196}
   timer: 0
 --- !u!114 &6985666645011913046
 MonoBehaviour:
@@ -10324,7 +10325,7 @@ Transform:
   - {fileID: 6985666645011913051}
   - {fileID: 6985666645141742084}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 33.044, z: 0}
 --- !u!23 &2941046254170849342
 MeshRenderer:
@@ -10427,6 +10428,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 8fec88ccaab7985409eaa8be5e473568, type: 3}
+--- !u!198 &6985666644580641196 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 6820588145337418827, guid: 8fec88ccaab7985409eaa8be5e473568, type: 3}
+  m_PrefabInstance: {fileID: 4491647982408953319}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6985666644580641197 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6820588145337418826, guid: 8fec88ccaab7985409eaa8be5e473568, type: 3}
@@ -10523,6 +10529,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerHealth: 2
   BlurScript: {fileID: 6985666644263454376}
+  currentHealth: 0
 --- !u!1001 &6985666644004833655
 PrefabInstance:
   m_ObjectHideFlags: 0
