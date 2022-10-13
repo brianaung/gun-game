@@ -8,8 +8,11 @@ public class ParticleSystemController : MonoBehaviour
     [SerializeField] private int damageAmount = 10;
 
     private void OnParticleCollision(GameObject enemy) {
-        var healthManager = enemy.gameObject.GetComponent<HealthManager>();
-        healthManager.ApplyDamage(this.damageAmount);
+        if (enemy.CompareTag("Enemy")) {
+            var healthManager = enemy.gameObject.GetComponent<HealthManager>();
+            healthManager.ApplyDamage(this.damageAmount);
+        }
+        
     }
 
 }

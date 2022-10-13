@@ -12,7 +12,7 @@ public class ProjectileController : MonoBehaviour
 
     private void OnTriggerEnter(Collider col)
     {
-        if (col.gameObject.tag == this.tagToDamage)
+        if (col.CompareTag("Enemy"))
         {
             
             // var particles = Instantiate(this.collisionParticles);
