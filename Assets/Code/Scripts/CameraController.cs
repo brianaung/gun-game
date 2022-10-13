@@ -15,8 +15,8 @@ public class CameraController : MonoBehaviour
     private Vector3 currRotation;
     private Vector3 camVelocity = Vector3.zero;
     private float smoothTime = 0.1f;
-    private float cameraCollisionOffset = 2.5f;
-    private float maxDist = 4f;
+    private float cameraCollisionOffset = 0.5f;
+    private float maxDist = 3f;
     private float playerCamDist;
     private void Awake() 
     {
@@ -44,23 +44,15 @@ public class CameraController : MonoBehaviour
 
         
 
-        // transform.position = playerTransform.position - (transform.forward * -zOffset) + (transform.up * yOffset);
+        var newPosition = playerTransform.position - (transform.forward * -zOffset) + (transform.up * yOffset);
 
-        // Basic camera collision. Checks if there is object behind the camera. if there is set the transform of the camera to that hit point minus 
-        // some offset. There is another if statement to check if the player is too far away from the camera as the camera will get stuck to the wall.
-        // Although this method works, it will sometimes still clip through a wall when moving the camera at some weird angles.
-        if(Physics.Raycast(transform.position, -transform.forward, out var hit, maxDist))
+        if(Physics.Linecast(playerTransform.position - (transform.forward * cameraCollisionOffset), newPosition, out var hit2))
         {
-            transform.position = hit.point - (transform.forward * -cameraCollisionOffset);
-            if(Vector3.Distance(transform.position, playerTransform.position) > playerCamDist)
-            {
-                transform.position = playerTransform.position - (transform.forward * -zOffset) + (transform.up * yOffset);
-            }
+            transform.position = hit2.point;
         }
-
         else
         {
-            transform.position = playerTransform.position - (transform.forward * -zOffset) + (transform.up * yOffset);
+            transform.position = newPosition;
         }
         
     }

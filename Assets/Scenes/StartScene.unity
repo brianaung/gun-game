@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -84713,7 +84713,7 @@ MonoBehaviour:
   topCornerMod: 0.8
   offset: 1
   wallPrefab: {fileID: 8893536677210817396, guid: 8925afe43062a3a46b5ef5ab59dc8524, type: 3}
-  player: {fileID: 0}
+  player: {fileID: 6985666645793256778, guid: 1e674b9ce2bb75b4baa0b0381a306e2a, type: 3}
 --- !u!4 &1572941461
 Transform:
   m_ObjectHideFlags: 0
