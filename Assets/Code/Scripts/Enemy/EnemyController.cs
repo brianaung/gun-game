@@ -4,6 +4,7 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     [SerializeField] private ParticleSystem deathEffect;
+    [SerializeField] private GameObject prop;
     
     private MeshRenderer _renderer;
 
@@ -17,5 +18,15 @@ public class EnemyController : MonoBehaviour
     {
         var particles = Instantiate(this.deathEffect);
         particles.transform.position = transform.position;
+        DropProp();
+    }
+
+    private void DropProp() {
+        System.Random random = new System.Random(); 
+        int num = random.Next(50); 
+        if (num<=10) {
+            var porpPowerUp = Instantiate(this.prop);
+            porpPowerUp.transform.position = transform.position;
+        }
     }
 }

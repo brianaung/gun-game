@@ -289,6 +289,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathEffect: {fileID: 3417599769178259043, guid: c20ae4c7313f74a4abbfb85ee7397c6f, type: 3}
+  prop: {fileID: 5213135980634290556, guid: c9d0a2611bbd2433bbcc144e5cddac1e, type: 3}
 --- !u!1001 &9177454079624670648
 PrefabInstance:
   m_ObjectHideFlags: 0

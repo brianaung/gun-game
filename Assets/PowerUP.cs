@@ -5,7 +5,7 @@ using UnityEngine;
 public class PowerUP : MonoBehaviour
 {
     [SerializeField] private int multiplier = 2;
-    [SerializeField] private ParticleSystem powerUpEffect;
+    //[SerializeField] private ParticleSystem powerUpEffect;
     [SerializeField] private int powerUpTime;
     
     void OnTriggerEnter(Collider other) {
@@ -17,7 +17,7 @@ public class PowerUP : MonoBehaviour
     IEnumerator pickUp(Collider player) {
         
         //power up effect
-        Instantiate(this.powerUpEffect, transform.position, transform.rotation);
+        //Instantiate(this.powerUpEffect, transform.position, transform.rotation);
         GetComponent<MeshRenderer>().enabled = false;
         GetComponent<Collider>().enabled = false;
         //apply power up to player
