@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using Random = UnityEngine.Random;
 
 public class DungeonCreator : MonoBehaviour
 {
@@ -31,6 +32,13 @@ public class DungeonCreator : MonoBehaviour
 
     // player object
     public GameObject player;
+    public GameObject prefab1;
+    public GameObject prefab2;
+    public GameObject prefab3;
+    public GameObject prefab4;
+    public GameObject prefab5;
+    public GameObject prefab6;
+    public GameObject prefab7;
 
     // Start is called before the first frame update
     void Start()
@@ -54,10 +62,24 @@ public class DungeonCreator : MonoBehaviour
         allVertWallPos = new List<Vector3Int>();
         allHoriWallPos = new List<Vector3Int>();
 
+        GameObject otherPropsParent = new GameObject("PropsParent");
+        otherPropsParent.transform.parent = transform;
+
         // render map (floor and walls)
         for (int i = 0; i < listOfRooms.Count; i++)
         {
             CreateMesh(listOfRooms[i].BottomLeftAreaCorner, listOfRooms[i].TopRightAreaCorner);
+            if (!listOfRooms[i].isCorridor)
+            {
+                // randomly place props
+                PlacePrefab(prefab1, otherPropsParent, RandomPosInRoom(listOfRooms[i]));
+                PlacePrefab(prefab2, otherPropsParent, RandomPosInRoom(listOfRooms[i]));
+                PlacePrefab(prefab3, otherPropsParent, RandomPosInRoom(listOfRooms[i]));
+                PlacePrefab(prefab4, otherPropsParent, RandomPosInRoom(listOfRooms[i]));
+                PlacePrefab(prefab5, otherPropsParent, RandomPosInRoom(listOfRooms[i]));
+                PlacePrefab(prefab6, otherPropsParent, RandomPosInRoom(listOfRooms[i]));
+                PlacePrefab(prefab7, otherPropsParent, RandomPosInRoom(listOfRooms[i]));
+            }
         }
         CreateWalls(wallParent);
 
@@ -67,11 +89,27 @@ public class DungeonCreator : MonoBehaviour
         player.transform.position = finalPos;
     }
 
+    // return a random position inside each room
+    private Vector2Int RandomPosInRoom(Node room)
+    {
+        var center = (room.BottomLeftAreaCorner + room.TopRightAreaCorner) / 2;
+        var x = Random.Range(room.BottomLeftAreaCorner.x + 2, room.BottomRightAreaCorner.x - 2);
+        var z = Random.Range(room.BottomLeftAreaCorner.y + 2, room.TopLeftAreaCorner.y - 2);
+        var pos = new Vector2Int(x, z);
+        return pos;
+    }
+
     // place prefabs onto the specified location
     private void PlacePrefab(GameObject prefabAsset, GameObject propsParent, Vector2Int twoDPos)
     {
         // to render prefab starting from bottom (not their pivot)
-        var prefabOffset = (int) prefabAsset.GetComponent<Renderer>().bounds.size.y / 2;
+        var prefabOffset = 0;
+        /*
+        if (prefabAsset.GetComponent<Renderer>() != null)
+        {
+            prefabOffset = (int) prefabAsset.GetComponent<Renderer>().bounds.size.y / 2;
+        }
+        */
 
         var finalPos = new Vector3Int(twoDPos.x, prefabOffset, twoDPos.y);
 
