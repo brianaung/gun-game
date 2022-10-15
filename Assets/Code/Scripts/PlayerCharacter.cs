@@ -39,14 +39,13 @@ public class PlayerCharacter : MonoBehaviour
             BlurScript.enabled = true;
             StartCoroutine(Blur());
         }
-
-                
-        // if(currentHealth <= 0)
-        // {
-        //     BlurScript.enabled = false;
-        //     Cursor.lockState = CursorLockMode.None;
-        //     GameManager.Instance.endGame();
-        // }
+        
+        if(currentHealth <= 0)
+        {
+            BlurScript.enabled = false;
+            Cursor.lockState = CursorLockMode.None;
+            GameManager.Instance.endGame();
+        }
     }
 
     IEnumerator Blur() {

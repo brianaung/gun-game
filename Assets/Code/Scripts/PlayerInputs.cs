@@ -16,8 +16,6 @@ public class PlayerInputs : MonoBehaviour
     private bool doubleJump = false;
     private bool hasJumped = false;
     public ParticleSystem dust;
-
-    public float timer;
     private void Awake() 
     {
         playerTransform = GetComponent<Transform>();
@@ -47,7 +45,7 @@ public class PlayerInputs : MonoBehaviour
         // player transform rotation from https://www.youtube.com/watch?v=CSuvGGiC2wI
         move = transform.rotation * move;
         characterController.Move(move * Time.deltaTime);
-
+        
         Jump();
 
         velocity.y -= gravity * Time.deltaTime;
@@ -82,6 +80,5 @@ public class PlayerInputs : MonoBehaviour
                 dust.Play();
             }
         }
-
     }
 }
