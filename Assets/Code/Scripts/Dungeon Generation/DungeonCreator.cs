@@ -32,13 +32,8 @@ public class DungeonCreator : MonoBehaviour
 
     // player object
     public GameObject player;
-    public GameObject prefab1;
-    public GameObject prefab2;
-    public GameObject prefab3;
-    public GameObject prefab4;
-    public GameObject prefab5;
-    public GameObject prefab6;
-    public GameObject prefab7;
+    public GameObject[] envProps;
+    public GameObject[] groundProps;
 
     // Start is called before the first frame update
     void Start()
@@ -72,13 +67,17 @@ public class DungeonCreator : MonoBehaviour
             if (!listOfRooms[i].isCorridor)
             {
                 // randomly place props
-                PlacePrefab(prefab1, otherPropsParent, RandomPosInRoom(listOfRooms[i]));
-                PlacePrefab(prefab2, otherPropsParent, RandomPosInRoom(listOfRooms[i]));
-                PlacePrefab(prefab3, otherPropsParent, RandomPosInRoom(listOfRooms[i]));
-                PlacePrefab(prefab4, otherPropsParent, RandomPosInRoom(listOfRooms[i]));
-                PlacePrefab(prefab5, otherPropsParent, RandomPosInRoom(listOfRooms[i]));
-                PlacePrefab(prefab6, otherPropsParent, RandomPosInRoom(listOfRooms[i]));
-                PlacePrefab(prefab7, otherPropsParent, RandomPosInRoom(listOfRooms[i]));
+                foreach (var prop in envProps)
+                {
+                    PlacePrefab(prop, otherPropsParent, RandomPosInRoom(listOfRooms[i]));
+                    PlacePrefab(prop, otherPropsParent, RandomPosInRoom(listOfRooms[i]));
+                }
+
+                foreach (var prop in groundProps)
+                {
+                    PlacePrefab(prop, otherPropsParent, RandomPosInRoom(listOfRooms[i]));
+                    PlacePrefab(prop, otherPropsParent, RandomPosInRoom(listOfRooms[i]));
+                }
             }
         }
         CreateWalls(wallParent);
