@@ -33,7 +33,6 @@ public class DungeonCreator : MonoBehaviour
     // player object
     public GameObject player;
     public GameObject[] envProps;
-    public GameObject[] groundProps;
 
     // Start is called before the first frame update
     void Start()
@@ -68,12 +67,6 @@ public class DungeonCreator : MonoBehaviour
             {
                 // randomly place props
                 foreach (var prop in envProps)
-                {
-                    PlacePrefab(prop, otherPropsParent, RandomPosInRoom(listOfRooms[i]));
-                    PlacePrefab(prop, otherPropsParent, RandomPosInRoom(listOfRooms[i]));
-                }
-
-                foreach (var prop in groundProps)
                 {
                     PlacePrefab(prop, otherPropsParent, RandomPosInRoom(listOfRooms[i]));
                     PlacePrefab(prop, otherPropsParent, RandomPosInRoom(listOfRooms[i]));

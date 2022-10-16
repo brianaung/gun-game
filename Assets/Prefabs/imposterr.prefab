@@ -349,7 +349,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathEffect: {fileID: 3417599769178259043, guid: c20ae4c7313f74a4abbfb85ee7397c6f, type: 3}
-  prop: {fileID: 0}
+  speedUp: {fileID: 0}
+  scaleUp: {fileID: 0}
+  jumpUp: {fileID: 0}
+  amoUp: {fileID: 0}
+  rateUp: {fileID: 0}
 --- !u!136 &8519221628408164478
 CapsuleCollider:
   m_ObjectHideFlags: 0
