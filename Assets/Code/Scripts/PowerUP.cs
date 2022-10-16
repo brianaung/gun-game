@@ -34,6 +34,8 @@ public class PowerUP : MonoBehaviour
         } else if (gameObject.tag == "amoUp") {
             AK47.bulletTotal = AK47.bulletCapacity;
             //FireThrower.bulletTotal = 100;
+        } else if (gameObject.tag == "rateUp") {
+            AK47.fireRate /= multiplier;
         }
         
         
@@ -48,6 +50,8 @@ public class PowerUP : MonoBehaviour
             playerInput.jumpStrength /= multiplier;
         } else if (gameObject.tag == "scaleUp") {
             player.transform.localScale /= multiplier;
+        } else if (gameObject.tag == "rateUp") {
+            AK47.fireRate *= multiplier;
         }
         Destroy(gameObject);
         

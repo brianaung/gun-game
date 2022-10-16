@@ -8,7 +8,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private GameObject scaleUp;
     [SerializeField] private GameObject jumpUp;
     [SerializeField] private GameObject amoUp;
-    
+    [SerializeField] private GameObject rateUp;
     private MeshRenderer _renderer;
 
     private void Awake()
@@ -36,9 +36,12 @@ public class EnemyController : MonoBehaviour
         } else if (num<=6) {
             var scaleUp = Instantiate(this.scaleUp);
             scaleUp.transform.position = transform.position;
-        } else if (num<=10) {
+        } else if (num<=8) {
             var amoUp = Instantiate(this.amoUp);
             amoUp.transform.position = transform.position;
+        } else if (num<=10) {
+            var rateUp = Instantiate(this.rateUp);
+            rateUp.transform.position = transform.position;
         }
     }
 }
