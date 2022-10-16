@@ -18,6 +18,7 @@ public class CorridorGenerator
             if (node.ChildrenNodeList.Count == 0) { continue; }
 
             CorridorNode corridor = new CorridorNode(node.ChildrenNodeList[0], node.ChildrenNodeList[1], corridorWidth);
+            corridor.isCorridor = true;
             corridorList.Add(corridor);
         }
         return corridorList;

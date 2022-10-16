@@ -9,6 +9,7 @@ public abstract class Node
     public List<Node> ChildrenNodeList { get => childrenNodeList; }
 
     public bool Visited { get; set; }
+    public bool isCorridor { get; set; }
     public Vector2Int BottomLeftAreaCorner { get; set; }
     public Vector2Int BottomRightAreaCorner { get; set; }
     public Vector2Int TopRightAreaCorner { get; set; }
@@ -22,6 +23,7 @@ public abstract class Node
     {
         childrenNodeList = new List<Node>();
         this.Parent = parentNode;
+        this.isCorridor = false;
         if (parentNode != null)
         {
             parentNode.AddChild(this);
