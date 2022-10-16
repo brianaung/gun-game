@@ -24,7 +24,7 @@ public class FireThrowerController : MonoBehaviour {
     //variable
     bool canShoot;
     int currentBullet;
-    int bulletTotal;
+    public int bulletTotal;
 
     //muzzel flash
     //public Image muzzleFlashImage;
@@ -68,30 +68,15 @@ public class FireThrowerController : MonoBehaviour {
 
         currentRotation.y = Mathf.Clamp(currentRotation.y, -30, 45);
 
-        // transform.root.localRotation = Quaternion.AngleAxis(currentRotation.x, Vector3.up);
-        // transform.parent.localRotation = Quaternion.AngleAxis(-currentRotation.y, Vector3.right);
     }
 
     IEnumerator shoot() {
         gunRecoil();
-        //StartCoroutine(muzzleFlash());
         flame.Play();
-        //RaycastToEnemy();
         yield return new WaitForSeconds(fireRate);
         canShoot = true;
     }
 
-    // IEnumerator muzzleFlash() {
-    //     muzzleFlashImage.sprite = flashes[Random.Range(0,flashes.Length)];
-    //     muzzleFlashImage.color = Color.white;
-    //     yield return new WaitForSeconds(0.05f);
-    //     muzzleFlashImage.sprite = null;
-    //     muzzleFlashImage.color = new Color(0,0,0,0);
-    // }
-
-    // IEnumerator  shootFlame() {
-    //     flame.
-    // }
 
     void gunRecoil() {
         transform.root.localPosition -= Vector3.forward*100f;
@@ -105,24 +90,7 @@ public class FireThrowerController : MonoBehaviour {
         }
     }
     
-    //TODO: gun aiming effect
-    void gunAim() {
-
-    }
-
-    void RaycastToEnemy() {
-        RaycastHit hit;
-        if (Physics.Raycast(transform.parent.position, transform.parent.forward, out hit, 1<< LayerMask.NameToLayer("Enemy"))) {
-            try {
-                //Debug.Log("Hit an enemy");
-                Rigidbody rb = hit.transform.GetComponent<Rigidbody>();
-                rb.constraints = RigidbodyConstraints.None;
-                rb.AddForce(transform.parent.transform.forward*500);
-            } catch {
-
-            }
-        }
-    }
+    
 
     public int GetClipSize()
     {

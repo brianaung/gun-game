@@ -24,7 +24,7 @@ public class GunController : MonoBehaviour {
     //variable
     bool canShoot;
     int currentBullet;
-    int bulletTotal;
+    public int bulletTotal;
 
     //muzzel flash
     public Image muzzleFlashImage;
