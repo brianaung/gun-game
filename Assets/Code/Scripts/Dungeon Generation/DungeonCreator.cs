@@ -33,6 +33,7 @@ public class DungeonCreator : MonoBehaviour
     // player object
     public GameObject player;
     public GameObject Enemy;
+    public int enemyNumber;
     public GameObject[] envProps;
 
     // Start is called before the first frame update
@@ -191,7 +192,7 @@ public class DungeonCreator : MonoBehaviour
         floor.AddComponent<EnemySpawner>();
         floor.transform.parent = transform;
         floor.GetComponent<EnemySpawner>().theEnemy = this.Enemy;
-        floor.GetComponent<EnemySpawner>().enemyNumber = 10;
+        floor.GetComponent<EnemySpawner>().enemyNumber = this.enemyNumber;
         floor.GetComponent<EnemySpawner>().Floor= vertices;
 
         // horizontal walls and doors

@@ -29,13 +29,7 @@ public class EnemySpawner : MonoBehaviour
             StartCoroutine(EnemyDrop());
         }
     }
-
-
-    private void OnTriggerEnter(Collider col){
-            Debug.Log(col.gameObject.tag);
-        if(col.gameObject.tag == "Player"){
-        }
-    }
+    
     IEnumerator EnemyDrop()
     {
         while(this.enemyCount < enemyNumber){
