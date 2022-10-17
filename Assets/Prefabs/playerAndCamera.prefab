@@ -351,6 +351,7 @@ MonoBehaviour:
   mouseSensitivity: 1
   randomRecoil: 0
   randomRecoilConstraints: {x: 0, y: 0}
+  bulletTotal: 0
 --- !u!1 &6985666644867227728
 GameObject:
   m_ObjectHideFlags: 0
@@ -5269,6 +5270,7 @@ GameObject:
   - component: {fileID: 6985666645011913048}
   - component: {fileID: 6985666645011913046}
   - component: {fileID: 6985666645011913047}
+  - component: {fileID: 7450222467375101625}
   m_Layer: 0
   m_Name: player
   m_TagString: Player
@@ -5313,7 +5315,6 @@ MonoBehaviour:
   dashCooldownTime: 1
   gravity: 25
   dust: {fileID: 6985666644580641196}
-  timer: 0
 --- !u!114 &6985666645011913046
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5346,6 +5347,23 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7450222467375101625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6985666645011913050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01b3fb27c0f61e94c8dbc2a00aeb1019, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 300
+  healthBar: {fileID: 0}
+  onDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &6985666645141742087
 GameObject:
   m_ObjectHideFlags: 0
@@ -10529,7 +10547,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerHealth: 2
   BlurScript: {fileID: 6985666644263454376}
+  healthBar: {fileID: 0}
   currentHealth: 0
+  enemyTag: 
 --- !u!1001 &6985666644004833655
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10638,6 +10658,7 @@ MonoBehaviour:
   mouseSensitivity: 1
   randomRecoil: 1
   randomRecoilConstraints: {x: -1, y: 1}
+  bulletTotal: 0
   muzzleFlashImage: {fileID: 6985666644867227758}
   flashes:
   - {fileID: 21300000, guid: 8a27e69d1720340f389a3b55390d167c, type: 3}
