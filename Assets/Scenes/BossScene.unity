@@ -355,6 +355,22 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7689493535336028664, guid: c622029afddbdbc4598e46f6ebadae3d, type: 3}
+      propertyPath: m_Mass
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7689493535336028664, guid: c622029afddbdbc4598e46f6ebadae3d, type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7689493535336028664, guid: c622029afddbdbc4598e46f6ebadae3d, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8519221628408164478, guid: c622029afddbdbc4598e46f6ebadae3d, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: c622029afddbdbc4598e46f6ebadae3d, type: 3}
@@ -456,6 +472,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &464789789 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4679013553686186176, guid: a0e2e9a3b534c7f4189a693b9ca85fde, type: 3}
+  m_PrefabInstance: {fileID: 112022858}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b88009ea63c86d4db0202d84ecfd2ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &768359005
 GameObject:
   m_ObjectHideFlags: 0
@@ -816,7 +843,7 @@ PrefabInstance:
     - target: {fileID: 6985666644691768828, guid: 1e674b9ce2bb75b4baa0b0381a306e2a, type: 3}
       propertyPath: healthBar
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 464789789}
     - target: {fileID: 6985666644691768828, guid: 1e674b9ce2bb75b4baa0b0381a306e2a, type: 3}
       propertyPath: PlayerHealth
       value: 5

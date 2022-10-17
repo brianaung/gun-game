@@ -7539,7 +7539,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 330845309145238508, guid: a0e2e9a3b534c7f4189a693b9ca85fde, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 337.07422
+      value: 471
       objectReference: {fileID: 0}
     - target: {fileID: 330845309145238508, guid: a0e2e9a3b534c7f4189a693b9ca85fde, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -101996,6 +101996,7 @@ MonoBehaviour:
   wallPrefab: {fileID: 8893536677210817396, guid: 8925afe43062a3a46b5ef5ab59dc8524, type: 3}
   player: {fileID: 622703300}
   Enemy: {fileID: 2165856287477778891, guid: 07479aa2f29b7fb4792cd7f490fb2d8b, type: 3}
+  enemyNumber: 10
   envProps:
   - {fileID: 1400461039152700, guid: c7821bc923171f24094e69062402d005, type: 3}
   - {fileID: 1327385724211766, guid: dc00aab85b301f242896a77c4b442ec0, type: 3}
