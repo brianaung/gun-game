@@ -26,7 +26,7 @@ public class EnemySpawner : MonoBehaviour
         zPosMin = (int) (center.z - lossyZ);
         zPosMax = (int) (center.z + lossyZ);
         if(lossyX >= 10 && lossyZ >= 10){
-            // StartCoroutine(EnemyDrop());
+            StartCoroutine(EnemyDrop());
         }
     }
 
