@@ -24,6 +24,7 @@ public class PowerUP : MonoBehaviour
         var playerInput = player.GetComponent<PlayerInputs>();
         
         var AK47 = FindObjectOfType<GunController>();
+        var playerCharacter = FindObjectOfType<PlayerCharacter>();
         //var FireThrower = FindObjectOfType<FireThrowerController>();
         if (gameObject.tag == "speedUp") {
             playerInput.playerSpeed *= multiplier;
@@ -36,6 +37,9 @@ public class PowerUP : MonoBehaviour
             //FireThrower.bulletTotal = 100;
         } else if (gameObject.tag == "rateUp") {
             AK47.fireRate /= multiplier;
+        } else if (gameObject.tag == "healthUp") {
+            playerCharacter.currentHealth += 1;
+            playerCharacter.healthBar.SetHealth(playerCharacter.currentHealth);
         }
         
         
@@ -52,7 +56,7 @@ public class PowerUP : MonoBehaviour
             player.transform.localScale /= multiplier;
         } else if (gameObject.tag == "rateUp") {
             AK47.fireRate *= multiplier;
-        }
+        } 
         Destroy(gameObject);
         
         

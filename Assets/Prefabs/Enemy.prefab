@@ -196,7 +196,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2165856287477778891}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 2
@@ -290,10 +290,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathEffect: {fileID: 3417599769178259043, guid: c20ae4c7313f74a4abbfb85ee7397c6f, type: 3}
   speedUp: {fileID: 2512546810727786231, guid: dd2721e816471475086d0fa9a6c0a741, type: 3}
-  scaleUp: {fileID: 7302455062499896825, guid: bb4bd28893f904fe7baff66b2a382163, type: 3}
-  jumpUp: {fileID: 6298389326999549203, guid: 29c0f0bdd2cef4527a06b55d967fc633, type: 3}
-  amoUp: {fileID: 4515159603277960106, guid: e6c460b3c5752430bafafb96b57bba37, type: 3}
-  rateUp: {fileID: 4111888757854706031, guid: 9dfd4e1d3e1fc42aa897881c7c2d95d7, type: 3}
+  scaleUp: {fileID: 6728736152183632276, guid: b8a0f0051166348eab71fbe7d572be7e, type: 3}
+  jumpUp: {fileID: 8712131369160462019, guid: 28dda755aabfb402dae8e64fc432334d, type: 3}
+  amoUp: {fileID: 1770068563757794982, guid: 1293d3cdc09d2443c9e88240ef4eb309, type: 3}
+  rateUp: {fileID: 5901070926009600996, guid: 54db46571b3cd4cb7a60dea1bc3ab013, type: 3}
+  healthUp: {fileID: 4820968590678061732, guid: de2254a2fd0b94a669af92736f7b206f, type: 3}
 --- !u!1001 &9177454079624670648
 PrefabInstance:
   m_ObjectHideFlags: 0
