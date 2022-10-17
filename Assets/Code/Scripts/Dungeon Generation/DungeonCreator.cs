@@ -32,6 +32,7 @@ public class DungeonCreator : MonoBehaviour
 
     // player object
     public GameObject player;
+    public GameObject Enemy;
     public GameObject[] envProps;
 
     // Start is called before the first frame update
@@ -64,7 +65,7 @@ public class DungeonCreator : MonoBehaviour
         {
             CreateMesh(listOfRooms[i].BottomLeftAreaCorner, listOfRooms[i].TopRightAreaCorner);
             if (!listOfRooms[i].isCorridor)
-            {
+            {   
                 // randomly place props
                 foreach (var prop in envProps)
                 {
@@ -187,7 +188,11 @@ public class DungeonCreator : MonoBehaviour
         floor.GetComponent<MeshFilter>().mesh = mesh;
         floor.GetComponent<MeshRenderer>().material = material;
         floor.AddComponent<MeshCollider>();
+        floor.AddComponent<EnemySpawner>();
         floor.transform.parent = transform;
+        floor.GetComponent<EnemySpawner>().theEnemy = this.Enemy;
+        floor.GetComponent<EnemySpawner>().enemyNumber = 10;
+        floor.GetComponent<EnemySpawner>().Floor= vertices;
 
         // horizontal walls and doors
         for (int i = (int) botLeftV.x; i < (int) botRightV.x; i++)

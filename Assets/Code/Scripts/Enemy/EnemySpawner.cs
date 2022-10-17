@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    [SerializeField] private int maxEnemyNumber;
-
     public GameObject theEnemy;
-    public string position;
+    public Vector3[] Floor;
     private int enemyCount;
+    public int enemyNumber;
     
     private int xPosMin;
     private int xPosMax;
@@ -16,25 +15,34 @@ public class EnemySpawner : MonoBehaviour
     private int zPosMax;
 
     
-
-    void Awake(){
-        xPosMin = (int) (transform.position.x-2*transform.lossyScale.x);
-        xPosMax = (int) (transform.position.x+2*transform.lossyScale.x);
-        zPosMin = (int) (transform.position.z-transform.lossyScale.z/2);
-        zPosMax = (int) (transform.position.z + transform.lossyScale.z/2);
-    }
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(EnemyDrop());
+        var center = (Floor[0] + Floor[3]) / 2;
+        var lossyX = Mathf.Abs(((Floor[0] - Floor[1]) /2).x);
+        var lossyZ = Mathf.Abs(((Floor[0] - Floor[2]) / 2).z);
+        xPosMin = (int) (center.x-lossyX);
+        xPosMax = (int) (center.x+lossyX);
+        zPosMin = (int) (center.z - lossyZ);
+        zPosMax = (int) (center.z + lossyZ);
+        if(lossyX >= 10 && lossyZ >= 10){
+            // StartCoroutine(EnemyDrop());
+        }
     }
 
+
+    private void OnTriggerEnter(Collider col){
+            Debug.Log(col.gameObject.tag);
+        if(col.gameObject.tag == "Player"){
+        }
+    }
     IEnumerator EnemyDrop()
     {
-        while(this.enemyCount < maxEnemyNumber){
-            int xPos = Random.Range(xPosMin, xPosMax);
-            int zPos = Random.Range(zPosMin, zPosMax);
-            Instantiate(theEnemy, new Vector3(xPos, 0, zPos), Quaternion.identity);
+        while(this.enemyCount < enemyNumber){
+            int xPos, zPos;
+            xPos = Random.Range(xPosMin, xPosMax);
+            zPos = Random.Range(zPosMin, zPosMax);
+            Instantiate(theEnemy, new Vector3(xPos, 1, zPos), Quaternion.identity);
             yield return new WaitForSeconds(0.5f);
             this.enemyCount+=1;
         }
