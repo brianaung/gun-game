@@ -38,17 +38,10 @@ public class UIManager : MonoBehaviour
             ammoText.text = "Ammo: " + Flamethrower.GetComponent<FireThrowerController>().GetClipSize() + " / " + Flamethrower.GetComponent<FireThrowerController>().GetBulletCapacity();
         }
 
-        WeaponChange();
-        
-        // if(Input.GetKeyDown(KeyCode.H))
-        // {
-        //     HealthDecrease();
-        // }
+        healthText.text = player.GetComponent<PlayerCharacter>().currentHealth + " / " + player.GetComponent<PlayerCharacter>().PlayerHealth;
 
-        // if(Input.GetKeyDown(KeyCode.J))
-        // {
-        //     HealthIncrease();
-        // }
+        WeaponChange();
+    
     }
 
     private void WeaponChange()
