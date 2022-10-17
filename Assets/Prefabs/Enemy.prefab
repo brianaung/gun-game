@@ -246,7 +246,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collisionParticles: {fileID: 3417599769178259043, guid: c20ae4c7313f74a4abbfb85ee7397c6f, type: 3}
+  damageAmount: 50
   tagToDamage: Player
+  Role: Mob
 --- !u!114 &8455406926108133519
 MonoBehaviour:
   m_ObjectHideFlags: 0
