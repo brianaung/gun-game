@@ -50,8 +50,8 @@ public class PlayerInputs : MonoBehaviour
         move = transform.rotation * move;
         characterController.Move(move * Time.deltaTime);
         if(characterController.isGrounded && (move.x != 0 || move.z != 0) && walking.isPlaying == false){
-            walking.volume = Random.Range(0.6f, 0.7f);
-            walking.pitch = Random.Range(0.8f, 1.1f);
+            walking.volume = Random.Range(0.2f, 0.5f);
+            walking.pitch = Random.Range(0.7f, 0.9f);
             walking.Play();
         }
         Jump();
