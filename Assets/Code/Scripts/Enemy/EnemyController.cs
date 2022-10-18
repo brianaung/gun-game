@@ -25,24 +25,25 @@ public class EnemyController : MonoBehaviour
     }
 
     private void DropProp() {
-        System.Random random = new System.Random(); 
+        System.Random random = new System.Random();
+        Vector3 position = new Vector3(transform.position.x, 0, transform.position.z);
         int num = random.Next(50); 
         if (num<=4) {
             var jumpUp = Instantiate(this.jumpUp);
-            jumpUp.transform.position = transform.position;
+            jumpUp.transform.position = position;
         } else if (num<=8) {
             var scaleUp = Instantiate(this.scaleUp);
-            scaleUp.transform.position = transform.position;
+            scaleUp.transform.position = position;
         } else if (num<=12) {
             var amoUp = Instantiate(this.amoUp);
-            amoUp.transform.position = transform.position;
+            amoUp.transform.position = position;
         } else if (num<=16) {
             var rateUp = Instantiate(this.rateUp);
-            rateUp.transform.position = transform.position;
+            rateUp.transform.position = position;
         } else if (num<=50) {
             // higher chance of getting health powerup?
             var healthUp = Instantiate(this.healthUp);
-            healthUp.transform.position = transform.position;
+            healthUp.transform.position = position;
         }
     }
 }
