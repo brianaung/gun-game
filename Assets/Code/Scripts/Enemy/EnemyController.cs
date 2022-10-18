@@ -28,13 +28,13 @@ public class EnemyController : MonoBehaviour
         System.Random random = new System.Random();
         Vector3 position = new Vector3(transform.position.x, 0, transform.position.z);
         int num = random.Next(10); 
-        if (num<=2) {
+        if (num<=1) {
             var jumpUp = Instantiate(this.jumpUp);
             jumpUp.transform.position = position;
-        } else if (num<=4) {
+        } else if (num<=1) {
             var scaleUp = Instantiate(this.scaleUp);
             scaleUp.transform.position = position;
-        } else if (num<=6) {
+        } else if (num<=1) {
             var amoUp = Instantiate(this.amoUp);
             amoUp.transform.position = position;
         } else if (num<=8) {

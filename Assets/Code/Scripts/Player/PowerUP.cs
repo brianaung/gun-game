@@ -43,16 +43,13 @@ public class PowerUP : MonoBehaviour
             }
             //FireThrower.bulletTotal = 100;
         } else if (gameObject.tag == "rateUp") {
-<<<<<<< HEAD
             FindObjectOfType<Timer>().Duration = powerUpTime;
             FindObjectOfType<Timer>().timerText.text = "FireRate++";
             FindObjectOfType<Timer>().StartTimer();
             AK47.fireRate /= multiplier;
-=======
             if(AK47 != null){
                 AK47.fireRate /= multiplier;
             }
->>>>>>> 5e0ca5d737fe5d0e47c70b6cad78c20aa35c858e
         } else if (gameObject.tag == "healthUp") {
             playerCharacter.currentHealth += 1;
             playerCharacter.healthBar.SetHealth(playerCharacter.currentHealth);
