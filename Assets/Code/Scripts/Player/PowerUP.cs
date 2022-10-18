@@ -48,7 +48,6 @@ public class PowerUP : MonoBehaviour
             FindObjectOfType<Timer>().Duration = powerUpTime;
             FindObjectOfType<Timer>().timerText.text = "FireRate++";
             FindObjectOfType<Timer>().StartTimer();
-            
             if(AK47 != null){
                 AK47.fireRate /= multiplier;
             }

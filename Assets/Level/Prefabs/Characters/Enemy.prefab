@@ -248,6 +248,7 @@ MonoBehaviour:
   collisionParticles: {fileID: 3417599769178259043, guid: c20ae4c7313f74a4abbfb85ee7397c6f, type: 3}
   tagToDamage: Player
   Role: Mob
+  clip: {fileID: 8300000, guid: be4ebff2067501e41aa62f13713ede70, type: 3}
 --- !u!114 &8455406926108133519
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -290,7 +291,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathEffect: {fileID: 3417599769178259043, guid: c20ae4c7313f74a4abbfb85ee7397c6f, type: 3}
-  speedUp: {fileID: 2512546810727786231, guid: dd2721e816471475086d0fa9a6c0a741, type: 3}
   scaleUp: {fileID: 6728736152183632276, guid: b8a0f0051166348eab71fbe7d572be7e, type: 3}
   jumpUp: {fileID: 8712131369160462019, guid: 28dda755aabfb402dae8e64fc432334d, type: 3}
   amoUp: {fileID: 1770068563757794982, guid: 1293d3cdc09d2443c9e88240ef4eb309, type: 3}

@@ -9,6 +9,9 @@ public class ContactController : MonoBehaviour
     [SerializeField] private string tagToDamage;
     [SerializeField] private string Role;
 
+    private void Start() {
+    }
+
     private void OnTriggerEnter(Collider col)
     {
         if (col.gameObject.tag == this.tagToDamage)
@@ -16,7 +19,11 @@ public class ContactController : MonoBehaviour
             var particles = Instantiate(this.collisionParticles);
             particles.transform.position = transform.position;
             
-            if(Role != "boss") Destroy(gameObject);
+            if(Role != "boss")
+            {
+                AudioSource.PlayClipAtPoint(clip, transform.position);
+                Destroy(gameObject);
+            }
         }
     }
 }
