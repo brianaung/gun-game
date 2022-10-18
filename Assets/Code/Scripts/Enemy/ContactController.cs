@@ -27,4 +27,8 @@ public class ContactController : MonoBehaviour
             }
         }
     }
+
+    public string getRole(){
+        return this.Role;
+    }
 }

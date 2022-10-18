@@ -232,6 +232,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 4
   enemyHealth: 100
+  contact: {fileID: 10540450}
   thePlayer: {fileID: 8329708556879167979, guid: eca97d98d8ab33a4583ede23761ceabe, type: 3}
 --- !u!114 &10540450
 MonoBehaviour:
