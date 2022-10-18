@@ -58,6 +58,7 @@ public class FireThrowerController : MonoBehaviour {
             }
         } else if (Input.GetMouseButtonUp(0) || currentBullet<=0) {
             flame.Stop();
+            FlameSounds.Stop();
         }
     }    
 
