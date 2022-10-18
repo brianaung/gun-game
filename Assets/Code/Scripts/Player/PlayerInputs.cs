@@ -51,6 +51,10 @@ public class PlayerInputs : MonoBehaviour
         characterController.Move(move * Time.deltaTime);
         if(characterController.isGrounded){
             walking.Play();
+            if(walking != null && walking.isPlaying)
+            {
+                walking.Stop();
+            }
         }
         
         Jump();
