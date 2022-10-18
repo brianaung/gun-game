@@ -11,6 +11,7 @@ public class GunController : MonoBehaviour {
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField] private Transform firePoint;
     [SerializeField] private float bulletVelocity;
+    [SerializeField] public AudioSource gunSound;
 
     [Header("Mouse Setting")]
     public float mouseSensitivity = 1;
@@ -72,6 +73,7 @@ public class GunController : MonoBehaviour {
         StartCoroutine(muzzleFlash());
         //RaycastToEnemy();
         var projectile = Instantiate(this.projectilePrefab, this.firePoint.position, this.firePoint.rotation);
+        gunSound.Play();
             //projectile.AddForce(firePoint.forward *(this.bulletVelocity));
             //Destroy(projectile, 1f); 
         yield return new WaitForSeconds(fireRate);
