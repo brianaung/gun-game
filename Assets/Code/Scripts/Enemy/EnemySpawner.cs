@@ -22,13 +22,15 @@ public class EnemySpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        var center = (Floor[0] + Floor[3]) / 2;
-        lossyX = Mathf.Abs(((Floor[0] - Floor[1]) /2).x);
-        lossyZ = Mathf.Abs(((Floor[0] - Floor[2]) / 2).z);
-        xPosMin = (int) (center.x-lossyX);
-        xPosMax = (int) (center.x+lossyX);
-        zPosMin = (int) (center.z - lossyZ);
-        zPosMax = (int) (center.z + lossyZ);
+        if(Floor.Length > 3){
+            var center = (Floor[0] + Floor[3]) / 2;
+            lossyX = Mathf.Abs(((Floor[0] - Floor[1]) /2).x);
+            lossyZ = Mathf.Abs(((Floor[0] - Floor[2]) / 2).z);
+            xPosMin = (int) (center.x-lossyX);
+            xPosMax = (int) (center.x+lossyX);
+            zPosMin = (int) (center.z - lossyZ);
+            zPosMax = (int) (center.z + lossyZ);
+        }
         
     }
 

@@ -19,10 +19,12 @@ public class ProjectileController : MonoBehaviour
             // particles.transform.position = transform.position;
             // particles.transform.rotation =
             //     Quaternion.LookRotation(-this.velocity);
-
-            var healthManager = col.gameObject.GetComponent<HealthManager>();
-            healthManager.ApplyDamage(this.damageAmount);
-            Destroy(gameObject);
+            if(col.gameObject.GetComponent<HealthManager>() != null)
+            {
+                var healthManager = col.gameObject.GetComponent<HealthManager>();
+                healthManager.ApplyDamage(this.damageAmount);
+                Destroy(gameObject);
+            }
         }
     }
 
