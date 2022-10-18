@@ -26,9 +26,7 @@ public class PowerUP : MonoBehaviour
         var AK47 = FindObjectOfType<GunController>();
         var playerCharacter = FindObjectOfType<PlayerCharacter>();
         //var FireThrower = FindObjectOfType<FireThrowerController>();
-        if (gameObject.tag == "speedUp") {
-            playerInput.playerSpeed *= multiplier;
-        } else if (gameObject.tag == "jumpUp") {
+        if (gameObject.tag == "jumpUp") {
             playerInput.jumpStrength *= multiplier;
         } else if (gameObject.tag == "scaleUp") {
             player.transform.localScale *= multiplier;
@@ -58,9 +56,5 @@ public class PowerUP : MonoBehaviour
             AK47.fireRate *= multiplier;
         } 
         Destroy(gameObject);
-        
-        
     }
 }
-
-

@@ -4,7 +4,6 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     [SerializeField] private ParticleSystem deathEffect;
-    [SerializeField] private GameObject speedUp;
     [SerializeField] private GameObject scaleUp;
     [SerializeField] private GameObject jumpUp;
     [SerializeField] private GameObject amoUp;
@@ -28,22 +27,20 @@ public class EnemyController : MonoBehaviour
     private void DropProp() {
         System.Random random = new System.Random(); 
         int num = random.Next(50); 
-        if (num<=2) {
-            var speedUp = Instantiate(this.speedUp);
-            speedUp.transform.position = transform.position;
-        } else if (num<=4) {
+        if (num<=4) {
             var jumpUp = Instantiate(this.jumpUp);
             jumpUp.transform.position = transform.position;
-        } else if (num<=6) {
+        } else if (num<=8) {
             var scaleUp = Instantiate(this.scaleUp);
             scaleUp.transform.position = transform.position;
-        } else if (num<=8) {
+        } else if (num<=12) {
             var amoUp = Instantiate(this.amoUp);
             amoUp.transform.position = transform.position;
-        } else if (num<=10) {
+        } else if (num<=16) {
             var rateUp = Instantiate(this.rateUp);
             rateUp.transform.position = transform.position;
-        } else if (num>=12) {
+        } else if (num<=50) {
+            // higher chance of getting health powerup?
             var healthUp = Instantiate(this.healthUp);
             healthUp.transform.position = transform.position;
         }
