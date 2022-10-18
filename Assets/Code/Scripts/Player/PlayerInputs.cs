@@ -19,6 +19,7 @@ public class PlayerInputs : MonoBehaviour
 
     [SerializeField] AudioSource jump;
     [SerializeField] AudioSource highjump;
+    [SerializeField] AudioSource walking;
     private void Awake() 
     {
         playerTransform = GetComponent<Transform>();
@@ -48,7 +49,9 @@ public class PlayerInputs : MonoBehaviour
         // player transform rotation from https://www.youtube.com/watch?v=CSuvGGiC2wI
         move = transform.rotation * move;
         characterController.Move(move * Time.deltaTime);
-        
+        if(characterController.isGrounded){
+            walking.Play();
+        }
         
         Jump();
 
