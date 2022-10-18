@@ -16,6 +16,7 @@ public class EnemySpawner : MonoBehaviour
     private float lossyX;
     private float lossyZ;
     private bool inRoom = false;
+    private int updatenum = 0;
 
     
     // Start is called before the first frame update
@@ -28,7 +29,12 @@ public class EnemySpawner : MonoBehaviour
         xPosMax = (int) (center.x+lossyX);
         zPosMin = (int) (center.z - lossyZ);
         zPosMax = (int) (center.z + lossyZ);
-        if(lossyX > 9 && lossyZ > 9 && inRoom){
+        
+    }
+
+    private void Update() {
+        if(lossyX > 9 && lossyZ > 9 && inRoom && updatenum==0){
+            updatenum++;
             StartCoroutine(EnemyDrop());
         }
     }
@@ -37,6 +43,7 @@ public class EnemySpawner : MonoBehaviour
         if(col.tag == "Position"){
             inRoom = true;
         }
+        
     }
 
     IEnumerator EnemyDrop()
