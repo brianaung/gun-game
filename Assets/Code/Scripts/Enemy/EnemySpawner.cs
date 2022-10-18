@@ -13,23 +13,32 @@ public class EnemySpawner : MonoBehaviour
     private int xPosMax;
     private int zPosMin;
     private int zPosMax;
+    private float lossyX;
+    private float lossyZ;
+    private bool inRoom = false;
 
     
     // Start is called before the first frame update
     void Start()
     {
         var center = (Floor[0] + Floor[3]) / 2;
-        var lossyX = Mathf.Abs(((Floor[0] - Floor[1]) /2).x);
-        var lossyZ = Mathf.Abs(((Floor[0] - Floor[2]) / 2).z);
+        lossyX = Mathf.Abs(((Floor[0] - Floor[1]) /2).x);
+        lossyZ = Mathf.Abs(((Floor[0] - Floor[2]) / 2).z);
         xPosMin = (int) (center.x-lossyX);
         xPosMax = (int) (center.x+lossyX);
         zPosMin = (int) (center.z - lossyZ);
         zPosMax = (int) (center.z + lossyZ);
-        if(lossyX >= 10 && lossyZ >= 10){
+        if(lossyX > 9 && lossyZ > 9 && inRoom){
             StartCoroutine(EnemyDrop());
         }
     }
-    
+
+    private void OnTriggerEnter(Collider col) {
+        if(col.tag == "Position"){
+            inRoom = true;
+        }
+    }
+
     IEnumerator EnemyDrop()
     {
         while(this.enemyCount < enemyNumber){
