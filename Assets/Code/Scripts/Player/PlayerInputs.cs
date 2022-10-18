@@ -49,14 +49,11 @@ public class PlayerInputs : MonoBehaviour
         // player transform rotation from https://www.youtube.com/watch?v=CSuvGGiC2wI
         move = transform.rotation * move;
         characterController.Move(move * Time.deltaTime);
-        if(characterController.isGrounded){
+        if(characterController.isGrounded && (move.x != 0 || move.z != 0) && walking.isPlaying == false){
+            walking.volume = Random.Range(0.6f, 0.7f);
+            walking.pitch = Random.Range(0.8f, 1.1f);
             walking.Play();
-            if(walking != null && walking.isPlaying)
-            {
-                walking.Stop();
-            }
         }
-        
         Jump();
 
         velocity.y -= gravity * Time.deltaTime;
