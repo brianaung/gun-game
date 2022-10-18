@@ -11,6 +11,7 @@ public class FireThrowerController : MonoBehaviour {
 
     [SerializeField] private ParticleSystem flame;
     [SerializeField] private Light light;
+    [SerializeField] public AudioSource FlameSounds;
 
     [Header("Mouse Setting")]
     public float mouseSensitivity = 1;
@@ -73,6 +74,7 @@ public class FireThrowerController : MonoBehaviour {
     IEnumerator shoot() {
         gunRecoil();
         flame.Play();
+        FlameSounds.Play();
         yield return new WaitForSeconds(fireRate);
         canShoot = true;
     }
