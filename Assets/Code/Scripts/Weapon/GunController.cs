@@ -12,6 +12,7 @@ public class GunController : MonoBehaviour {
     [SerializeField] private Transform firePoint;
     [SerializeField] private float bulletVelocity;
     [SerializeField] public AudioSource gunSound;
+    [SerializeField] public AudioSource reloadSound;
 
     [Header("Mouse Setting")]
     public float mouseSensitivity = 1;
@@ -46,6 +47,7 @@ public class GunController : MonoBehaviour {
             currentBullet--;
             StartCoroutine(shoot());
         } else if (Input.GetKeyDown(KeyCode.R) && currentBullet<clipSize && bulletTotal>0) {
+            StartCoroutine(reload());
             if (bulletTotal>=(clipSize-currentBullet)) {
                 bulletTotal-=(clipSize-currentBullet); 
                 currentBullet = clipSize;
@@ -66,6 +68,11 @@ public class GunController : MonoBehaviour {
 
         // transform.root.localRotation = Quaternion.AngleAxis(currentRotation.x, Vector3.up);
         // transform.parent.localRotation = Quaternion.AngleAxis(-currentRotation.y, Vector3.right);
+    }
+
+    IEnumerator reload() {
+        reloadSound.Play();
+        yield return new WaitForSeconds(3);
     }
 
     IEnumerator shoot() {
