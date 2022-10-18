@@ -16,6 +16,9 @@ public class PlayerInputs : MonoBehaviour
     private bool doubleJump = false;
     private bool hasJumped = false;
     public ParticleSystem dust;
+
+    [SerializeField] AudioSource jump;
+    [SerializeField] AudioSource highjump;
     private void Awake() 
     {
         playerTransform = GetComponent<Transform>();
@@ -46,6 +49,7 @@ public class PlayerInputs : MonoBehaviour
         move = transform.rotation * move;
         characterController.Move(move * Time.deltaTime);
         
+        
         Jump();
 
         velocity.y -= gravity * Time.deltaTime;
@@ -70,6 +74,8 @@ public class PlayerInputs : MonoBehaviour
                 hasJumped = true;
                 doubleJump = true;
                 velocity.y = jumpStrength;
+                if(jumpStrength >= 18.0f) highjump.Play();
+                else jump.Play();
                 dust.Play();
             }
 
@@ -77,6 +83,8 @@ public class PlayerInputs : MonoBehaviour
             {
                 velocity.y = jumpStrength;
                 doubleJump = false;
+                if(jumpStrength >= 18.0f)highjump.Play(); 
+                else jump.Play();
                 dust.Play();
             }
         }
