@@ -27,13 +27,23 @@ public class PowerUP : MonoBehaviour
         var playerCharacter = FindObjectOfType<PlayerCharacter>();
         //var FireThrower = FindObjectOfType<FireThrowerController>();
         if (gameObject.tag == "jumpUp") {
+            FindObjectOfType<Timer>().Duration = powerUpTime;
+            FindObjectOfType<Timer>().timerText.text = "Jump++";
+            FindObjectOfType<Timer>().StartTimer();
+
             playerInput.jumpStrength *= multiplier;
         } else if (gameObject.tag == "scaleUp") {
+            FindObjectOfType<Timer>().Duration = powerUpTime;
+            FindObjectOfType<Timer>().timerText.text = "Scale++";
+            FindObjectOfType<Timer>().StartTimer();
             player.transform.localScale *= multiplier;
         } else if (gameObject.tag == "amoUp") {
             AK47.bulletTotal = AK47.bulletCapacity;
             //FireThrower.bulletTotal = 100;
         } else if (gameObject.tag == "rateUp") {
+            FindObjectOfType<Timer>().Duration = powerUpTime;
+            FindObjectOfType<Timer>().timerText.text = "FireRate++";
+            FindObjectOfType<Timer>().StartTimer();
             AK47.fireRate /= multiplier;
         } else if (gameObject.tag == "healthUp") {
             playerCharacter.currentHealth += 1;
