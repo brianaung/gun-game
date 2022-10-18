@@ -7,6 +7,8 @@ public class PowerUP : MonoBehaviour
     [SerializeField] private int multiplier = 2;
     //[SerializeField] private ParticleSystem powerUpEffect;
     [SerializeField] private int powerUpTime;
+
+    [SerializeField] public AudioSource pickUpSound;
     
     void OnTriggerEnter(Collider other) {
         if (other.CompareTag("Player")) {
@@ -43,7 +45,9 @@ public class PowerUP : MonoBehaviour
             playerCharacter.currentHealth += 1;
             playerCharacter.healthBar.SetHealth(playerCharacter.currentHealth);
         }
+
         
+        pickUpSound.Play();
         
         
         //wait for some time, then go back to normal
@@ -57,7 +61,9 @@ public class PowerUP : MonoBehaviour
         } else if (gameObject.tag == "scaleUp") {
             player.transform.localScale /= multiplier;
         } else if (gameObject.tag == "rateUp") {
-            AK47.fireRate *= multiplier;
+            if(AK47 != null){
+                AK47.fireRate *= multiplier;
+            }
         } 
         Destroy(gameObject);
     }
