@@ -189,8 +189,15 @@ public class DungeonCreator : MonoBehaviour
         floor.GetComponent<MeshFilter>().mesh = mesh;
         floor.GetComponent<MeshRenderer>().material = material;
         floor.AddComponent<MeshCollider>();
-        floor.AddComponent<EnemySpawner>();
+        floor.AddComponent<Rigidbody>();
+        floor.GetComponent<Rigidbody>().isKinematic = true;
+        floor.GetComponent<Rigidbody>().useGravity = false;
+
+
         floor.transform.parent = transform;
+
+        // Add Enemy Spawner to each floor
+        floor.AddComponent<EnemySpawner>();
         floor.GetComponent<EnemySpawner>().theEnemy = this.Enemy;
         floor.GetComponent<EnemySpawner>().enemyNumber = this.enemyNumber;
         floor.GetComponent<EnemySpawner>().Floor= vertices;
