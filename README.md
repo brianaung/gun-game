@@ -21,6 +21,8 @@ a summary of who completed what. (You should of course remove and replace this p
   - jumping/double jump, dashing (mid-air/ground), strafing
 - Ian: UI elements (health and ammo) + game controller ()
 - Ian: jump particle effect
+- Ian: Audio for guns and menu
+- Ian: Ui elements/buttons for menu 
 - Harry: weapon system: AK47/Firethrower
   - right click to shoot, press "R" to reload, press "1" or "2" to swich weapon, move mouse to trun character around
   - fire gun: it is implement with fire particle system. 
@@ -59,7 +61,17 @@ For more details you can find a guide [here](https://docs.github.com/en/github/w
 * [Code Snipets](#code-snippets)
 
 ### Game Summary
-_Exciting title_ is a first-person shooter (FPS) set in...
+Gun Game is a game where you play as capsule man going through a dungeon and killing other capsule men and then eventually ending up fighting a giant amogus after 20 kills.
+
+### How to play the game
+The game uses fairly stand mouse and keyboard inputs, WASD to move the player around, left mouse button to shoot, moving the mouse moves the camera around the player space to jump, r to reload and the numbers 1 and 2 allow you to switch to the corresponding two weapons. When the game first loads you are taken to a menu screen where you can press start to play or press controls to look over the controls or the credits to look at the credits.
+
+### Gameplay design decisions
+
+### Level design
+The biggest design decision we made is how the level is going to be like. We knew we wanted an shooter game in the third person and so an arena first came to mind. However, an area would be a bit too basic and we wanted to include some procedural generation for the level, and so we thought of doing a maze of some kind. Whilst this would work, mazes tend to be quite small as its just a bunch of corridors. We eventually came up with the idea of procedurally generating rooms and connecting them with corridors. This gives us much more space to decorate the rooms with objects and larger rooms give the player more freedom of movement.
+
+### 
 
 ### Technologies
 Project is created with:
