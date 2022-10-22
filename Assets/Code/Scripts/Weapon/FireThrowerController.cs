@@ -10,7 +10,7 @@ public class FireThrowerController : MonoBehaviour {
     public int bulletCapacity = 300;
 
     [SerializeField] private ParticleSystem flame;
-    [SerializeField] private Light light;
+    [SerializeField] private Light LightSource;
     [SerializeField] public AudioSource FlameSounds;
 
     [Header("Mouse Setting")]

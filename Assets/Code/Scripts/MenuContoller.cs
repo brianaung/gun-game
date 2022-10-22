@@ -14,7 +14,7 @@ public class MenuContoller : MonoBehaviour
     public GameObject playerCharacter;
     public GameObject Ak47;
     public GameObject Flamethrower;
-    public AudioSource audio;
+    [SerializeField] AudioSource buttonSound;
 
     private void Awake() 
     {
@@ -37,7 +37,7 @@ public class MenuContoller : MonoBehaviour
         playerCharacter.SetActive(false);
         Ak47.SetActive(false);
         Flamethrower.SetActive(false);
-        audio.Play();
+        buttonSound.Play();
     }
 
     public void CreditButton()
@@ -49,7 +49,7 @@ public class MenuContoller : MonoBehaviour
         playerCharacter.SetActive(false);
         Ak47.SetActive(false);
         Flamethrower.SetActive(false);
-        audio.Play();
+        buttonSound.Play();
     }
 
     public void BackButton()
@@ -62,6 +62,6 @@ public class MenuContoller : MonoBehaviour
         playerCharacter.SetActive(true);
         Ak47.SetActive(true);
         Flamethrower.SetActive(true);
-        audio.Play();
+        buttonSound.Play();
     }
 }

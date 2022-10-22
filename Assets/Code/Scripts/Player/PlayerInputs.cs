@@ -16,7 +16,6 @@ public class PlayerInputs : MonoBehaviour
     private bool doubleJump = false;
     private bool hasJumped = false;
     public ParticleSystem dust;
-
     [SerializeField] AudioSource jump;
     [SerializeField] AudioSource highjump;
     [SerializeField] AudioSource walking;
