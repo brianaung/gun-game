@@ -17,13 +17,10 @@ public class CameraController : MonoBehaviour
     private float smoothTime = 0.1f;
     private float cameraCollisionOffset = 0.5f;
     private float maxDist = 3f;
-    private float playerCamDist;
     private void Awake() 
     {
         playerTransform = player.transform;
         transform.position = playerTransform.position - (transform.forward * -zOffset) + (transform.up * yOffset);
-        playerCamDist = Vector3.Distance(playerTransform.position, transform.position);
-        
     }
 
     public void cameraMove()

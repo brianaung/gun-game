@@ -61,22 +61,20 @@ For more details you can find a guide [here](https://docs.github.com/en/github/w
 * [Code Snipets](#code-snippets)
 
 ### Game Summary
-Gun Game is a game where you play as capsule man going through a dungeon and killing other capsule men and then eventually ending up fighting a giant amogus after 20 kills.
+Gun Game is a game where you play as a capsule man going through a dungeon and killing other capsule men and then eventually ending up fighting a giant amogus after 20 kills.
 
 ### How to play the game
 The game uses fairly stand mouse and keyboard inputs, WASD to move the player around, left mouse button to shoot, moving the mouse moves the camera around the player space to jump, r to reload and the numbers 1 and 2 allow you to switch to the corresponding two weapons. When the game first loads you are taken to a menu screen where you can press start to play or press controls to look over the controls or the credits to look at the credits.
 
-### Gameplay design decisions
-
 ### Level design
-The biggest design decision we made is how the level is going to be like. We knew we wanted an shooter game in the third person and so an arena first came to mind. However, an area would be a bit too basic and we wanted to include some procedural generation for the level, and so we thought of doing a maze of some kind. Whilst this would work, mazes tend to be quite small as its just a bunch of corridors. We eventually came up with the idea of procedurally generating rooms and connecting them with corridors. This gives us much more space to decorate the rooms with objects and larger rooms give the player more freedom of movement.
+The biggest design decision we made is how the level is going to be like. We knew we wanted a shooter game in the third person and so an arena first came to mind. However, an area would be a bit too basic and we wanted to include some procedural generation for the level, and so we thought of doing a maze of some kind. Whilst this would work, mazes tend to be quite small as it's just a bunch of corridors. We eventually came up with the idea of procedurally generating rooms and connecting them with corridors. This gives us much more space to decorate the rooms with objects and larger rooms give the player more freedom of movement.
 
 ### Player and Camera controls
-The next gameplay decision was how the player is going to be controlled. We opted for the standard mouse and keyboard controls, WASD, space, left mouse button, etc., as that is what most shooter games use. We could have added a controller option however we thought mouse and keyboard controls were best due to the accuracy of a mouse would fit the game much better than controller thumb sticks.
+The next gameplay decision was how the player is going to be controlled. We opted for the standard mouse and keyboard controls, WASD, space, left mouse button, etc., as that is what most shooter games use. We could have added a controller option however we thought mouse and keyboard controls were best due to the accuracy of a mouse would fit the game much better than controller thumbsticks.
 
 Another thing we had to consider is making the game with a first person perspective or third person perspective. Whilst the game can work with a first person perspective and easier as dealing with camera collision makes the camera movement a bit more complicated, making the game third person, gives the player a larger field of view allowing the player to see enemies on the sides more easily, making for a better gameplay experience.
 
-Another design related decision that needs to be made in regards to the camera is how it is going to collide with the objects around it. An early implementation of camera collision was to check slighly behind the camera for objects, however, when using the position of the camera, as a start point of a linecast. Something like this,
+Another design related decision that needs to be made in regards to the camera is how it is going to collide with the objects around it. An early implementation of camera collision was to check slightly behind the camera for objects, however, when using the position of the camera, as a start point of a linecast. Something like this,
 ``` C#
 if(Physics.Linecast(camTransform.position + offset, camTransform.position - offset, out var hit))
 {
@@ -84,7 +82,7 @@ if(Physics.Linecast(camTransform.position + offset, camTransform.position - offs
 }
  
 ```
-will make the camera stick to the wall. This can be patched with checking if the player's distance from the camera gets to large than the camera will move to its normal position, however, that is only janky patch and not actually a fix as the gameplay experience isn't that great as the camera will suddenly move forwards.
+will make the camera stick to the wall. This can be patched with checking if the player's distance from the camera gets to larger than the camera will move to its normal position, however, that is only a janky patch and not actually a fix as the gameplay experience isn't that great as the camera will suddenly move forwards.
 
 Eventually we ended up going for a more simple route, which is just checking for objects between the player and camera. However, since the player is also an object we must include a slight offset so the linecast avoids the player. Something like this
 ``` C#
@@ -94,6 +92,29 @@ Eventually we ended up going for a more simple route, which is just checking for
   }
 ```
 Whilst this isn't a perfect solution, enemies or objects when close enough can mess with the camera position, it is a solution that works well enough and was easily implemented.
+
+### Boss level
+A gameplay decision we had to make was how do we end the game? The game wasn't endless and so we decided to add in a boss enemy at the end. There are many ways of adding a boss enemy to a game, however, with how we did the level design, much more thought was needed to determine the best way to add the boss. For example, what room do we add the boss? At what point in the game do we add the boss? These were the big questions we had to think about. We first thought about adding the boss in the biggest room that was generated. However, due to the nature of how the level was generated we couldn't guarantee a large room since we wanted to make the boss large in comparison to the player. We could've figured out a way to generate a predetermined size room specifically for the boss but adding that into the dungeon generator made it too complicated. And so, rather than making the boss a part of the dungeon we decided to make the boss its own scene. With the boss having its own scene, we could design the level specifically for the boss and not have to worry about the limitations of the dungeon generator as we can design the level to the needs of the boss. 
+
+The next decision we had to make was how to transition from the dungeon level to the boss level. There was a couple of ways to do this, the first is a time limit, which can be implemented quite easily, however, we wanted the player to be able to explore the dungeon at their own leisure, and with different dungeon sizes, the time limit needs to be altered which adds to unnecessary coupling. We ended up deciding on using a kill counter to determine when the player will transition to the boss level. We also thought about using the number of rooms cleared but that would still be the equivalent to a kill counter, and if we decided to make the game more maze like the player wouldn't need to clearevery room completely to transition to the boss level.
+
+### Procedural Generation Technique 
+# TODO: Add more details
+We wanted to use procedural generation is regards to the making the dungeon and the simplest way of doing that was generating rooms and then connecting them with corridors. For the room generation, we used an algorithm called Binary Space Partitioning which subdivides a space into smaller spaces. And so, repeatedly doing that will split a large space into smaller spaces which will act as rooms. Adding straight line paths from each room to another room and walls around the paths and rooms will create a complete dungeon. 
+
+### Shader pipeline
+
+## Cel Shader
+
+## Pixelated Shader
+
+
+### Particle System
+## TODO: Which one do we want marked?
+Enemy explosion/Flamethrower in Assets/Level/Prefabs/Effects
+
+### Evaluation
+## TODO: Evaluation stuff
 
 ### Technologies
 Project is created with:
