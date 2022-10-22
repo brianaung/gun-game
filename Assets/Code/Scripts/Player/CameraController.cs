@@ -43,9 +43,9 @@ public class CameraController : MonoBehaviour
 
         var newPosition = playerTransform.position - (transform.forward * -zOffset) + (transform.up * yOffset);
 
-        if(Physics.Linecast(playerTransform.position - (transform.forward * cameraCollisionOffset), newPosition, out var hit2))
+        if(Physics.Linecast(playerTransform.position - (transform.forward * cameraCollisionOffset), newPosition, out var hit))
         {
-            transform.position = hit2.point;
+            transform.position = hit.point;
         }
         else
         {
