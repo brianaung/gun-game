@@ -54,7 +54,7 @@ public class EnemySpawner : MonoBehaviour
             int xPos, zPos;
             xPos = Random.Range(xPosMin, xPosMax);
             zPos = Random.Range(zPosMin, zPosMax);
-            Instantiate(theEnemy, new Vector3(xPos, 1, zPos), Quaternion.identity);
+            Instantiate(theEnemy, new Vector3(xPos, 0, zPos), Quaternion.identity);
             yield return new WaitForSeconds(0.5f);
             this.enemyCount+=1;
         }
