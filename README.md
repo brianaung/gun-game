@@ -134,7 +134,7 @@ Path: Assets/Code/Shaders/CelShader.shader
 
 ### Particle System
 ## TODO: Which one do we want marked?
-Enemy explosion/Flamethrower in Assets/Level/Prefabs/Effects
+Flamethrower effect in Assets/Level/Prefabs/Effects
 
 ### Evaluation
 ## TODO: Evaluation stuff
