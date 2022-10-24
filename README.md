@@ -99,12 +99,35 @@ A gameplay decision we had to make was how do we end the game? The game wasn't e
 The next decision we had to make was how to transition from the dungeon level to the boss level. There was a couple of ways to do this, the first is a time limit, which can be implemented quite easily, however, we wanted the player to be able to explore the dungeon at their own leisure, and with different dungeon sizes, the time limit needs to be altered which adds to unnecessary coupling. We ended up deciding on using a kill counter to determine when the player will transition to the boss level. We also thought about using the number of rooms cleared but that would still be the equivalent to a kill counter, and if we decided to make the game more maze like the player wouldn't need to clearevery room completely to transition to the boss level.
 
 ### Procedural Generation Technique 
-# TODO: Add more details
-We wanted to use procedural generation is regards to the making the dungeon and the simplest way of doing that was generating rooms and then connecting them with corridors. For the room generation, we used an algorithm called Binary Space Partitioning which subdivides a space into smaller spaces. And so, repeatedly doing that will split a large space into smaller spaces which will act as rooms. Adding straight line paths from each room to another room and walls around the paths and rooms will create a complete dungeon. 
+
+For the level design, we wanted to create a dungeon that will be different each time the user plays the game (something like minecraft where the world will be different each time you start a new game). Therefore we decided to use procedural generation to randomly generate rooms. The main algorithm used is called Binary Space Partitioning.
+
+The high level overview of the algorithm is: 
+1. first we define the space where we want to generate the entire dungeon.
+2. after that, the parent room is divided into smaller rooms if the is larger than the minimum room size that we defined (we set some offsets so the rooms created are of different sizes)
+3. repeat step 2 until all rooms are small enough and can not be divided further.
+4. to build the corridors that connect the rooms (and ensure that all rooms can be reached by the player), we connect the parent node with its children nodes in the tree construct when splitting the room.
+
+After applying this procedural generation algorithm, we simply place the prefab assets onto the scene at random positions on the map. Since we are just using premade assets of the natural environment (trees, rocks, etc.), spawing them at random positions make sense.
+
+This algorithm can be used to easily generate dungeons as large as you want and as complicated by adjusting the parameters. However, we decided to generate a smaller and less complicated dungeon consisting of around 5 or 6 rooms since we do not want to make the player spend a long time defeating smaller enemies before reaching the final boss scene.
 
 ### Shader pipeline
 
 ## Cel Shader
+
+We used cel shading technique to create fun and cartoonish aesthetic to our game.
+
+Some features of our cel shader:
+- object glossiness
+- rim effect using Fresnel around the objects
+- different number of shadow steps and sizes
+- customizable outlines (some objects have thicker outline with distinct colors to make it pop more. e.g. Powerups)
+
+Why Cel shading?
+- Since our team lack member who have experience with creating our own assets (in blender for example), we decided to mostly download free assets from different sources. Using the cel shading technique helped us make the aesthetic of all the assets more consistent and do not make them look out of place. For the assets, we mostly use low poly assets (objects made with low polygon count with flat surfaces) since we want to make the game look cartoonish and simple. Therefore, the cel shading technique matches more with these low poly assets, making the game looks simple yet looks good.
+
+Path: Assets/Code/Shaders/CelShader.shader
 
 ## Pixelated Shader
 
@@ -151,3 +174,14 @@ public class CameraController : MonoBehaviour
 https://www.youtube.com/watch?v=zVX9-c_aZVg
 https://www.youtube.com/watch?v=CSuvGGiC2wI
 https://docs.unity3d.com/ScriptReference/CharacterController.Move.html
+
+#### For Procedural generation
+https://www.youtube.com/watch?v=JSRBdUhRBu4
+https://www.jamesbaum.co.uk/blether/procedural-generation-with-binary-space-partitions-and-rust/
+https://medium.com/@guribemontero/dungeon-generation-using-binary-space-trees-47d4a668e2d0
+
+#### For Cel shading
+https://www.youtube.com/watch?v=kV4IG811DUU&t=250s
+https://danielilett.com/2019-05-29-tut2-intro/
+https://roystan.net/articles/toon-shader/
+https://www.ronja-tutorials.com/post/032-improved-toon/#specular-highlights
