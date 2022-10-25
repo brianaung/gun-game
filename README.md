@@ -135,9 +135,9 @@ We used pixeleated shader to provide sqecial visual effect when player is attack
 
 - This shader is assigned to a material called "pixeleted" and controled by a script called pixelationShaderHandeller. It will enable picelated material when collision was detected and disabled after 2 seconds. 
 
-The aim of this pixelated shader is to blur the whole scene when player was attacked. 
+- The aim of this pixelated shader is to blur the whole screen when player was attacked. 
 
-The team trying to assign this material to all the objects in the scene. However, we find it is very inefficiency and almost impossable to do so. Therefore, pixelated material was assigned to camera, which works as a filter. It turned out very efficient and easy to do so. 
+- The team trying to assign this material to all the objects in the scene. However, we find it is very inefficiency and almost impossable to do so. Therefore, pixelated material was assigned to camera, which works as a filter. It turned out very efficient and easy to do so. 
 
 How this be done
 - the screen was divided to specific number of pixels with fixed width and height. Each pixcel was assigned to a texture which is extracted from the main texture. 
