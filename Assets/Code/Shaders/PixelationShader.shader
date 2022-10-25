@@ -2,7 +2,7 @@ Shader "deeznuts/PixelationShader"
 {
     Properties
     {
-        _MainTex ("Texture", 2D) = "white" {}
+        _MainTex ("Texture", 2D) = "White" {}
         _pixels("Resolution", int) = 512
         _pw ("PixelWidth", float) = 64
         _ph ("PixelHight", float) = 64
