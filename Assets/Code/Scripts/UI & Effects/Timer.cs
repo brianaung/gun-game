@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using TMPro;
 public class Timer : MonoBehaviour
 {
    [SerializeField] private Image timerBackground ;
    [SerializeField] private Image timerFill ;
-   [SerializeField] public Text timerText ;
+   [SerializeField] public TMP_Text timerText ;
 
    public int Duration;
    public int RemainDuration;
