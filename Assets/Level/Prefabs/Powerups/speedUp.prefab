@@ -49,7 +49,7 @@ GameObject:
   - component: {fileID: 6855209276886896563}
   m_Layer: 0
   m_Name: scaleUp
-  m_TagString: scaleUp
+  m_TagString: speedUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
