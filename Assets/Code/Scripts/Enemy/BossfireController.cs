@@ -43,11 +43,7 @@ public class BossfireController : MonoBehaviour
     private void OnParticleCollision(GameObject enemy) {
         if (enemy.CompareTag("Player")) {
             this.onHit.Invoke();
-
         }
-
-        
-        
     }
 
 }

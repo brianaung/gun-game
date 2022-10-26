@@ -19,6 +19,7 @@ public class BossController : MonoBehaviour
     {
         var particles = Instantiate(this.deathEffect);
         particles.transform.position = -transform.position;
+        Destroy(gameObject);
 
         GameManager.Instance.playAgain();
     }
