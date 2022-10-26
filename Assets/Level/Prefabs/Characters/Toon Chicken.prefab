@@ -310,7 +310,9 @@ GameObject:
   - component: {fileID: 6822172307032873425}
   - component: {fileID: -8551571386667429368}
   - component: {fileID: 5841532960146725395}
-  - component: {fileID: 6459862098695879951}
+  - component: {fileID: 4504204549471983663}
+  - component: {fileID: 1742453849960286494}
+  - component: {fileID: 4769559964829010463}
   m_Layer: 0
   m_Name: Toon Chicken
   m_TagString: Enemy
@@ -496,7 +498,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!135 &6459862098695879951
+--- !u!65 &4504204549471983663
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1311290861401530}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.19211844, y: 0.13832927, z: 0.33122006}
+  m_Center: {x: 0.0024443492, y: 0.20796958, z: -0.012558103}
+--- !u!135 &1742453849960286494
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -507,8 +522,21 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.3
-  m_Center: {x: 0, y: 0.25, z: 0}
+  m_Radius: 0.18261477
+  m_Center: {x: -1.3767568e-17, y: 0.28291255, z: 0.0322188}
+--- !u!65 &4769559964829010463
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1311290861401530}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.15, y: 0.22, z: 0.25}
+  m_Center: {x: 0, y: 0.1, z: 0}
 --- !u!1 &1325880688823160
 GameObject:
   m_ObjectHideFlags: 0
