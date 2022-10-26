@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.666209, g: 0.8827703, b: 0.88574874, a: 1}
+  m_IndirectSpecularColor: {r: 0.66621685, g: 0.8827709, b: 0.8857476, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -928,13 +928,21 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1275521235203733008, guid: c622029afddbdbc4598e46f6ebadae3d, type: 3}
+      propertyPath: startingHealth
+      value: 400
+      objectReference: {fileID: 0}
     - target: {fileID: 1513270080133518086, guid: c622029afddbdbc4598e46f6ebadae3d, type: 3}
       propertyPath: contact
       value: 
       objectReference: {fileID: 1458213353}
     - target: {fileID: 1513270080133518086, guid: c622029afddbdbc4598e46f6ebadae3d, type: 3}
       propertyPath: moveSpeed
-      value: 10
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1513270080133518086, guid: c622029afddbdbc4598e46f6ebadae3d, type: 3}
+      propertyPath: enemyHealth
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 3619264502078153872, guid: c622029afddbdbc4598e46f6ebadae3d, type: 3}
       propertyPath: m_Name
@@ -4982,13 +4990,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c583f3ac7d6d9b45816127249e68395, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  theEnemy: {fileID: 2165856287477778891, guid: 07479aa2f29b7fb4792cd7f490fb2d8b, type: 3}
-  Floor:
-  - {x: -0.02, y: 10, z: -0.4}
-  - {x: 0.28, y: 10, z: 0.1}
-  - {x: -0.02, y: 10, z: 0.1}
-  - {x: 0.28, y: 10, z: -0.4}
-  enemyNumber: 10
+  theEnemy: {fileID: 1311290861401530, guid: 312b31977ed9b2d48a14849ebb8c7fb3, type: 3}
+  Floor: []
+  enemyNumber: 4
 --- !u!1001 &1273967408
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11442,9 +11446,7 @@ GameObject:
   - component: {fileID: 1729386582}
   - component: {fileID: 1729386581}
   - component: {fileID: 1729386580}
-  - component: {fileID: 1729386579}
   - component: {fileID: 1729386578}
-  - component: {fileID: 1729386577}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -11452,25 +11454,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1729386577
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1729386576}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c583f3ac7d6d9b45816127249e68395, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  theEnemy: {fileID: 2165856287477778891, guid: 07479aa2f29b7fb4792cd7f490fb2d8b, type: 3}
-  Floor:
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  enemyNumber: 0
 --- !u!23 &1729386578
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11513,24 +11496,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &1729386579
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1729386576}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53b82e0b901e594418f008ab4e2b78b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  deathEffect: {fileID: 0}
-  speedUp: {fileID: 0}
-  jumpUp: {fileID: 0}
-  amoUp: {fileID: 0}
-  rateUp: {fileID: 0}
-  healthUp: {fileID: 0}
 --- !u!114 &1729386580
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12612,7 +12577,7 @@ AudioSource:
   m_PlayOnAwake: 0
   m_Volume: 0.905
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

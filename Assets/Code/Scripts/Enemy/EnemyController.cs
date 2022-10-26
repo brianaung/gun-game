@@ -20,7 +20,7 @@ public class EnemyController : MonoBehaviour
     public void Kill()
     {
         var particles = Instantiate(this.deathEffect);
-        particles.transform.position = transform.position;
+        particles.transform.position = -transform.position;
         DropProp();
     }
 
