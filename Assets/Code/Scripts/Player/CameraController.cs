@@ -16,7 +16,6 @@ public class CameraController : MonoBehaviour
     private Vector3 camVelocity = Vector3.zero;
     private float smoothTime = 0.1f;
     private float cameraCollisionOffset = 0.5f;
-    private float maxDist = 3f;
     private void Awake() 
     {
         playerTransform = player.transform;

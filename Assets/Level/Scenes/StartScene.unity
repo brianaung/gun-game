@@ -1804,7 +1804,17 @@ MonoBehaviour:
 
 
     Power
-    Up Sound - https://mixkit.co/free-sound-effects/game/'
+    Up Sound - https://mixkit.co/free-sound-effects/game/
+
+
+    Dash Sound - https://mixkit.co/free-sound-effects/whoosh/
+
+
+    Flamethrower
+    Sound - QuickSound.com
+
+
+    Walking Sound - FesliyanStudio.com'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 78eb5844a3c784448ae192e01909e912, type: 2}
   m_sharedMaterial: {fileID: -765277969113800840, guid: 78eb5844a3c784448ae192e01909e912, type: 2}
@@ -4956,7 +4966,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1585984240}
   m_Direction: 2
   m_Value: 1.0000007
-  m_Size: 0.5177536
+  m_Size: 0.51775366
   m_NumberOfSteps: 1
   m_OnValueChanged:
     m_PersistentCalls:
