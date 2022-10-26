@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class GunController : MonoBehaviour {
     [Header("Gun Setting")]
-    public float fireRate = 0.1f;
+    public float fireRate = 0.05f;
     public int clipSize = 20;
     public int bulletCapacity = 300;
     [SerializeField] private GameObject projectilePrefab;
@@ -21,7 +21,6 @@ public class GunController : MonoBehaviour {
     //weapon Recoil
     public bool randomRecoil;
     public Vector2 randomRecoilConstraints;
-
 
     //variable
     bool canShoot;

@@ -34,11 +34,11 @@ public class PowerUP : MonoBehaviour
             FindObjectOfType<Timer>().StartTimer();
 
             playerInput.jumpStrength *= multiplier;
-        } else if (gameObject.tag == "scaleUp") {
+        } else if (gameObject.tag == "speedUp") { // this doesnt work for some reason
             FindObjectOfType<Timer>().Duration = powerUpTime;
-            FindObjectOfType<Timer>().timerText.text = "Scale++";
+            FindObjectOfType<Timer>().timerText.text = "Speed++";
             FindObjectOfType<Timer>().StartTimer();
-            player.transform.localScale *= multiplier;
+            playerInput.playerSpeed *= multiplier;
         } else if (gameObject.tag == "amoUp") {
             if(AK47 != null){
                 AK47.bulletTotal = AK47.bulletCapacity;
@@ -68,8 +68,6 @@ public class PowerUP : MonoBehaviour
             playerInput.playerSpeed /= multiplier;
         } else if (gameObject.tag == "jumpUp") {
             playerInput.jumpStrength /= multiplier;
-        } else if (gameObject.tag == "scaleUp") {
-            player.transform.localScale /= multiplier;
         } else if (gameObject.tag == "rateUp") {
             if(AK47 != null){
                 AK47.fireRate *= multiplier;

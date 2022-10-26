@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1770068563757794977}
   m_Layer: 0
   m_Name: amoUp
-  m_TagString: Untagged
+  m_TagString: amoUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

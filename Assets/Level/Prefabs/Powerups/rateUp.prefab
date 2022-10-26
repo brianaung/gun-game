@@ -242,7 +242,7 @@ GameObject:
   - component: {fileID: 5901070926009600999}
   m_Layer: 0
   m_Name: rateUp
-  m_TagString: Untagged
+  m_TagString: rateUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

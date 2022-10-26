@@ -475,7 +475,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathEffect: {fileID: 3417599769178259043, guid: c20ae4c7313f74a4abbfb85ee7397c6f, type: 3}
-  scaleUp: {fileID: 6728736152183632276, guid: b8a0f0051166348eab71fbe7d572be7e, type: 3}
+  speedUp: {fileID: 6728736152183632276, guid: b8a0f0051166348eab71fbe7d572be7e, type: 3}
   jumpUp: {fileID: 8712131369160462019, guid: 28dda755aabfb402dae8e64fc432334d, type: 3}
   amoUp: {fileID: 1770068563757794982, guid: 1293d3cdc09d2443c9e88240ef4eb309, type: 3}
   rateUp: {fileID: 5901070926009600996, guid: 54db46571b3cd4cb7a60dea1bc3ab013, type: 3}

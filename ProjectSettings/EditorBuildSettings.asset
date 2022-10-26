@@ -14,7 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Level/Scenes/BackupBoss.unity
     guid: 7ceb219d9efdcdc4fa10b84fe9580208
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Level/Scenes/Level 0.unity
-    guid: d0baf2bbcd925bb44b4edf28291eedfe
+    path: Assets/Level/Scenes/BossScene.unity
+    guid: 8bad9b8ad598bc044b911d71c84976a0
   m_configObjects: {}
