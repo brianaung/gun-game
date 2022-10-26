@@ -5,7 +5,6 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     public GameObject player;
-    public Camera cam;
     public float yOffset = 1.0f;
     public float zOffset = -5.0f;
     public float sensitivity = 1.0f;
