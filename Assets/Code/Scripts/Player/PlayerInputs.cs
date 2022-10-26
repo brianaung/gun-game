@@ -6,19 +6,22 @@ public class PlayerInputs : MonoBehaviour
 {
     public float playerSpeed = 9.0f;
     public float jumpStrength = 9.0f;
-    public float dashStrength = 5.0f;
+    public float dashStrength = 20.0f;
     public float sensitivity = 1.0f;
-    public float dashCooldownTime = 1f;
+    public float dashCooldownTime = 2f;
+    public float dashTime = 0.3f;
     private Transform playerTransform;
     public float gravity = 25f;
     private CharacterController characterController;
     private Vector3 velocity;
     private bool doubleJump = false;
     private bool hasJumped = false;
+    private float dashTimer;
     public ParticleSystem dust;
     [SerializeField] AudioSource jump;
     [SerializeField] AudioSource highjump;
     [SerializeField] AudioSource walking;
+    [SerializeField] AudioSource dash;
     private void Awake() 
     {
         playerTransform = GetComponent<Transform>();
@@ -53,6 +56,17 @@ public class PlayerInputs : MonoBehaviour
             walking.pitch = Random.Range(0.7f, 0.9f);
             walking.Play();
         }
+        var direction = Vector3.Normalize(move);
+        
+        dashTimer += Time.deltaTime;
+
+        if(Input.GetKeyDown(KeyCode.LeftShift) && dashTimer > dashCooldownTime)
+        {
+            StartCoroutine(dashCoroutine(direction));
+            dashTimer = 0f;
+            dash.Play();
+        }
+
         Jump();
 
         velocity.y -= gravity * Time.deltaTime;
@@ -68,7 +82,6 @@ public class PlayerInputs : MonoBehaviour
     {
         playerTransform.Rotate(new Vector3(0, Input.GetAxis("Mouse X") * sensitivity,0));
     }
-
     public void Jump()
     {
         if(Input.GetButtonDown("Jump"))
@@ -91,5 +104,17 @@ public class PlayerInputs : MonoBehaviour
                 dust.Play();
             }
         }
+    }
+
+    IEnumerator dashCoroutine(Vector3 direction)
+    {
+        var startTime = Time.time;
+
+        while(Time.time - startTime < dashTime)
+        {
+            characterController.Move(direction * dashStrength * Time.deltaTime);
+            yield return null;
+        }
+        
     }
 }

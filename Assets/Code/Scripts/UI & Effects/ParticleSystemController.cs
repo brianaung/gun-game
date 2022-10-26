@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ParticleSystemController : MonoBehaviour
 {
-    public ParticleSystem particleSystem;
+    public ParticleSystem particle;
     [SerializeField] private int damageAmount = 10;
 
     private void OnParticleCollision(GameObject enemy) {

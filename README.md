@@ -146,14 +146,13 @@ Path: Assets/Code/Shaders/PixelationShader.shader
 
 
 ### Particle System
-## TODO: Which one do we want marked?
 Flamethrower effect in Assets/Level/Prefabs/Effects
 This flame particle system is made into cartoonish style on purpose in order to match our game aesthetic. 
 
 Attributes were changed based on the apperence of the flame. 
 
 Attributes varied
-- Start lifetime was randomed between 1 and 2. This attribute is worked with start speed to make sure the flame has reasonable length. The randomness of lifetime makes sure the flame particle die out naturally.
+-  Start lifetime was randomed between 1 and 2. This attribute is worked with start speed to make sure the flame has reasonable length. The randomness of lifetime makes sure the flame particle die out naturally.
 -  Max particles was set to 3000 to make flame look good.
 -  Shape of particle system is set to cone shape, with radius 0.1 and angle 1. This is can enable all the particles bounds together.
 -  Color over lifetime was from yellow to red in order to mimic flame. 
@@ -163,7 +162,7 @@ Attributes varied
 Another particle system "FireEmbers" was add under the hariachy of this flame particle system to make it looks nice. 
 
 ### Evaluation
-## TODO: Evaluation stuff
+
 
 ### Technologies
 Project is created with:
