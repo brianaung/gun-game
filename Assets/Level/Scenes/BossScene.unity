@@ -1009,6 +1009,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6728736152183632276, guid: b8a0f0051166348eab71fbe7d572be7e, type: 3}
     - target: {fileID: 6863940792518330758, guid: c622029afddbdbc4598e46f6ebadae3d, type: 3}
+      propertyPath: speedUp
+      value: 
+      objectReference: {fileID: 6728736152183632276, guid: b8a0f0051166348eab71fbe7d572be7e, type: 3}
+    - target: {fileID: 6863940792518330758, guid: c622029afddbdbc4598e46f6ebadae3d, type: 3}
       propertyPath: healthUp
       value: 
       objectReference: {fileID: 4820968590678061732, guid: de2254a2fd0b94a669af92736f7b206f, type: 3}
