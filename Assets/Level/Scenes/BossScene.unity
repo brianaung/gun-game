@@ -11255,7 +11255,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerKills: 0
-  startScreen: StartScreen
+  startScreen: StartScene
   gameOver: 0
   bossScene: BossScene
 --- !u!4 &1681301846
@@ -12119,7 +12119,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 2067627237}
-  cam: {fileID: 1016359933}
   yOffset: 1
   zOffset: -10
   sensitivity: 1
