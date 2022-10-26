@@ -24,11 +24,7 @@ public class PlayerCharacter : MonoBehaviour
 
     private void OnTriggerEnter(Collider col) {
         if(col.gameObject.tag == this.enemyTag){
-            if (currentHealth > 0) {
-                currentHealth--;
-                healthBar.SetHealth(currentHealth);
-            }
-            isShot = true;
+            this.ApplyDamage();
         }
     }
 
@@ -46,6 +42,14 @@ public class PlayerCharacter : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
             GameManager.Instance.endGame();
         }
+    }
+
+    public void ApplyDamage(){
+        if (currentHealth > 0) {
+            currentHealth--;
+            healthBar.SetHealth(currentHealth);
+        }
+        isShot = true;
     }
 
     IEnumerator Blur() {

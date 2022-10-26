@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class BossfireController : MonoBehaviour
 {
     public ParticleSystem bossfire;
     [SerializeField] private int damageAmount = 10;
+    [SerializeField] private UnityEvent onHit;
 
     bool canShoot;
     private void Start() {
@@ -40,9 +42,8 @@ public class BossfireController : MonoBehaviour
 
     private void OnParticleCollision(GameObject enemy) {
         if (enemy.CompareTag("Player")) {
-            // var healthManager = enemy.gameObject.GetComponent<HealthManager>();
-            // healthManager.ApplyDamage(this.damageAmount);
-            Debug.Log("hit by boss fire");
+            this.onHit.Invoke();
+
         }
 
         

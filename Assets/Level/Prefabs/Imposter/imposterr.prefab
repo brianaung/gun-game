@@ -203,7 +203,6 @@ GameObject:
   - component: {fileID: 4315939590478345641}
   - component: {fileID: 1513270080133518086}
   - component: {fileID: 1275521235203733008}
-  - component: {fileID: 6863940792518330758}
   - component: {fileID: 8519221628408164478}
   - component: {fileID: 7921603138445257139}
   - component: {fileID: 7689493535336028664}
@@ -308,6 +307,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   enemyHealth: 200
+  contact: {fileID: 0}
   thePlayer: {fileID: 8329708556879167979, guid: eca97d98d8ab33a4583ede23761ceabe, type: 3}
 --- !u!114 &1275521235203733008
 MonoBehaviour:
@@ -326,7 +326,7 @@ MonoBehaviour:
   onDeath:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6863940792518330758}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: EnemyController, Assembly-CSharp
         m_MethodName: Kill
         m_Mode: 1
@@ -338,25 +338,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &6863940792518330758
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3619264502078153872}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53b82e0b901e594418f008ab4e2b78b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  deathEffect: {fileID: 3417599769178259043, guid: c20ae4c7313f74a4abbfb85ee7397c6f, type: 3}
-  speedUp: {fileID: 0}
-  scaleUp: {fileID: 0}
-  jumpUp: {fileID: 0}
-  amoUp: {fileID: 0}
-  rateUp: {fileID: 0}
-  healthUp: {fileID: 0}
 --- !u!136 &8519221628408164478
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -386,6 +367,7 @@ MonoBehaviour:
   collisionParticles: {fileID: 3417599769178259043, guid: c20ae4c7313f74a4abbfb85ee7397c6f, type: 3}
   tagToDamage: Player
   Role: boss
+  clip: {fileID: 0}
 --- !u!54 &7689493535336028664
 Rigidbody:
   m_ObjectHideFlags: 0
