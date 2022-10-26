@@ -34,10 +34,10 @@ public class EnemyController : MonoBehaviour
         } else if (num % 11 == 0) {
             var speedUp = Instantiate(this.speedUp);
             speedUp.transform.position = position;
-        } else if (num % 7 == 0) {
+        } else if (num % 5 == 0) {
             var amoUp = Instantiate(this.amoUp);
             amoUp.transform.position = position;
-        } else if (num % 5 == 0) {
+        } else if (num % 7 == 0) {
             var rateUp = Instantiate(this.rateUp);
             rateUp.transform.position = position;
         } else if (num % 3 == 0) {
