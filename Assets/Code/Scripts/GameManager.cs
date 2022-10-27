@@ -2,13 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     public int playerKills;
     public string startScreen;
     public bool gameOver = false;
+
+    public bool gameWin = false;
     public string bossScene;
+    [SerializeField] TMP_Text winText;
     private void Awake() {
 
         if(Instance == null)
@@ -36,6 +40,11 @@ public class GameManager : MonoBehaviour
     public void endGame()
     {
         gameOver = true;
+    }
+
+    public void winGame()
+    {
+        gameWin = true;
     }
 
     public void playAgain()

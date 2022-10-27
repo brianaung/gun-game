@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,7 +8,7 @@ public class BossController : MonoBehaviour
     [SerializeField] private ParticleSystem deathEffect;
     private MeshRenderer _renderer;
 
-
+    private int wait = 5;
 
     private void Awake()
     {
@@ -20,7 +21,6 @@ public class BossController : MonoBehaviour
         var particles = Instantiate(this.deathEffect);
         particles.transform.position = -transform.position;
         Destroy(gameObject);
-
-        GameManager.Instance.playAgain();
+        GameManager.Instance.winGame();
     }
 }

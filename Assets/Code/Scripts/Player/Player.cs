@@ -13,18 +13,19 @@ public class Player : MonoBehaviour
     }
     void Update()
     {
-        if(!GameManager.Instance.gameOver)
+        if(!GameManager.Instance.gameOver && !GameManager.Instance.gameWin)
         {
             playerInputs.handleMovement();
             playerInputs.handleRotation();
             cameraController.cameraMove();   
         }
 
-        if(GameManager.Instance.gameOver)
+        if(GameManager.Instance.gameOver || GameManager.Instance.gameWin)
         {
             if(Input.GetKeyDown(KeyCode.Return))
             {
                 GameManager.Instance.playAgain();
+                Cursor.lockState = CursorLockMode.None;
             }
         }
 

@@ -22,6 +22,12 @@ public class UIManager : MonoBehaviour
         {
             endGameText.text = "You Died! D: \n Press enter to return to the main menu";
         }
+
+        else if(GameManager.Instance.gameWin)
+        {
+            endGameText.text = "You Win! :D \n Press enter to return to the main menu";
+        }
+
         else
         {
             endGameText.text = "";
