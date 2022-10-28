@@ -8,8 +8,6 @@ public class BossController : MonoBehaviour
     [SerializeField] private ParticleSystem deathEffect;
     private MeshRenderer _renderer;
 
-    private int wait = 5;
-
     private void Awake()
     {
         this._renderer = gameObject.GetComponent<MeshRenderer>();

@@ -60,7 +60,7 @@ public class PlayerInputs : MonoBehaviour
         
         dashTimer += Time.deltaTime;
 
-        if(Input.GetKeyDown(KeyCode.LeftShift) && dashTimer > dashCooldownTime)
+        if((Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift)) && dashTimer > dashCooldownTime)
         {
             StartCoroutine(dashCoroutine(direction));
             dashTimer = 0f;

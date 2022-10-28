@@ -30,9 +30,9 @@ public class GunController : MonoBehaviour {
     //muzzel flash
     public Image muzzleFlashImage;
     public Sprite[] flashes;  
-
+    private float timer;
     private void Start() {
-        canShoot = true;
+        timer = fireRate;
         currentBullet = clipSize;
         bulletTotal = bulletCapacity;
         muzzleFlashImage.sprite = null;
@@ -41,8 +41,9 @@ public class GunController : MonoBehaviour {
       
     private void Update() {
         gunMovement();
-        if (Input.GetMouseButton(0) && canShoot && currentBullet>0) {
-            canShoot = false;
+        timer += Time.deltaTime;
+        if (Input.GetMouseButton(0) && (timer >= fireRate) && currentBullet>0) {
+            timer = 0;
             currentBullet--;
             StartCoroutine(shoot());
         } else if (Input.GetKeyDown(KeyCode.R) && currentBullet<clipSize && bulletTotal>0) {
@@ -82,8 +83,7 @@ public class GunController : MonoBehaviour {
         gunSound.Play();
             //projectile.AddForce(firePoint.forward *(this.bulletVelocity));
             //Destroy(projectile, 1f); 
-        yield return new WaitForSeconds(fireRate);
-        canShoot = true;
+        yield return null;
     }
 
     IEnumerator muzzleFlash() {

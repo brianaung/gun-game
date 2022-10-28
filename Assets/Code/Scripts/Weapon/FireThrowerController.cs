@@ -27,13 +27,15 @@ public class FireThrowerController : MonoBehaviour {
     int currentBullet;
     public int bulletTotal;
 
+    private float timer;
+
     //muzzel flash
     //public Image muzzleFlashImage;
     //public Sprite[] flashes;  
 
     private void Start() {
         flame.Stop();
-        canShoot = true;
+        timer = fireRate;
         currentBullet = clipSize;
         bulletTotal = bulletCapacity;
         //muzzleFlashImage.sprite = null;
@@ -43,8 +45,9 @@ public class FireThrowerController : MonoBehaviour {
       
     private void Update() {
         gunMovement();
-        if (Input.GetMouseButton(0) && canShoot && currentBullet>0) {
-            canShoot = false;
+        timer += Time.deltaTime;
+        if (Input.GetMouseButton(0) && (timer > fireRate) && currentBullet>0) {
+            timer = 0;
             currentBullet--;
             StartCoroutine(shoot());
         
@@ -76,8 +79,7 @@ public class FireThrowerController : MonoBehaviour {
         gunRecoil();
         flame.Play();
         FlameSounds.Play();
-        yield return new WaitForSeconds(fireRate);
-        canShoot = true;
+        yield return null;
     }
 
 

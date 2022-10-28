@@ -17,12 +17,15 @@ public class WeaponSwitching : MonoBehaviour
     private int selectWeapon;
     private float timeSinceLastSwich;
 
+    private bool canSwap = true;
+
     private void Start() {
         setWeapons();
         select(selectWeapon); 
     }
 
     private void Update() {
+
         int previousSelectedWeapon = selectWeapon;
         for (int i = 0; i < keys.Length; i++)
         {
