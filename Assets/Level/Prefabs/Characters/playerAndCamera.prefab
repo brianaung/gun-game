@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8675409146555688374}
   m_Layer: 0
-  m_Name: PlayerAndCamera
+  m_Name: playerAndCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8675409146555688375}
   m_LocalRotation: {x: -0, y: 0.2843864, z: -0, w: 0.95870984}
-  m_LocalPosition: {x: 30, y: 0, z: 23}
+  m_LocalPosition: {x: 155, y: 0, z: 95}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -79,7 +79,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 8675409147389774247}
-  cam: {fileID: 8675409147718735446}
   yOffset: 1
   zOffset: -10
   sensitivity: 1
@@ -9767,7 +9766,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7d763cbbf0bc4617859a1144ff5786d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  particleSystem: {fileID: 8675409147247345092}
+  particle: {fileID: 0}
   damageAmount: 5
 --- !u!1 &8675409147249193133
 GameObject:
@@ -9902,10 +9901,13 @@ MonoBehaviour:
   dashStrength: 5
   sensitivity: 1
   dashCooldownTime: 1
+  dashTime: 0.3
   gravity: 25
   dust: {fileID: 6820588145337418827, guid: 8fec88ccaab7985409eaa8be5e473568, type: 3}
   jump: {fileID: 8675409148313163485}
   highjump: {fileID: 8675409148073272416}
+  walking: {fileID: 0}
+  dash: {fileID: 0}
 --- !u!114 &8675409147389774251
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10085,6 +10087,8 @@ MonoBehaviour:
   clipSize: 10
   bulletCapacity: 100
   flame: {fileID: 8675409147247345092}
+  LightSource: {fileID: 0}
+  FlameSounds: {fileID: 0}
   mouseSensitivity: 1
   randomRecoil: 0
   randomRecoilConstraints: {x: 0, y: 0}

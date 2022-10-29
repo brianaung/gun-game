@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-[CustomEditor(typeof(DungeonCreator))]
+[CustomEditor(typeof(MapBuilder))]
 public class MapEditor : Editor
 {
     public override void OnInspectorGUI()
     {
         base.OnInspectorGUI();
-        DungeonCreator dungeonCreator = (DungeonCreator)target;
+        MapBuilder dungeonCreator = (MapBuilder)target;
         if (GUILayout.Button("Create New Map"))
         {
             dungeonCreator.CreateDungeon();
