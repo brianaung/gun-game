@@ -29,16 +29,18 @@
 #### Weapon System *(Harry)*
 - implement weapons (AK47 and Firethrower)
 - basic functionality: left click to shoot, "R" to reload, "1" and "2" to switch weapons
-- damage system
 - aim system
 - weapon projectile
 - particle system for flame effect (for firethrower)
+- final boss: ability to throw rocks
 
 #### Enemy System *(Jun)*
 - enemy movement: speed, follow the player
 - enemy spawn rate/location
 - collision detections
-- final boss: ability to throw rocks
+- damage system
+- health system
+
 
 #### Environment *(Brian)*
 - procedurally generate dungeon: dungeon size, rooms count, connect rooms, etc.
