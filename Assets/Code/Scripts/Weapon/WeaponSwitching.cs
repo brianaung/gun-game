@@ -17,8 +17,6 @@ public class WeaponSwitching : MonoBehaviour
     private int selectWeapon;
     private float timeSinceLastSwich;
 
-    private bool canSwap = true;
-
     private void Start() {
         setWeapons();
         select(selectWeapon); 
