@@ -91,6 +91,7 @@ The game uses fairly standard mouse and keyboard inputs:
 - *left mouse button* to shoot
 - *R* to reload
 - numbers *1* and *2* allows you to switch the weapons
+- *Shift* to dash
 
 #### Navigation
 When the game first loads, you are taken to a menu screen where you can start the game, view the controls, or the game credits.
