@@ -482,6 +482,7 @@ MonoBehaviour:
   amoUp: {fileID: 1770068563757794982, guid: 1293d3cdc09d2443c9e88240ef4eb309, type: 3}
   rateUp: {fileID: 5901070926009600996, guid: 54db46571b3cd4cb7a60dea1bc3ab013, type: 3}
   healthUp: {fileID: 4820968590678061732, guid: de2254a2fd0b94a669af92736f7b206f, type: 3}
+  clip: {fileID: 8300000, guid: be4ebff2067501e41aa62f13713ede70, type: 3}
 --- !u!54 &5841532960146725395
 Rigidbody:
   m_ObjectHideFlags: 0
