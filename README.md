@@ -9,24 +9,24 @@
 
 <!-- Fill this section by Milestone 1 (see specification for details) -->
 
-#### Tasks Overview
+### Tasks Overview
 
-##### Player Movement and Camera *(Ian)*
+#### Player Movement and Camera *(Ian)*
 - implement third-person camera view, camera movement, camera collision
 - player input for character movement: jumping/double jump, dashing, strafing
 
-##### UI Elements *(Ian)*
+#### UI Elements *(Ian)*
 - health and ammo ui
 - game menu ui
 - game controller
 
-##### Audio *(All)*
+#### Audio *(All)*
 - game background music
 - weapons sounds: fire, reload, etc.
 - menu sounds
 - character movement sounds
 
-##### Weapon System *(Harry)*
+#### Weapon System *(Harry)*
 - implement weapons (AK47 and Firethrower)
 - basic functionality: left click to shoot, "R" to reload, "1" and "2" to switch weapons
 - damage system
@@ -34,23 +34,23 @@
 - weapon projectile
 - particle system for flame effect (for firethrower)
 
-##### Enemy System *(Jun)*
+#### Enemy System *(Jun)*
 - enemy movement: speed, follow the player
 - enemy spawn rate/location
 - collision detections
 - final boss: ability to throw rocks
 
-##### Environment *(Brian)*
+#### Environment *(Brian)*
 - procedurally generate dungeon: dungeon size, rooms count, connect rooms, etc.
 - place assets and prefabs on the procedurally generated dungeon.
 - build the final boss scene.
 
-##### Shaders *(Brian and Harry)*
-###### Cel Shader *(Brian)*
+#### Shaders *(Brian and Harry)*
+##### Cel Shader *(Brian)*
 - cel shading to have cartoonish effect
 - makes the assets have consistent aesthetic
 
-###### Pixel Shader *(Harry)*
+##### Pixel Shader *(Harry)*
 - pixelate the screen when the player is dealt damage
 
 <!-- [[EndTeamworkPlan]] PLEASE LEAVE THIS LINE UNTOUCHED -->
@@ -81,7 +81,7 @@
 ***Gun Game*** is a third-person arena shooter game where you have to defeat a bunch of enemies to beat the game. The game begins with you waking up in the middle of a maze-like dungeon where a bunch of chicken are constantly attacking you. After killing 20 of them, you suddenly got teleported onto a mysterious island where you are faced with a giant final boss (amongus imposter) who is throwing rocks at you. You have to defeat this weird giant imposter to finally win the game!
 
 ### How to play the game
-##### Keybindings
+#### Keybindings
 The game uses fairly standard mouse and keyboard inputs:
 - *WASD* to move the player
 - *space* to jump
@@ -90,22 +90,22 @@ The game uses fairly standard mouse and keyboard inputs:
 - *R* to reload
 - numbers *1* and *2* allows you to switch the weapons
 
-##### Navigation
+#### Navigation
 When the game first loads, you are taken to a menu screen where you can start the game, view the controls, or the game credits.
 
 <p align="center">
   <img src="Gifs/menu.png" width="300">
 </p>
 
-##### Task
+#### Task
 Once you start the game, you have to kill 20 regular enemies (chickens). After that the final boss scene will be loaded and you have to defeat the final boss to win the game. During the game, killing the enemies will randomly drop you different powerups which will aids you in beating the game.
 
 
 ### Gameplay Decisions
-##### Level design
+#### Level design
 The biggest design decision we made is how the level is going to be like. We knew we wanted a shooter game in the third person and so an arena first came to mind. However, an area would be a bit too basic and we wanted to include some procedural generation for the level, and so we thought of doing a maze of some kind. Whilst this would work, mazes tend to be quite small as it's just a bunch of corridors. We eventually came up with the idea of procedurally generating rooms and connecting them with corridors. This gives us much more space to decorate the rooms with objects and larger rooms give the player more freedom of movement.
 
-##### Player and Camera controls
+#### Player and Camera controls
 The next gameplay decision was how the player is going to be controlled. We opted for the standard mouse and keyboard controls, WASD, space, left mouse button, etc., as that is what most shooter games use. We could have added a controller option however we thought mouse and keyboard controls were best due to the accuracy of a mouse would fit the game much better than controller thumbsticks.
 
 Another thing we had to consider is making the game with a first person perspective or third person perspective. Whilst the game can work with a first person perspective and easier as dealing with camera collision makes the camera movement a bit more complicated, making the game third person, gives the player a larger field of view allowing the player to see enemies on the sides more easily, making for a better gameplay experience.
@@ -129,12 +129,12 @@ Eventually we ended up going for a more simple route, which is just checking for
 ```
 Whilst this isn't a perfect solution, enemies or objects when close enough can mess with the camera position, it is a solution that works well enough and was easily implemented.
 
-##### Boss level
+#### Boss level
 A gameplay decision we had to make was how do we end the game? The game wasn't endless and so we decided to add in a boss enemy at the end. There are many ways of adding a boss enemy to a game, however, with how we did the level design, much more thought was needed to determine the best way to add the boss. For example, what room do we add the boss? At what point in the game do we add the boss? These were the big questions we had to think about. We first thought about adding the boss in the biggest room that was generated. However, due to the nature of how the level was generated we couldn't guarantee a large room since we wanted to make the boss large in comparison to the player. We could've figured out a way to generate a predetermined size room specifically for the boss but adding that into the dungeon generator made it too complicated. And so, rather than making the boss a part of the dungeon we decided to make the boss its own scene. With the boss having its own scene, we could design the level specifically for the boss and not have to worry about the limitations of the dungeon generator as we can design the level to the needs of the boss. 
 
 The next decision we had to make was how to transition from the dungeon level to the boss level. There was a couple of ways to do this, the first is a time limit, which can be implemented quite easily, however, we wanted the player to be able to explore the dungeon at their own leisure, and with different dungeon sizes, the time limit needs to be altered which adds to unnecessary coupling. We ended up deciding on using a kill counter to determine when the player will transition to the boss level. We also thought about using the number of rooms cleared but that would still be the equivalent to a kill counter, and if we decided to make the game more maze like the player wouldn't need to clearevery room completely to transition to the boss level.
 
-##### Weapon Aiming System
+#### Weapon Aiming System
 One of the issues we faced was to make the weapons aim vertically in third-person view. This is easier to implement in first-person view but in third-person, the causes issues with the camera rotations when trying to aim vertically.
 
 Therefore, we decided to stick to horizontal aiming. To allow the player to shoot higher (e.g. a very tall final boss), we decided to implement powerups system that allows the player to jump really high.
@@ -153,7 +153,7 @@ For credits please refer to the [External Resources](#external-resources) sectio
 
 
 ### Graphics Pipeline
-##### Cel Shader
+#### Cel Shader
 > Path: *Assets/Code/Shaders/CelShader.shader*
 
 We used cel shading technique to create fun and cartoonish aesthetic to our game.
@@ -167,7 +167,7 @@ Some features of our cel shader:
 Why Cel shading?
 - Since our team lack member who have experience with creating our own assets (in blender for example), we decided to mostly download free assets from different sources. Using the cel shading technique helped us make the aesthetic of all the assets more consistent and do not make them look out of place. For the assets, we mostly use low poly assets (objects made with low polygon count with flat surfaces) since we want to make the game look cartoonish and simple. Therefore, the cel shading technique matches more with these low poly assets, making the game looks simple yet looks good.
 
-##### Pixelated Shader
+#### Pixelated Shader
 > Path: *Assets/Code/Shaders/PixelationShader.shader*
 
 We used pixeleated shader to provide sqecial visual effect when player is attacked by enemies.
@@ -192,7 +192,7 @@ The high level overview of the algorithm is:
 
 After applying this procedural generation algorithm, we simply place the prefab assets onto the scene at random positions on the map. Since we are just using premade assets of the natural environment (trees, rocks, etc.), spawing them at random positions make sense.
 
-##### Sample Rooms
+#### Sample Rooms
 <p align="center">
   <img src="Gifs/dungeon1.png" width="300">
   <img src="Gifs/dungeon2.png" width="300">
@@ -217,7 +217,7 @@ This flame particle system is made into cartoonish style on purpose in order to 
 
 Attributes were changed based on the apperence of the flame. 
 
-##### Attributes varied
+#### Attributes varied
 -  Start lifetime was randomed between 1 and 2. This attribute is worked with start speed to make sure the flame has reasonable length. The randomness of lifetime makes sure the flame particle die out naturally.
 -  Max particles was set to 3000 to make flame look good.
 -  Shape of particle system is set to cone shape, with radius 0.1 and angle 1. This is can enable all the particles bounds together.
@@ -275,22 +275,22 @@ public class CameraController : MonoBehaviour
 - https://www.youtube.com/watch?v=CSuvGGiC2wI
 - https://docs.unity3d.com/ScriptReference/CharacterController.Move.html
 
-##### For Procedural generation
+#### For Procedural generation
 - https://www.youtube.com/watch?v=JSRBdUhRBu4
 - https://www.jamesbaum.co.uk/blether/procedural-generation-with-binary-space-partitions-and-rust/
 - https://medium.com/@guribemontero/dungeon-generation-using-binary-space-trees-47d4a668e2d0
 
-##### For Cel shading
+#### For Cel shading
 - https://www.youtube.com/watch?v=kV4IG811DUU&t=250s
 - https://danielilett.com/2019-05-29-tut2-intro/
 - https://roystan.net/articles/toon-shader/
 - https://www.ronja-tutorials.com/post/032-improved-toon/#specular-highlights
 
-##### For Weapon System
+#### For Weapon System
 - https://www.youtube.com/watch?v=Cwe-GV1OM3k
 - https://www.youtube.com/watch?v=om-SS-CBZ8g&t=3s
 
-##### For External Assets
+#### For External Assets
 - Crewmate model: https://sketchfab.com/3d-models/imposter-among-us-5ce5a5172ffc4f88adb11aff8a58b541
 - Control Icons: https://thoseawesomeguys.com/prompts/
 - Environment Props: https://assetstore.unity.com/packages/3d/environments/landscapes/lowpoly-environment-pack-99479
