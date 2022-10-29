@@ -277,6 +277,7 @@ public class CameraController : MonoBehaviour
 - https://www.youtube.com/watch?v=zVX9-c_aZVg
 - https://www.youtube.com/watch?v=CSuvGGiC2wI
 - https://docs.unity3d.com/ScriptReference/CharacterController.Move.html
+- https://www.youtube.com/watch?v=BLfNP4Sc_iA
 
 #### For Procedural generation
 - https://www.youtube.com/watch?v=JSRBdUhRBu4
@@ -293,6 +294,10 @@ public class CameraController : MonoBehaviour
 - https://www.youtube.com/watch?v=Cwe-GV1OM3k
 - https://www.youtube.com/watch?v=om-SS-CBZ8g&t=3s
 
+#### For Enemy System
+- https://www.youtube.com/watch?v=ZExSz7x69j8
+- https://www.youtube.com/watch?v=r7RaNR6Zc8Y
+
 #### For External Assets
 - Crewmate model: https://sketchfab.com/3d-models/imposter-among-us-5ce5a5172ffc4f88adb11aff8a58b541
 - Control Icons: https://thoseawesomeguys.com/prompts/
@@ -302,6 +307,8 @@ public class CameraController : MonoBehaviour
 - Menu Sound: https://mixkit.co/free-sound-effects/game/
 - Ak47 Sound: https://mixkit.co/free-sound-effects/game/
 - Power Up Sound: https://mixkit.co/free-sound-effects/game/
+- Jump / High Jump Sound: https://www.fesliyanstudios.com/
+- Enemy Explosion Sound: https://mixkit.co/free-sound-effects/explosion/
 - Dash Sound: https://mixkit.co/free-sound-effects/whoosh/
 - Flamethrower Sound: QuickSound.com
-- Walking Sound: FesliyanStudio.com
+- Walking Sound: https://www.fesliyanstudios.com/
