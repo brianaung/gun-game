@@ -111,6 +111,8 @@ The biggest design decision we made is how the level is going to be like. We kne
 #### Player and Camera controls
 The next gameplay decision was how the player is going to be controlled. We opted for the standard mouse and keyboard controls, WASD, space, left mouse button, etc., as that is what most shooter games use. We could have added a controller option however we thought mouse and keyboard controls were best due to the accuracy of a mouse would fit the game much better than controller thumbsticks.
 
+The player character uses a character controller component to move around rather than using something like a rigidbody as the character controller gives us much more precise character movements in exchange for a much basic capsule collider and built in physics. Since the game isn't very physics heavy and the player is also just a capsule, trade off for using a character controller was not a big deal.
+
 Another thing we had to consider is making the game with a first person perspective or third person perspective. Whilst the game can work with a first person perspective and easier as dealing with camera collision makes the camera movement a bit more complicated, making the game third person, gives the player a larger field of view allowing the player to see enemies on the sides more easily, making for a better gameplay experience.
 
 Another design related decision that needs to be made in regards to the camera is how it is going to collide with the objects around it. An early implementation of camera collision was to check slightly behind the camera for objects, however, when using the position of the camera, as a start point of a linecast. Something like this,
