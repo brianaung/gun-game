@@ -303,6 +303,11 @@ private void Update()
     StartCoroutine(shoot());
   }
 }
+
+IEnumerator shoot() {
+  var projectile = Instantiate(this.projectilePrefab, this.firePoint.position, this.firePoint.rotation);
+  yield return null;
+}
 ```
 The variable timer will slightly increase every frame, and once the timer exceeds or equals the fire rate, the gun will then be able to shoot. Once the gun shoots, the timer is set back to zero.
  
