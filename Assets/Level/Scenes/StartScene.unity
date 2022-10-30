@@ -2128,7 +2128,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerKills: 0
-  startScreen: StartScreen
+  startScene: 
   gameOver: 0
   gameWin: 0
   bossScene: 
