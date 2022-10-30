@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.666209, g: 0.8827703, b: 0.88574874, a: 1}
+  m_IndirectSpecularColor: {r: 0.66621685, g: 0.8827709, b: 0.8857476, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -9139,7 +9139,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   theEnemy: {fileID: 1311290861401530, guid: 312b31977ed9b2d48a14849ebb8c7fb3, type: 3}
   Floor: []
-  enemyNumber: 0
+  enemyNumber: 3
 --- !u!1001 &1273967408
 PrefabInstance:
   m_ObjectHideFlags: 0
