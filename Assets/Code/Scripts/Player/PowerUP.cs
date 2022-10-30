@@ -34,7 +34,7 @@ public class PowerUP : MonoBehaviour
                 FindObjectOfType<Timer>().Duration = powerUpTime;
                 FindObjectOfType<Timer>().timerText.text = "Jump++";
                 FindObjectOfType<Timer>().StartTimer();
-                playerInput.jumpStrength *= multiplier;
+                playerInput.jumpStrength *= (multiplier*0.8f);
                 numOfJump++;
         } else if (gameObject.tag == "speedUp") { // this doesnt work for some reason
             FindObjectOfType<Timer>().Duration = powerUpTime;
@@ -69,7 +69,7 @@ public class PowerUP : MonoBehaviour
         if (gameObject.tag == "speedUp") {
             playerInput.playerSpeed /= multiplier;
         } else if (gameObject.tag == "jumpUp") {
-            playerInput.jumpStrength /= multiplier;
+            playerInput.jumpStrength /= (multiplier*0.8f);
             numOfJump--;
         } else if (gameObject.tag == "rateUp") {
             if(AK47 != null){

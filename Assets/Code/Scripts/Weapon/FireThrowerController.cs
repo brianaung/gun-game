@@ -12,6 +12,7 @@ public class FireThrowerController : MonoBehaviour {
     [SerializeField] private ParticleSystem flame;
     [SerializeField] private Light LightSource;
     [SerializeField] public AudioSource FlameSounds;
+    [SerializeField] public AudioSource reloadSound;
 
     [Header("Mouse Setting")]
     public float mouseSensitivity = 1;
@@ -52,6 +53,7 @@ public class FireThrowerController : MonoBehaviour {
             StartCoroutine(shoot());
         
         } else if (Input.GetKeyDown(KeyCode.R) && currentBullet<clipSize && bulletTotal>0) {
+            StartCoroutine(reload());
             if (bulletTotal>=(clipSize-currentBullet)) {
                 bulletTotal-=(clipSize-currentBullet); 
                 currentBullet = clipSize;
@@ -82,6 +84,10 @@ public class FireThrowerController : MonoBehaviour {
         yield return null;
     }
 
+    IEnumerator reload() {
+        reloadSound.Play();
+        yield return new WaitForSeconds(5);
+    }
 
     void gunRecoil() {
         transform.root.localPosition -= Vector3.forward*100f;
