@@ -41,7 +41,6 @@
 - damage system
 - health system
 
-
 #### Environment *(Brian)*
 - procedurally generate dungeon: dungeon size, rooms count, connect rooms, etc.
 - place assets and prefabs on the procedurally generated dungeon.
@@ -71,16 +70,12 @@
 * [Particle System](#particle-system)
 * [Querying and Observational methods](#querying-and-observational-methods)
 * [Changes made based on feedbacks](#changes-made-based-on-feedbacks)
-  <!-- TODO: remove this part before submission -->
-* [Using Images](#using-images)
-* [Code Snipets](#code-snippets)
-  <!-- -->
 * [External Resources](#external-resources)
-* [Technologies](#technologies)
 
 
 ### Game Summary
 ***Gun Game*** is a third-person arena shooter game where you have to defeat a bunch of enemies to beat the game. The game begins with you waking up in the middle of a maze-like dungeon where a bunch of chicken are constantly attacking you. After killing 20 of them, you suddenly got teleported onto a mysterious island where you are faced with a giant final boss (amongus imposter) who is throwing rocks at you. You have to defeat this weird giant imposter to finally win the game!
+
 
 ### How to play the game
 #### Keybindings
@@ -183,7 +178,7 @@ We used pixeleated shader to provide sqecial visual effect when player is attack
 
 - The team trying to assign this material to all the objects in the scene. However, we find it is very inefficiency and almost impossable to do so. Therefore, pixelated material was assigned to camera, which works as a filter. It turned out very efficient and easy to do so. 
 
-How this be done
+*How this is done:*
 - the screen was divided to specific number of pixels with fixed width and height. Each pixcel was assigned to a texture which is extracted from the main texture. 
 
 ### Procedural Generation
@@ -233,41 +228,78 @@ Attributes were changed based on the apperence of the flame.
 Another particle system "FireEmbers" was add under the hariachy of this flame particle system to make it looks nice. 
 
 
-#### Querying/Observational methods
-##### Querying method: Questionnaire
-##### Demographics:
-Ages: 18-25
-Number of Males: 3
-Number of Females: 2
-##### Questions:
-What aspects of the game do you like?
-What aspects of the game can be improved?
-What is your favourite power up?
-How do you feel after playing?
-What other power up do you want?
-What weapon do you like?
-What do you think of the player/camera inputs?
-Rate the game out of 10
-##### General Comments
-People liked it with an average score of 8.6
- 
-#### Observation method: Talk aloud
-##### Demographics:
-Ages: 18-25
-Number of Males: 4
-Number of Females: 1
-##### Methodology: 
-We gave the participants a copy of the game and let them play for about 5 minutes, allowing them to have multiple runs through the game. We wrote down notes as they played and talked throughout their playthrough. 
- 
-#### Changes
+### Querying and Observational methods
+#### Querying Technique: Questionnaire
+***Demographics***
+*Age:* 18-25
+*Gender:* 3 Male, 2 Female
+
+***Method***
+We used the google forms to send out the questionnaires:
+https://forms.gle/uG7nxiduCxR4Bnht6
+
+- Questions:
+  - What aspects of the game do you like?
+  - What aspects of the game can be improved?
+  - What is your favourite power up?
+  - How do you feel after playing?
+  - What other power up do you want?
+  - What weapon do you like?
+  - What do you think of the player/camera inputs?
+  - Rate the game out of 10
+
+- Type of Questions Used:
+  - ***Multiple-choice questions*** were used to make the responses consistent across the participants and easier for us to analyse.
+  - ***Open-ended questions*** were used to get feedbacks about improving the game in areas we may not have thought of.
+  - ***Scalar questions*** were used to get the general idea of how the participants feel about the game (rating the game overall).
+  
+***Results***
+Generally, open-ended questions were most useful in helping us fix bugs in the game and improve the specific aspects of the gameplay (e.g. the participants have suggested adding more powerups like speed up which we implemented later on).
+
+- Some Feedbacks:
+<p align="center">
+  <img src="Gifs/surveyOpen1.png" width="300">
+  <img src="Gifs/surveyOpen2.png" width="300">
+  <img src="Gifs/survey (mcq).png" width="300">
+  <img src="Gifs/gameRating.png" width="300">
+</p>
+
+General Rating: 8.6/10
+
+More about the feedbacks and changes [here](#changes-made-based-on-feedbacks).
+
+#### Observational Technique: Think Aloud
+***Demographics***
+*Age:* 18-25
+*Gender:* 4 Male, 1 Female
+
+***Method***
+We get the participants to play the game while we monitor them in-person. Each participant plays the game for about 5-10 minutes, allowing them to have multiple runs through the game. They are encouraged to vocalise their thoughts and opinions about the game while playing. Since the participants are our friends, they feel less awkward to talk through their playthrough. We wrote down notes as we were monitoring and then these notes were later used to make [changes](#changes-made-based-on-feedbacks) to the game.
+
+***Results***
+*Some feedbacks:*
+- improve flamethrower particle system
+- allow vertical aiming system
+- add better enemy animations
+- flamethrower is too overpowered
+- Bug: weapons stopped firing if you switch weapon while firing
+- "I kinda like playing as a capsule man ngl"
+
+
+### Changes made based on feedbacks
+#### Flamethrower Particle Effect
 One of the first things that was mentioned during a think aloud session, was that the participant thought that the particles for the flamethrower did not look very good and that they don't really look like flames and suggested to change it to be more flame-like. The team agreed that the flames did not look very good, and so we changed the particle effect to have each particle to have a different shape instead of just being squares, and change various attributes in order for the particles to mimic more flame-like behaviour.
  
+#### Enemy Animation
 Another suggestion a few participants suggested was that the enemy should be different as we just had floating capsule objects as the enemies. And so we decided to add in chickens as an enemy type. Adding more enemy types was also suggested, however, due to time constraints it was difficult to do.
  
+#### Changes to Powerups
 The questionnaire gave us key aspects that needed to be modified such as weapons and power up. Most of the power ups were well liked however, the size up power up wasn’t well liked as much and a few in the talk aloud session stated that the power up was more like a power down since the increase in size increased the size of the hitbox of the player. We fixed this by replacing the size up power up with a speed up power up which many in the questionnaire suggested. 
  
+#### Balancing the Weapons
 A few people stated that the gun was much more underpowered compared to the flamethrower, and many in the talk aloud session seemed to mainly use the flamethrower. And so we decided to give the gun a buff by increasing the fire rate of the gun and reducing the clip size of the flamethrower by three quarters.
  
+#### Game Breaking Bug!!!
 A major issue that was discovered was that when a participant was switching between the weapons whilst shooting, the weapon would just suddenly not shoot. After a bit of testing, it was discovered that the reason for this was how we implemented the fire rate of the weapons.
  
 Initially we made our shoot function into a coroutine and we had a variable, canShoot, to determine if we were able to shoot.
