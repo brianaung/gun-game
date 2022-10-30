@@ -391,3 +391,4 @@ The variable timer will slightly increase every frame, and once the timer exceed
 - Walking Sound: https://www.fesliyanstudios.com/
 - Chicken Prefab: https://assetstore.unity.com/packages/3d/characters/animals/meshtint-free-chicken-mega-toon-series-151842
 - Background Music: https://www.fesliyanstudios.com/royalty-free-music/download/boss-time/2340
+- Reload sound: https://pixabay.com/sound-effects/rifle-or-shotgun-reload-6787/ 
