@@ -230,11 +230,11 @@ Another particle system "FireEmbers" was add under the hariachy of this flame pa
 
 ### Querying and Observational methods
 #### Querying Technique: Questionnaire
-***Demographics***
+##### *Demographics*
 *Age:* 18-25
 *Gender:* 3 Male, 2 Female
 
-***Method***
+##### *Method*
 We used the google forms to send out the questionnaires:
 https://forms.gle/uG7nxiduCxR4Bnht6
 
@@ -253,7 +253,7 @@ https://forms.gle/uG7nxiduCxR4Bnht6
   - ***Open-ended questions*** were used to get feedbacks about improving the game in areas we may not have thought of.
   - ***Scalar questions*** were used to get the general idea of how the participants feel about the game (rating the game overall).
   
-***Results***
+##### *Results*
 Generally, open-ended questions were most useful in helping us fix bugs in the game and improve the specific aspects of the gameplay (e.g. the participants have suggested adding more powerups like speed up which we implemented later on).
 
 - Some Feedbacks:
@@ -269,14 +269,14 @@ General Rating: 8.6/10
 More about the feedbacks and changes [here](#changes-made-based-on-feedbacks).
 
 #### Observational Technique: Think Aloud
-***Demographics***
+#####*Demographics*
 *Age:* 18-25
 *Gender:* 4 Male, 1 Female
 
-***Method***
+#####*Method*
 We get the participants to play the game while we monitor them in-person. Each participant plays the game for about 5-10 minutes, allowing them to have multiple runs through the game. They are encouraged to vocalise their thoughts and opinions about the game while playing. Since the participants are our friends, they feel less awkward to talk through their playthrough. We wrote down notes as we were monitoring and then these notes were later used to make [changes](#changes-made-based-on-feedbacks) to the game.
 
-***Results***
+#####*Results*
 *Some feedbacks:*
 - improve flamethrower particle system
 - allow vertical aiming system
