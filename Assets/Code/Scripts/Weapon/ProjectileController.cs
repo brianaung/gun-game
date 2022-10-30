@@ -6,7 +6,7 @@ using System.Collections;
 
 public class ProjectileController : MonoBehaviour
 {
-    //  [SerializeField] private ParticleSystem collisionParticles;
+
      [SerializeField] private string tagToDamage;
      [SerializeField] private int damageAmount = 50;
 
@@ -14,11 +14,6 @@ public class ProjectileController : MonoBehaviour
     {
         if (col.gameObject.tag == "Enemy")
         {
-            
-            // var particles = Instantiate(this.collisionParticles);
-            // particles.transform.position = transform.position;
-            // particles.transform.rotation =
-            //     Quaternion.LookRotation(-this.velocity);
             if(col.gameObject.GetComponent<HealthManager>() != null)
             {
                 var healthManager = col.gameObject.GetComponent<HealthManager>();

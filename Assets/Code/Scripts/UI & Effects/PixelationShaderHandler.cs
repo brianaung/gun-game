@@ -6,7 +6,6 @@ using UnityEngine;
 public class PixelationShaderHandler : MonoBehaviour
 {
     public Material effectMaterial;
-   //[SerializeField] public Material effectMaterial;
     
     private void OnRenderImage(RenderTexture source, RenderTexture destination) {
         Graphics.Blit(source, destination, effectMaterial);

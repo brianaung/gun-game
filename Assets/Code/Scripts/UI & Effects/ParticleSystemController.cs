@@ -12,10 +12,6 @@ public class ParticleSystemController : MonoBehaviour
             var healthManager = enemy.gameObject.GetComponent<HealthManager>();
             healthManager.ApplyDamage(this.damageAmount);
         }
-
-        // if (enemy.CompareTag("Player")) {
-
-        // }
         
     }
 

@@ -30,17 +30,13 @@ public class FireThrowerController : MonoBehaviour {
 
     private float timer;
 
-    //muzzel flash
-    //public Image muzzleFlashImage;
-    //public Sprite[] flashes;  
-
+    
     private void Start() {
         flame.Stop();
         timer = fireRate;
         currentBullet = clipSize;
         bulletTotal = bulletCapacity;
-        //muzzleFlashImage.sprite = null;
-        //muzzleFlashImage.color = new Color(0,0,0,0);
+        
         
     }
       
@@ -78,7 +74,6 @@ public class FireThrowerController : MonoBehaviour {
     }
 
     IEnumerator shoot() {
-        gunRecoil();
         flame.Play();
         FlameSounds.Play();
         yield return null;
@@ -89,17 +84,6 @@ public class FireThrowerController : MonoBehaviour {
         yield return new WaitForSeconds(5);
     }
 
-    void gunRecoil() {
-        transform.root.localPosition -= Vector3.forward*100f;
-        transform.root.localPosition += Vector3.forward*100f;
-        if (randomRecoil) {
-            float xRecoil = Random.Range(-randomRecoilConstraints.x, randomRecoilConstraints.x);
-            float yRecoil = Random.Range(-randomRecoilConstraints.y, randomRecoilConstraints.y);
-
-            Vector2 recoil = new Vector2(xRecoil, yRecoil);
-            currentRotation += recoil;
-        }
-    }
     
     
 

@@ -5,7 +5,6 @@ using UnityEngine;
 public class PowerUP : MonoBehaviour
 {
     [SerializeField] private int multiplier = 2;
-    //[SerializeField] private ParticleSystem powerUpEffect;
     [SerializeField] private int powerUpTime;
 
     [SerializeField] public AudioSource pickUpSound;
@@ -20,7 +19,7 @@ public class PowerUP : MonoBehaviour
     IEnumerator pickUp(Collider player) {
         
         //power up effect
-        //Instantiate(this.powerUpEffect, transform.position, transform.rotation);
+       
         GetComponent<MeshRenderer>().enabled = false;
         GetComponent<Collider>().enabled = false;
         //apply power up to player
@@ -28,7 +27,7 @@ public class PowerUP : MonoBehaviour
         
         var AK47 = FindObjectOfType<GunController>();
         var playerCharacter = FindObjectOfType<PlayerCharacter>();
-        //var FireThrower = FindObjectOfType<FireThrowerController>();
+        
         //limit the number of "jumUp" powerups taken by the player at the same time
         if (gameObject.tag == "jumpUp" && numOfJump == 0) {
                 FindObjectOfType<Timer>().Duration = powerUpTime;
@@ -36,7 +35,7 @@ public class PowerUP : MonoBehaviour
                 FindObjectOfType<Timer>().StartTimer();
                 playerInput.jumpStrength *= (multiplier*0.8f);
                 numOfJump++;
-        } else if (gameObject.tag == "speedUp") { // this doesnt work for some reason
+        } else if (gameObject.tag == "speedUp") { 
             FindObjectOfType<Timer>().Duration = powerUpTime;
             FindObjectOfType<Timer>().timerText.text = "Speed++";
             FindObjectOfType<Timer>().StartTimer();
@@ -45,7 +44,7 @@ public class PowerUP : MonoBehaviour
             if(AK47 != null){
                 AK47.bulletTotal = AK47.bulletCapacity;
             }
-            //FireThrower.bulletTotal = 100;
+            
         } else if (gameObject.tag == "rateUp") {
             FindObjectOfType<Timer>().Duration = powerUpTime;
             FindObjectOfType<Timer>().timerText.text = "FireRate++";
@@ -64,8 +63,7 @@ public class PowerUP : MonoBehaviour
         
         //wait for some time, then go back to normal
         yield return new WaitForSeconds(powerUpTime);
-        //player.transform.localScale /= multiplier;
-        //playerInput.jumpStrength /= multiplier;
+        
         if (gameObject.tag == "speedUp") {
             playerInput.playerSpeed /= multiplier;
         } else if (gameObject.tag == "jumpUp") {

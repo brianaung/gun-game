@@ -42,8 +42,6 @@ public class Timer : MonoBehaviour
    }
 
    private void End() {
-    Debug.Log("end timer");
-    //Destroy(gameObject);
     timerFill.enabled = false;
     timerBackground.enabled = false;
     timerText.enabled = false;

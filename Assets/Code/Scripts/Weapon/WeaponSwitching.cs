@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class WeaponSwitching : MonoBehaviour
 {
-    //[Header("reference")]
     [Header("reference")]
     [SerializeField] private Transform[] weapons;
 

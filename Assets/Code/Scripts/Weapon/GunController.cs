@@ -65,24 +65,22 @@ public class GunController : MonoBehaviour {
         currentRotation += mouseAxis;
 
         currentRotation.y = Mathf.Clamp(currentRotation.y, -30, 45);
-
-        // transform.root.localRotation = Quaternion.AngleAxis(currentRotation.x, Vector3.up);
-        // transform.parent.localRotation = Quaternion.AngleAxis(-currentRotation.y, Vector3.right);
     }
 
     IEnumerator reload() {
         reloadSound.Play();
+        
         yield return new WaitForSeconds(3);
+        
     }
 
     IEnumerator shoot() {
         gunRecoil();
         StartCoroutine(muzzleFlash());
-        //RaycastToEnemy();
+        
         var projectile = Instantiate(this.projectilePrefab, this.firePoint.position, this.firePoint.rotation);
         gunSound.Play();
-            //projectile.AddForce(firePoint.forward *(this.bulletVelocity));
-            //Destroy(projectile, 1f); 
+            
         yield return null;
     }
 
@@ -106,16 +104,12 @@ public class GunController : MonoBehaviour {
         }
     }
     
-    //TODO: gun aiming effect
-    void gunAim() {
-
-    }
 
     void RaycastToEnemy() {
         RaycastHit hit;
         if (Physics.Raycast(transform.parent.position, transform.parent.forward, out hit, 1<< LayerMask.NameToLayer("Enemy"))) {
             try {
-                //Debug.Log("Hit an enemy");
+                
                 Rigidbody rb = hit.transform.GetComponent<Rigidbody>();
                 rb.constraints = RigidbodyConstraints.None;
                 rb.AddForce(transform.parent.transform.forward*500);
@@ -125,10 +119,6 @@ public class GunController : MonoBehaviour {
         }
     }
 
-    //TODO: swich weapon
-    void swichWeapon() {
-        
-    }
 
     public int GetClipSize()
     {
