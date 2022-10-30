@@ -7,7 +7,7 @@ public class FireThrowerController : MonoBehaviour {
     [Header("Gun Setting")]
     public float fireRate = 0.1f;
     public int clipSize = 5;
-    public int bulletCapacity = 300;
+    public int bulletCapacity = 50;
 
     [SerializeField] private ParticleSystem flame;
     [SerializeField] private Light LightSource;

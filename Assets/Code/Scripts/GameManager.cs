@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     public int playerKills;
-    public string startScreen;
+    public string startScene;
     public bool gameOver = false;
 
     public bool gameWin = false;
@@ -49,7 +49,7 @@ public class GameManager : MonoBehaviour
 
     public void playAgain()
     {
-        SceneManager.LoadScene(startScreen);
+        SceneManager.LoadScene(startScene);
     }
 
     public void loadBossScene()

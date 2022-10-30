@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1825,7 +1825,9 @@ MonoBehaviour:
     Up Sound - https://mixkit.co/free-sound-effects/game/\n\nDash Sound - https://mixkit.co/free-sound-effects/whoosh/\n\nFlamethrower
     Sound - QuickSound.com\n\nWalking Sound - FesliyanStudio.com\n\nThrow Rock Sound
     - \nhttps://pixabay.com/sound-effects/toss-aside-88750/\n\nReload Sound -\nhttps://pixabay.com/sound-effects/rifle-or-shotgun-reload-6787/\n\nChicken
-    Prefab:\nhttps://assetstore.unity.com/packages/3d/characters/animals/meshtint-free-chicken-mega-toon-series-151842\n\n"
+    Prefab - \nhttps://assetstore.unity.com/packages/3d/characters/animals/meshtint-free-chicken-mega-toon-series-151842\n\nJump
+    / High Jump Sound - https://www.fesliyanstudios.com/\n\nEnemy Explosion Sound
+    - https://mixkit.co/free-sound-effects/explosion/\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 78eb5844a3c784448ae192e01909e912, type: 2}
   m_sharedMaterial: {fileID: -765277969113800840, guid: 78eb5844a3c784448ae192e01909e912, type: 2}
