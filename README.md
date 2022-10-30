@@ -389,3 +389,5 @@ The variable timer will slightly increase every frame, and once the timer exceed
 - Dash Sound: https://mixkit.co/free-sound-effects/whoosh/
 - Flamethrower Sound: QuickSound.com
 - Walking Sound: https://www.fesliyanstudios.com/
+- Chicken Prefab: https://assetstore.unity.com/packages/3d/characters/animals/meshtint-free-chicken-mega-toon-series-151842
+- Background Music: https://www.fesliyanstudios.com/royalty-free-music/download/boss-time/2340
