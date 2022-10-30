@@ -233,12 +233,80 @@ Attributes were changed based on the apperence of the flame.
 Another particle system "FireEmbers" was add under the hariachy of this flame particle system to make it looks nice. 
 
 
-### Querying and Observational methods
-Lorem Ipsum
+#### Querying/Observational methods
+##### Querying method: Questionnaire
+##### Demographics:
+Ages: 18-25
+Number of Males: 3
+Number of Females: 2
+##### Questions:
+What aspects of the game do you like?
+What aspects of the game can be improved?
+What is your favourite power up?
+How do you feel after playing?
+What other power up do you want?
+What weapon do you like?
+What do you think of the player/camera inputs?
+Rate the game out of 10
+##### General Comments
+People liked it with an average score of 8.6
+ 
+#### Observation method: Talk aloud
+##### Demographics:
+Ages: 18-25
+Number of Males: 4
+Number of Females: 1
+##### Methodology: 
+We gave the participants a copy of the game and let them play for about 5 minutes, allowing them to have multiple runs through the game. We wrote down notes as they played and talked throughout their playthrough. 
+ 
+#### Changes
+One of the first things that was mentioned during a think aloud session, was that the participant thought that the particles for the flamethrower did not look very good and that they don't really look like flames and suggested to change it to be more flame-like. The team agreed that the flames did not look very good, and so we changed the particle effect to have each particle to have a different shape instead of just being squares, and change various attributes in order for the particles to mimic more flame-like behaviour.
+ 
+Another suggestion a few participants suggested was that the enemy should be different as we just had floating capsule objects as the enemies. And so we decided to add in chickens as an enemy type. Adding more enemy types was also suggested, however, due to time constraints it was difficult to do.
+ 
+The questionnaire gave us key aspects that needed to be modified such as weapons and power up. Most of the power ups were well liked however, the size up power up wasn’t well liked as much and a few in the talk aloud session stated that the power up was more like a power down since the increase in size increased the size of the hitbox of the player. We fixed this by replacing the size up power up with a speed up power up which many in the questionnaire suggested. 
+ 
+A few people stated that the gun was much more underpowered compared to the flamethrower, and many in the talk aloud session seemed to mainly use the flamethrower. And so we decided to give the gun a buff by increasing the fire rate of the gun and reducing the clip size of the flamethrower by three quarters.
+ 
+A major issue that was discovered was that when a participant was switching between the weapons whilst shooting, the weapon would just suddenly not shoot. After a bit of testing, it was discovered that the reason for this was how we implemented the fire rate of the weapons.
+ 
+Initially we made our shoot function into a coroutine and we had a variable, canShoot, to determine if we were able to shoot.
+```C#
+private void Update()
+{
+  if (Input.GetMouseButton(0) && canShoot && currentBullet>0)
+  {
+    canShoot = false;
+    currentBullet--;
+    StartCoroutine(shoot());
+  }
+}
+ 
+IEnumerator shoot() {
+  var projectile = Instantiate(this.projectilePrefab, this.firePoint.position, this.firePoint.rotation);
+  yield return new WaitForSeconds(fireRate);
+  canShoot = true;
+}
+```
+However, the issue lies in that canShoot also gets reassigned back to true within this coroutine. If the weapon gets swapped whilst the coroutine was happening can shoot will sometimes not be set back to true, as swapping the weapon will essentially cancel the coroutine. And so the gun will be unable to shoot as canShoot will always be false after this.
+ 
+A solution we have come up with was to remove the boolean variable canShoot, and instead have a timer variable that updates every frame which will act as a cooldown for the weapon. So that the fire rate of the weapon doesn’t rely on the shoot coroutine;
+```C#
+private float timer;
+private void Update()
+{
+  timer += Time.deltaTime;
+  if (Input.GetMouseButton(0) && (timer >= fireRate) && currentBullet>0)
+  {
+    timer = 0;
+    currentBullet--;
+    StartCoroutine(shoot());
+  }
+}
+```
+The variable timer will slightly increase every frame, and once the timer exceeds or equals the fire rate, the gun will then be able to shoot. Once the gun shoots, the timer is set back to zero.
+ 
 
-
-### Changes made based on feedbacks
-Lorem Ipsum
 
 
 ### Technologies
