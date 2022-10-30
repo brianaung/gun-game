@@ -290,7 +290,7 @@ IEnumerator shoot() {
 ```
 However, the issue lies in that canShoot also gets reassigned back to true within this coroutine. If the weapon gets swapped whilst the coroutine was happening can shoot will sometimes not be set back to true, as swapping the weapon will essentially cancel the coroutine. And so the gun will be unable to shoot as canShoot will always be false after this.
  
-A solution we have come up with was to remove the boolean variable canShoot, and instead have a timer variable that updates every frame which will act as a cooldown for the weapon. So that the fire rate of the weapon doesn’t rely on the shoot coroutine;
+A solution we have come up with was to remove the boolean variable canShoot, and instead have a timer variable that updates every frame which will act as a cooldown for the weapon. So that the fire rate of the weapon doesn’t rely on the shoot coroutine.
 ```C#
 private float timer;
 private void Update()
