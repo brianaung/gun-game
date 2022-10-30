@@ -7,7 +7,9 @@ using UnityEngine.UI;
 public class BossfireController : MonoBehaviour
 {
     public ParticleSystem bossfire;
+    public AudioClip clip;
     [SerializeField] private UnityEvent onHit;
+    [SerializeField] public AudioSource throwRockSounds;
 
     bool canShoot;
     private void Start() {
@@ -19,8 +21,10 @@ public class BossfireController : MonoBehaviour
         if (canShoot) {
             StartCoroutine(shoot());
             bossfire.Play();
+            throwRockSounds.Play();
         } else {
             bossfire.Stop();
+            //throwRockSounds.Stop();
         }
 
     }
@@ -32,7 +36,9 @@ public class BossfireController : MonoBehaviour
     }
     private void OnParticleCollision(GameObject enemy) {
         if (enemy.CompareTag("Player")) {
+            AudioSource.PlayClipAtPoint(clip, transform.position);
             this.onHit.Invoke();
+
         }
     }
 

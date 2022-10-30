@@ -19,10 +19,10 @@ public class ContactController : MonoBehaviour
         {
             var particles = Instantiate(this.collisionParticles);
             particles.transform.position = transform.position;
-            
+            AudioSource.PlayClipAtPoint(clip, transform.position);
             if(Role != "boss")
             {
-                AudioSource.PlayClipAtPoint(clip, transform.position);
+                //AudioSource.PlayClipAtPoint(clip, transform.position);
                 Destroy(gameObject);
             }
         }
