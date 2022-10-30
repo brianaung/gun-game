@@ -310,42 +310,10 @@ IEnumerator shoot() {
 }
 ```
 The variable timer will slightly increase every frame, and once the timer exceeds or equals the fire rate, the gun will then be able to shoot. Once the gun shoots, the timer is set back to zero.
- 
-
-
 
 ### Technologies
 Project is created with:
 * Unity 2022.1.9f1 
-* Ipsum version: 2.33
-* Ament library version: 999
-
-<!-- [[TODO]] REMOVE THIS PART BEFORE SUBMISSION -->
-### Using Images
-
-You can include images/gifs by adding them to a folder in your repo, currently `Gifs/*`:
-
-<p align="center">
-  <img src="Gifs/sample.gif" width="300">
-</p>
-
-To create a gif from a video you can follow this [link](https://ezgif.com/video-to-gif/ezgif-6-55f4b3b086d4.mov).
-
-### Code Snippets 
-
-You may wish to include code snippets, but be sure to explain them properly, and don't go overboard copying
-every line of code in your project!
-
-```c#
-public class CameraController : MonoBehaviour
-{
-    void Start ()
-    {
-        // Do something...
-    }
-}
-```
-<!-- -->
 
 
 ### External Resources
