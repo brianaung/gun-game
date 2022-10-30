@@ -35,7 +35,7 @@
 - final boss: ability to throw rocks
 
 #### Enemy System *(Jun)*
-- enemy movement: speed, follow the player
+- enemy movement: speed, follow and attack the player
 - enemy spawn rate/location
 - collision detections
 - damage system

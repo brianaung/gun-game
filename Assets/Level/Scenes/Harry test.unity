@@ -930,7 +930,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1275521235203733008, guid: c622029afddbdbc4598e46f6ebadae3d, type: 3}
       propertyPath: startingHealth
-      value: 100
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 1275521235203733008, guid: c622029afddbdbc4598e46f6ebadae3d, type: 3}
       propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -954,7 +954,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1513270080133518086, guid: c622029afddbdbc4598e46f6ebadae3d, type: 3}
       propertyPath: enemyHealth
-      value: 100
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 3619264502078153872, guid: c622029afddbdbc4598e46f6ebadae3d, type: 3}
       propertyPath: m_Name
@@ -6689,7 +6689,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bossfire: {fileID: 387680456}
-  damageAmount: 10
   onHit:
     m_PersistentCalls:
       m_Calls:
@@ -9856,7 +9855,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   theEnemy: {fileID: 1311290861401530, guid: 312b31977ed9b2d48a14849ebb8c7fb3, type: 3}
   Floor: []
-  enemyNumber: 0
+  enemyNumber: 3
 --- !u!1001 &1273967408
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16139,7 +16138,9 @@ MonoBehaviour:
   playerKills: 0
   startScreen: StartScene
   gameOver: 0
+  gameWin: 0
   bossScene: BossScene
+  winText: {fileID: 0}
 --- !u!4 &1681301846
 Transform:
   m_ObjectHideFlags: 0

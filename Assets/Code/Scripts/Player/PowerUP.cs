@@ -9,6 +9,7 @@ public class PowerUP : MonoBehaviour
     [SerializeField] private int powerUpTime;
 
     [SerializeField] public AudioSource pickUpSound;
+    private int numOfJump = 0;
     
     void OnTriggerEnter(Collider other) {
         if (other.CompareTag("Player")) {
@@ -28,12 +29,13 @@ public class PowerUP : MonoBehaviour
         var AK47 = FindObjectOfType<GunController>();
         var playerCharacter = FindObjectOfType<PlayerCharacter>();
         //var FireThrower = FindObjectOfType<FireThrowerController>();
-        if (gameObject.tag == "jumpUp") {
-            FindObjectOfType<Timer>().Duration = powerUpTime;
-            FindObjectOfType<Timer>().timerText.text = "Jump++";
-            FindObjectOfType<Timer>().StartTimer();
-
-            playerInput.jumpStrength *= multiplier;
+        //limit the number of "jumUp" powerups taken by the player at the same time
+        if (gameObject.tag == "jumpUp" && numOfJump == 0) {
+                FindObjectOfType<Timer>().Duration = powerUpTime;
+                FindObjectOfType<Timer>().timerText.text = "Jump++";
+                FindObjectOfType<Timer>().StartTimer();
+                playerInput.jumpStrength *= multiplier;
+                numOfJump++;
         } else if (gameObject.tag == "speedUp") { // this doesnt work for some reason
             FindObjectOfType<Timer>().Duration = powerUpTime;
             FindObjectOfType<Timer>().timerText.text = "Speed++";
@@ -68,6 +70,7 @@ public class PowerUP : MonoBehaviour
             playerInput.playerSpeed /= multiplier;
         } else if (gameObject.tag == "jumpUp") {
             playerInput.jumpStrength /= multiplier;
+            numOfJump--;
         } else if (gameObject.tag == "rateUp") {
             if(AK47 != null){
                 AK47.fireRate *= multiplier;
