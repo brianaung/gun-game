@@ -12,7 +12,6 @@ public class GameManager : MonoBehaviour
 
     public bool gameWin = false;
     public string bossScene;
-    [SerializeField] TMP_Text winText;
     private void Awake() {
 
         if(Instance == null)
