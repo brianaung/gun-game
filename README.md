@@ -258,9 +258,15 @@ Generally, open-ended questions were most useful in helping us fix bugs in the g
 
 - Some Feedbacks:
 <p align="center">
-  <img src="Gifs/surveyOpen1.png" width="300">
-  <img src="Gifs/surveyOpen2.png" width="300">
   <img src="Gifs/survey (mcq).png" width="300">
+</p>
+<p align="center">
+  <img src="Gifs/surveyOpen1.png" width="300">
+</p>
+<p align="center">
+  <img src="Gifs/surveyOpen2.png" width="300">
+</p>
+<p align="center">
   <img src="Gifs/gameRating.png" width="300">
 </p>
 
