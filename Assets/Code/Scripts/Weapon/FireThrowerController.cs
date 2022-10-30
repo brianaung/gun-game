@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class FireThrowerController : MonoBehaviour {
     [Header("Gun Setting")]
     public float fireRate = 0.1f;
-    public int clipSize = 20;
+    public int clipSize = 10;
     public int bulletCapacity = 300;
 
     [SerializeField] private ParticleSystem flame;
