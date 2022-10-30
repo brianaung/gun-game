@@ -343,10 +343,6 @@ IEnumerator shoot() {
 ```
 The variable timer will slightly increase every frame, and once the timer exceeds or equals the fire rate, the gun will then be able to shoot. Once the gun shoots, the timer is set back to zero.
 
-### Technologies
-Project is created with:
-* Unity 2022.1.9f1 
-
 
 ### External Resources
 - https://www.youtube.com/watch?v=zVX9-c_aZVg
