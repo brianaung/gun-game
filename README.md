@@ -269,14 +269,14 @@ General Rating: 8.6/10
 More about the feedbacks and changes [here](#changes-made-based-on-feedbacks).
 
 #### Observational Technique: Think Aloud
-#####*Demographics*
+##### *Demographics*
 *Age:* 18-25
 *Gender:* 4 Male, 1 Female
 
-#####*Method*
+##### *Method*
 We get the participants to play the game while we monitor them in-person. Each participant plays the game for about 5-10 minutes, allowing them to have multiple runs through the game. They are encouraged to vocalise their thoughts and opinions about the game while playing. Since the participants are our friends, they feel less awkward to talk through their playthrough. We wrote down notes as we were monitoring and then these notes were later used to make [changes](#changes-made-based-on-feedbacks) to the game.
 
-#####*Results*
+##### *Results*
 *Some feedbacks:*
 - improve flamethrower particle system
 - allow vertical aiming system
